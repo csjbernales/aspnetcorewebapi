@@ -5,6 +5,7 @@ D:\Users\NonPS\Documents\repositories\aspnetcorewebapi\aspnetcorewebapi\bin\Debu
 D:\Users\NonPS\Documents\repositories\aspnetcorewebapi\aspnetcorewebapi\bin\Debug\net7.0\aspnetcorewebapi.runtimeconfig.json
 D:\Users\NonPS\Documents\repositories\aspnetcorewebapi\aspnetcorewebapi\bin\Debug\net7.0\aspnetcorewebapi.dll
 D:\Users\NonPS\Documents\repositories\aspnetcorewebapi\aspnetcorewebapi\bin\Debug\net7.0\aspnetcorewebapi.pdb
+D:\Users\NonPS\Documents\repositories\aspnetcorewebapi\aspnetcorewebapi\bin\Debug\net7.0\aspnetcorewebapi.xml
 D:\Users\NonPS\Documents\repositories\aspnetcorewebapi\aspnetcorewebapi\bin\Debug\net7.0\Microsoft.AspNetCore.OpenApi.dll
 D:\Users\NonPS\Documents\repositories\aspnetcorewebapi\aspnetcorewebapi\bin\Debug\net7.0\Microsoft.OpenApi.dll
 D:\Users\NonPS\Documents\repositories\aspnetcorewebapi\aspnetcorewebapi\bin\Debug\net7.0\Swashbuckle.AspNetCore.Swagger.dll
@@ -28,8 +29,7 @@ D:\Users\NonPS\Documents\repositories\aspnetcorewebapi\aspnetcorewebapi\obj\Debu
 D:\Users\NonPS\Documents\repositories\aspnetcorewebapi\aspnetcorewebapi\obj\Debug\net7.0\aspnetcorewebapi.csproj.CopyComplete
 D:\Users\NonPS\Documents\repositories\aspnetcorewebapi\aspnetcorewebapi\obj\Debug\net7.0\aspnetcorewebapi.dll
 D:\Users\NonPS\Documents\repositories\aspnetcorewebapi\aspnetcorewebapi\obj\Debug\net7.0\refint\aspnetcorewebapi.dll
+D:\Users\NonPS\Documents\repositories\aspnetcorewebapi\aspnetcorewebapi\obj\Debug\net7.0\aspnetcorewebapi.xml
 D:\Users\NonPS\Documents\repositories\aspnetcorewebapi\aspnetcorewebapi\obj\Debug\net7.0\aspnetcorewebapi.pdb
 D:\Users\NonPS\Documents\repositories\aspnetcorewebapi\aspnetcorewebapi\obj\Debug\net7.0\aspnetcorewebapi.genruntimeconfig.cache
 D:\Users\NonPS\Documents\repositories\aspnetcorewebapi\aspnetcorewebapi\obj\Debug\net7.0\ref\aspnetcorewebapi.dll
-D:\Users\NonPS\Documents\repositories\aspnetcorewebapi\aspnetcorewebapi\bin\Debug\net7.0\aspnetcorewebapi.xml
-D:\Users\NonPS\Documents\repositories\aspnetcorewebapi\aspnetcorewebapi\obj\Debug\net7.0\aspnetcorewebapi.xml

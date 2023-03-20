@@ -1,4 +1,4 @@
-﻿namespace aspnetcorewebapi.Controllers.Models
+﻿namespace aspnetcorewebapi.Models
 {
     public enum ProductType
     {
