@@ -31,3 +31,5 @@ D:\Users\NonPS\Documents\repositories\aspnetcorewebapi\aspnetcorewebapi\obj\Debu
 D:\Users\NonPS\Documents\repositories\aspnetcorewebapi\aspnetcorewebapi\obj\Debug\net7.0\aspnetcorewebapi.pdb
 D:\Users\NonPS\Documents\repositories\aspnetcorewebapi\aspnetcorewebapi\obj\Debug\net7.0\aspnetcorewebapi.genruntimeconfig.cache
 D:\Users\NonPS\Documents\repositories\aspnetcorewebapi\aspnetcorewebapi\obj\Debug\net7.0\ref\aspnetcorewebapi.dll
+D:\Users\NonPS\Documents\repositories\aspnetcorewebapi\aspnetcorewebapi\bin\Debug\net7.0\aspnetcorewebapi.xml
+D:\Users\NonPS\Documents\repositories\aspnetcorewebapi\aspnetcorewebapi\obj\Debug\net7.0\aspnetcorewebapi.xml
