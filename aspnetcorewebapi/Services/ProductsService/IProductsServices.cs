@@ -10,6 +10,6 @@
 
         List<Product> UpdateProduct(Product product);
 
-        List<Product> UpdateProduct(int id);
+        List<Product> DeleteProduct(int id);
     }
 }

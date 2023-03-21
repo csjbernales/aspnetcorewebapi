@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using aspnetcorewebapi.Services.ProductsService;
+
+using Microsoft.AspNetCore.Mvc;
 
 namespace aspnetcorewebapi.Controllers
 {
@@ -6,70 +8,64 @@ namespace aspnetcorewebapi.Controllers
     [ApiController]
     public class ProductsController : ControllerBase
     {
-        private List<Product> products = new List<Product>
-            {
-                new Product { Id = 1, Name = "Nike", Type = ProductType.Shoe },
-                new Product { Id = 2, Name = "Logitech", Type = ProductType.Camera },
-                new Product { Id = 3, Name = "Samsung", Type = ProductType.Gadget },
-            };
+        private readonly IProductsServices productsServices;
+
+        public ProductsController(IProductsServices productsServices)
+        {
+            this.productsServices = productsServices;
+        }
 
         [HttpGet]
         public async Task<ActionResult<List<Product>>> GetAllProducts()
         {
-            return Ok(products);
+            return Ok(productsServices.GetAllProducts());
         }
 
         [HttpGet("{id}")]
         public async Task<ActionResult<Product>> GetProduct(int id)
         {
-            var product = products.Find(x => x.Id == id);
+            var result = productsServices.GetProduct(id);
 
-            if (product is null)
+            if (result.Id == 0)
             {
-                return NotFound("Product does not exist");
+                return NotFound();
             }
 
-            return Ok(product);
+            return Ok(result);
         }
 
         [HttpPost]
         public async Task<ActionResult<Product>> AddProduct([FromBody] Product product)
         {
-            products.Add(product);
+            var result = productsServices.AddProduct(product);
 
-            return Ok(products);
+            return Ok(result);
         }
 
         [HttpPut]
         public async Task<ActionResult<Product>> UpdateProduct([FromBody] Product product)
         {
-            var updatedProduct = products.Find(x => x.Id == product.Id);
+            var result = productsServices.UpdateProduct(product);
 
-
-            if (product is null)
+            if (result.Count == 0)
             {
-                return NotFound("Product does not exist");
+                return NotFound();
             }
 
-            updatedProduct.Name = product.Name;
-            updatedProduct.Type = product.Type;
-
-            return Ok(products);
+            return Ok(result);
         }
 
         [HttpDelete("{id}")]
         public async Task<ActionResult<Product>> DeleteProduct(int id)
         {
-            var product = products.Find(x => x.Id == id);
+            var result = productsServices.DeleteProduct(id);
 
-            if (product is null)
+            if (result.Count == 0)
             {
-                return NotFound("Product does not exist");
+                return NotFound();
             }
 
-            products.Remove(product);
-
-            return Ok(products);
+            return Ok(result);
         }
     }
 }
