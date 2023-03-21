@@ -1,5 +1,8 @@
 ﻿namespace aspnetcorewebapi.Services.ProductsService
 {
+    /// <summary>
+    /// ProductService class
+    /// </summary>
     public class ProductsService : IProductsServices
     {
         private List<Product> products = new()
@@ -52,7 +55,7 @@
         /// </summary>
         /// <param name="product">Product content</param>
         /// <returns>Updated list of products</returns>
-        public List<Product>? UpdateProduct(Product product)
+        public List<Product> UpdateProduct(Product product)
         {
             var updatedProduct = products.Find(x => x.Id == product.Id);
 
