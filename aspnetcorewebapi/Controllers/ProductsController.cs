@@ -22,7 +22,7 @@ namespace aspnetcorewebapi.Controllers
         [HttpGet]
         public async Task<ActionResult<List<Product>>> GetAllProducts()
         {
-            return Ok(productsServices.GetAllProducts());
+            return await productsServices.GetAllProducts();
         }
 
 
@@ -34,7 +34,7 @@ namespace aspnetcorewebapi.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<Product>> GetProduct(int id)
         {
-            var result = productsServices.GetProduct(id);
+            var result = await productsServices.GetProduct(id);
 
             if (result.Id == 0)
             {
@@ -53,7 +53,7 @@ namespace aspnetcorewebapi.Controllers
         [HttpPost]
         public async Task<ActionResult<Product>> AddProduct([FromBody] Product product)
         {
-            var result = productsServices.AddProduct(product);
+            var result = await productsServices.AddProduct(product);
 
             return Ok(result);
         }
@@ -67,7 +67,7 @@ namespace aspnetcorewebapi.Controllers
         [HttpPut]
         public async Task<ActionResult<Product>> UpdateProduct([FromBody] Product product)
         {
-            var result = productsServices.UpdateProduct(product);
+            var result = await productsServices.UpdateProduct(product);
 
             if (result.Count == 0)
             {
@@ -85,7 +85,7 @@ namespace aspnetcorewebapi.Controllers
         [HttpDelete("{id}")]
         public async Task<ActionResult<Product>> DeleteProduct(int id)
         {
-            var result = productsServices.DeleteProduct(id);
+            var result = await productsServices.DeleteProduct(id);
 
             if (result.Count == 0)
             {

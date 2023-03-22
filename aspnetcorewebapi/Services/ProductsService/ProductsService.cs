@@ -5,20 +5,21 @@
     /// </summary>
     public class ProductsService : IProductsServices
     {
-        private List<Product> products = new()
+        public readonly DataContext dataContext;
+
+        public ProductsService(DataContext dataContext)
         {
-                new Product { Id = 1, Name = "Nike", Type = ProductType.Shoe },
-                new Product { Id = 2, Name = "Logitech", Type = ProductType.Camera },
-                new Product { Id = 3, Name = "Samsung", Type = ProductType.Gadget },
-            };
+            this.dataContext = dataContext;
+        }
 
         /// <summary>
         /// Get the complete list of all products
         /// </summary>
         /// <returns>A list of Products</returns>
-        public List<Product> GetAllProducts()
+        public async Task<List<Product>> GetAllProducts()
         {
-            return products;
+            var productList = await dataContext.Products.ToListAsync();
+            return productList;
         }
 
         /// <summary>
@@ -26,9 +27,9 @@
         /// </summary>
         /// <param name="id">Product Id</param>
         /// <returns>A single product record</returns>
-        public Product GetProduct(int id)
+        public async Task<Product> GetProduct(int id)
         {
-            var product = products.Find(x => x.Id == id);
+            var product = await dataContext.Products.FindAsync(id);
 
             if (product is null)
             {
@@ -43,11 +44,12 @@
         /// </summary>
         /// <param name="product">Product content</param>
         /// <returns>Updated list of products</returns>
-        public List<Product> AddProduct(Product product)
+        public async Task<List<Product>> AddProduct(Product product)
         {
-            products.Add(product);
+            dataContext.Products.Add(product);
+            await dataContext.SaveChangesAsync();
 
-            return products;
+            return await GetAllProducts();
         }
 
         /// <summary>
@@ -55,9 +57,9 @@
         /// </summary>
         /// <param name="product">Product content</param>
         /// <returns>Updated list of products</returns>
-        public List<Product> UpdateProduct(Product product)
+        public async Task<List<Product>> UpdateProduct(Product product)
         {
-            var updatedProduct = products.Find(x => x.Id == product.Id);
+            var updatedProduct = await dataContext.Products.FindAsync(product.Id);
 
 
             if (updatedProduct is null)
@@ -68,7 +70,9 @@
             updatedProduct.Name = product.Name;
             updatedProduct.Type = product.Type;
 
-            return products;
+            await dataContext.SaveChangesAsync();
+
+            return await GetAllProducts();
         }
 
 
@@ -77,18 +81,19 @@
         /// </summary>
         /// <param name="id">Product Id</param>
         /// <returns>Updated list</returns>
-        public List<Product> DeleteProduct(int id)
+        public async Task<List<Product>> DeleteProduct(int id)
         {
-            var product = products.Find(x => x.Id == id);
+            var product = await dataContext.Products.FindAsync(id);
 
             if (product is null)
             {
                 return Array.Empty<Product>().ToList();
             }
 
-            products.Remove(product);
+            dataContext.Products.Remove(product);
+            await dataContext.SaveChangesAsync();
 
-            return products;
+            return await GetAllProducts();
         }
     }
 }
