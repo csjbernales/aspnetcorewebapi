@@ -1,3 +1,4 @@
+global using aspnetcorewebapi.Data;
 global using aspnetcorewebapi.Models;
 using aspnetcorewebapi.Services.ProductsService;
 
@@ -11,6 +12,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<IProductsServices, ProductsService>();
+builder.Services.AddDbContext<DataContext>();
 
 
 var app = builder.Build();
