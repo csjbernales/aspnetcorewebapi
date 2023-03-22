@@ -38,6 +38,18 @@
             <param name="id">Product Id</param>
             <returns>Updated list of products</returns>
         </member>
+        <member name="T:aspnetcorewebapi.Migrations.InitialCreate">
+            <inheritdoc />
+        </member>
+        <member name="M:aspnetcorewebapi.Migrations.InitialCreate.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:aspnetcorewebapi.Migrations.InitialCreate.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:aspnetcorewebapi.Migrations.InitialCreate.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
         <member name="T:aspnetcorewebapi.Services.ProductsService.ProductsService">
             <summary>
             ProductService class
