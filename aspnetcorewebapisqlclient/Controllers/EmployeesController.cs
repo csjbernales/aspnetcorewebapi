@@ -1,8 +1,7 @@
 using aspnetcorewebapisqlclient.Models;
+using aspnetcorewebapisqlclient.Service;
 
 using Microsoft.AspNetCore.Mvc;
-
-using System.Data.SqlClient;
 
 namespace aspnetcorewebapisqlclient.Controllers
 {
@@ -10,43 +9,43 @@ namespace aspnetcorewebapisqlclient.Controllers
     [Route("[controller]")]
     public class EmployeesController : ControllerBase
     {
+        private readonly IEmployeeService employeeService;
         private readonly ILogger<EmployeesController> _logger;
 
-        public EmployeesController(ILogger<EmployeesController> logger)
+        public EmployeesController(IEmployeeService employeeService, ILogger<EmployeesController> logger)
         {
+            this.employeeService = employeeService;
             _logger = logger;
         }
 
         [HttpGet(Name = "GetEmployees")]
-        public async Task<List<Employees>> Get()
+        public async Task<IActionResult> Get()
         {
-            string connectionString = "Server=laptop-nonps;Database=maindb;Trusted_Connection=True;TrustServerCertificate=true;";
-            List<Employees> employees = new List<Employees>();
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            {
-                conn.Open();
-                using (SqlCommand cmd = new SqlCommand())
-                {
-                    cmd.Connection = conn;
-                    cmd.CommandText = "select * from employees";
+            return Ok(await employeeService.Get());
+        }
 
-                    SqlDataReader reader = await cmd.ExecuteReaderAsync();
+        [HttpGet("{id}")]
+        public async Task<IActionResult> Get(int id)
+        {
+            return Ok(await employeeService.Get(id));
+        }
 
-                    while (reader.Read())
-                    {
-                        employees.Add(new Employees
-                        {
-                            Id = (int)reader["id"],
-                            Firstname = reader["firstname"].ToString()!,
-                            Middlename = reader["middlename"] is not null ? reader["middlename"].ToString()! : "",
-                            Lastname = reader["lastname"].ToString()!,
-                        });
-                    }
-                    conn.Close();
-                }
-            }
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Put(int id, [FromBody] Employees employee)
+        {
+            return Ok(await employeeService.Put(id, employee));
+        }
 
-            return employees;
+        [HttpPost()]
+        public async Task<IActionResult> Post([FromBody] Employees employee)
+        {
+            return Ok(await employeeService.Post(employee));
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            return Ok(await employeeService.Delete(id));
         }
     }
 }

@@ -2,9 +2,8 @@
 {
     public class Employees
     {
-        public int Id { get; set; }
-        public string Firstname { get; set; }
-        public string Middlename { get; set; }
-        public string Lastname { get; set; }
+        public string Firstname { get; set; } = String.Empty;
+        public string Middlename { get; set; } = String.Empty;
+        public string Lastname { get; set; } = String.Empty;
     }
 }
