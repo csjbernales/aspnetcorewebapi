@@ -11,8 +11,6 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<IEmployeeService, EmployeeService>();
 
-var env = builder.Configuration["Environment"];
-
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

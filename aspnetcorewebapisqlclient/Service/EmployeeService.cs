@@ -41,41 +41,37 @@ namespace aspnetcorewebapisqlclient.Service
             using (SqlConnection conn = new(connectionString))
             {
                 conn.Open();
-                using (SqlCommand cmd = new())
+                using SqlCommand cmd = new();
+                cmd.Connection = conn;
+                cmd.CommandText = $"select * from employees where id = {id}";
+
+                SqlDataReader reader = await cmd.ExecuteReaderAsync();
+
+                while (reader.Read())
                 {
-                    cmd.Connection = conn;
-                    cmd.CommandText = $"select * from employees where id = {id}";
-
-                    SqlDataReader reader = await cmd.ExecuteReaderAsync();
-
-                    while (reader.Read())
+                    employees.Add(new Employees
                     {
-                        employees.Add(new Employees
-                        {
-                            Firstname = reader["firstname"].ToString()!,
-                            Middlename = reader["middlename"] is not null ? reader["middlename"].ToString()! : "",
-                            Lastname = reader["lastname"].ToString()!,
-                        });
-                    }
-                    conn.Close();
+                        Firstname = reader["firstname"].ToString()!,
+                        Middlename = reader["middlename"] is not null ? reader["middlename"].ToString()! : "",
+                        Lastname = reader["lastname"].ToString()!,
+                    });
                 }
+                conn.Close();
             }
             return employees;
         }
 
         public async Task<List<Employees>> Put(int id, Employees employee)
         {
-            using (SqlConnection conn = new SqlConnection(connectionString))
+            using (SqlConnection conn = new(connectionString))
             {
                 conn.Open();
-                using (SqlCommand cmd = new SqlCommand())
-                {
-                    cmd.Connection = conn;
-                    cmd.CommandText = $"update employees set firstname = '{employee.Firstname}', middlename = '{employee.Middlename}', lastname= '{employee.Lastname}' where id = {id}";
+                using SqlCommand cmd = new();
+                cmd.Connection = conn;
+                cmd.CommandText = $"update employees set firstname = '{employee.Firstname}', middlename = '{employee.Middlename}', lastname= '{employee.Lastname}' where id = {id}";
 
-                    await cmd.ExecuteNonQueryAsync();
-                    conn.Close();
-                }
+                await cmd.ExecuteNonQueryAsync();
+                conn.Close();
             }
 
             return await Get();
@@ -83,17 +79,15 @@ namespace aspnetcorewebapisqlclient.Service
 
         public async Task<List<Employees>> Post(Employees employee)
         {
-            using (SqlConnection conn = new SqlConnection(connectionString))
+            using (SqlConnection conn = new(connectionString))
             {
                 conn.Open();
-                using (SqlCommand cmd = new SqlCommand())
-                {
-                    cmd.Connection = conn;
-                    cmd.CommandText = $"insert into employees (firstname, middlename, lastname) values ('{employee.Firstname}', '{employee.Middlename}', '{employee.Lastname}');";
+                using SqlCommand cmd = new();
+                cmd.Connection = conn;
+                cmd.CommandText = $"insert into employees (firstname, middlename, lastname) values ('{employee.Firstname}', '{employee.Middlename}', '{employee.Lastname}');";
 
-                    await cmd.ExecuteNonQueryAsync();
-                    conn.Close();
-                }
+                await cmd.ExecuteNonQueryAsync();
+                conn.Close();
             }
 
             return await Get();
@@ -101,7 +95,7 @@ namespace aspnetcorewebapisqlclient.Service
 
         public async Task<List<Employees>> Delete(int id)
         {
-            using (SqlConnection conn = new SqlConnection(connectionString))
+            using (SqlConnection conn = new(connectionString))
             {
                 conn.Open();
                 using SqlCommand cmd = new();
