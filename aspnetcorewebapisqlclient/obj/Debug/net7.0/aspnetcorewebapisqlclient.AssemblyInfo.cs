@@ -11,6 +11,7 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("9eafcb9a-19d5-45de-9dbc-9533707a5172")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("aspnetcorewebapisqlclient")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]

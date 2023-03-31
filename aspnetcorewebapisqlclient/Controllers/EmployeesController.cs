@@ -10,12 +10,10 @@ namespace aspnetcorewebapisqlclient.Controllers
     public class EmployeesController : ControllerBase
     {
         private readonly IEmployeeService employeeService;
-        private readonly ILogger<EmployeesController> _logger;
 
-        public EmployeesController(IEmployeeService employeeService, ILogger<EmployeesController> logger)
+        public EmployeesController(IEmployeeService employeeService)
         {
             this.employeeService = employeeService;
-            _logger = logger;
         }
 
         [HttpGet(Name = "GetEmployees")]
