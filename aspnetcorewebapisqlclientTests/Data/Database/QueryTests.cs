@@ -6,7 +6,7 @@
         [TestMethod()]
         public void SelectAllEmployeesTest()
         {
-            Query query = new Query();
+            Query query = new();
             var result = query.SelectAllEmployees();
 
             result.Should().NotBeEmpty();
@@ -15,7 +15,7 @@
         [TestMethod()]
         public void SelectEmployeeByIdTest()
         {
-            Query query = new Query();
+            Query query = new();
             var result = query.SelectEmployeeById(1);
 
             result.Should().NotBeEmpty();
@@ -24,7 +24,7 @@
         [TestMethod()]
         public void AddEmployeeTest()
         {
-            Query query = new Query();
+            Query query = new();
             var result = query.AddEmployee(new Employees());
 
             result.Should().NotBeEmpty();
@@ -33,7 +33,7 @@
         [TestMethod()]
         public void UpdateEmployeeTest()
         {
-            Query query = new Query();
+            Query query = new();
             var result = query.UpdateEmployee(new Employees());
 
             result.Should().NotBeEmpty();
@@ -42,7 +42,7 @@
         [TestMethod()]
         public void RemoveEmployeeTest()
         {
-            Query query = new Query();
+            Query query = new();
             var result = query.RemoveEmployee(new Employees());
 
             result.Should().NotBeEmpty();

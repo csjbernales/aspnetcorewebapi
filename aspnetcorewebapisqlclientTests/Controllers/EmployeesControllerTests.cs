@@ -78,9 +78,9 @@ namespace aspnetcorewebapisqlclient.Controllers.Tests
         {
             //arrange
 
-            List<Employees> employees = new() { employee };
+            List<Employees> employeesList = new() { employee };
 
-            A.CallTo(() => addNewEmployee.AddEmployee(A<Employees>.Ignored)).Returns(employees);
+            A.CallTo(() => addNewEmployee.AddEmployee(A<Employees>.Ignored)).Returns(employeesList);
 
             //act
             EmployeesController employeesController = new(getAllEmployee, getEmployeeById, addNewEmployee, updateEmployee, removeEmployee);
@@ -92,16 +92,16 @@ namespace aspnetcorewebapisqlclient.Controllers.Tests
             //assert
             A.CallTo(() => addNewEmployee.AddEmployee(employee)).MustHaveHappenedOnceExactly();
 
-            Assertion(employees, resultModel);
+            Assertion(employeesList, resultModel);
         }
 
         [TestMethod()]
         public void PutTest()
         {
             //arrange
-            List<Employees> employees = new() { employee };
+            List<Employees> employeesList = new() { employee };
 
-            A.CallTo(() => updateEmployee.UpdateEmployeeData(A<Employees>.Ignored)).Returns(employees);
+            A.CallTo(() => updateEmployee.UpdateEmployeeData(A<Employees>.Ignored)).Returns(employeesList);
 
             //act
             EmployeesController employeesController = new(getAllEmployee, getEmployeeById, addNewEmployee, updateEmployee, removeEmployee);
@@ -113,16 +113,16 @@ namespace aspnetcorewebapisqlclient.Controllers.Tests
             //assert
             A.CallTo(() => updateEmployee.UpdateEmployeeData(employee)).MustHaveHappenedOnceExactly();
 
-            Assertion(employees, resultModel);
+            Assertion(employeesList, resultModel);
         }
 
         [TestMethod()]
         public void DeleteTest()
         {
             //arrange
-            List<Employees> employees = new() { employee };
+            List<Employees> employeesList = new() { employee };
 
-            A.CallTo(() => removeEmployee.RemoveEmployeeData(A<Employees>.Ignored)).Returns(employees);
+            A.CallTo(() => removeEmployee.RemoveEmployeeData(A<Employees>.Ignored)).Returns(employeesList);
 
             //act
             EmployeesController employeesController = new(getAllEmployee, getEmployeeById, addNewEmployee, updateEmployee, removeEmployee);
@@ -133,7 +133,7 @@ namespace aspnetcorewebapisqlclient.Controllers.Tests
 
             //assert
             A.CallTo(() => removeEmployee.RemoveEmployeeData(A<Employees>.Ignored)).MustHaveHappenedOnceExactly();
-            Assertion(employees, resultModel);
+            Assertion(employeesList, resultModel);
         }
 
         private static void Assertion(List<Employees> employees, List<Employees> resultModel)

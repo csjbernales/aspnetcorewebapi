@@ -7,7 +7,6 @@
         public void UpdateEmployeeDataTest()
         {
             //arrange
-            int id = 1;
             Employees employees = new()
             {
                 Firstname = string.Empty,

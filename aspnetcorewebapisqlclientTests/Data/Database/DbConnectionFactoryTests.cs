@@ -12,7 +12,7 @@ namespace aspnetcorewebapisqlclient.Data.Database.Tests
         public void CreateTest()
         {
             IConnectionStringFactory connectionStringFactory = A.Fake<IConnectionStringFactory>();
-            ConnectionStrings connectionStrings = new ConnectionStrings()
+            ConnectionStrings connectionStrings = new()
             {
                 Database = "test",
                 Server = "test",
@@ -20,7 +20,7 @@ namespace aspnetcorewebapisqlclient.Data.Database.Tests
                 TrustServerCertificate = "True"
             };
 
-            DbConnectionFactory dbConnectionFactory = new(connectionStringFactory, connectionStrings); ;
+            DbConnectionFactory dbConnectionFactory = new(connectionStringFactory, connectionStrings);
             var result = dbConnectionFactory.Create();
 
             result.Should().NotBeNull();

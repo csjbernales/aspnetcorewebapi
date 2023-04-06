@@ -5,7 +5,12 @@ VisualStudioVersion = 17.5.33502.453
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "aspnetcorewebapisqlclient", "aspnetcorewebapisqlclient\aspnetcorewebapisqlclient.csproj", "{AE1A78EA-3E7A-4374-B5D6-ED0576B587E1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "aspnetcorewebapisqlclientTests", "aspnetcorewebapisqlclientTests\aspnetcorewebapisqlclientTests.csproj", "{81530476-136C-423D-B7CF-08DACFCFE993}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "aspnetcorewebapisqlclientTests", "aspnetcorewebapisqlclientTests\aspnetcorewebapisqlclientTests.csproj", "{81530476-136C-423D-B7CF-08DACFCFE993}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E0909C04-55D8-4EA5-83CE-EEAB2463C9EB}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

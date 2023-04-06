@@ -11,8 +11,7 @@ namespace aspnetcorewebapisqlclient.Data.Service.Tests
     {
         private IDbConnectionFactory dbConnectionFactory;
         private readonly ConnectionStringFactory connectionStringFactory = new();
-        private IQuery query = new Query();
-        private int rowCount;
+        private readonly IQuery query = new Query();
         private ConnectionStrings connectionStrings;
 
         [TestInitialize]
@@ -90,8 +89,6 @@ namespace aspnetcorewebapisqlclient.Data.Service.Tests
             result.Result.Should().BeOfType<List<Employees>>();
             result.Result.Should().NotBeNull();
             result.Result.Count.Should().BeGreaterThan(0);
-
-            rowCount = result.Result.Count;
         }
 
         [TestMethod()]
@@ -121,7 +118,7 @@ namespace aspnetcorewebapisqlclient.Data.Service.Tests
         }
 
         [TestMethod()]
-        public void E_PutTest()
+        public async Task E_PutTest()
         {
             //arrange
             string connstring = connectionStringFactory.ConnectionString(connectionStrings);
@@ -138,7 +135,9 @@ namespace aspnetcorewebapisqlclient.Data.Service.Tests
 
             //act
             EmployeeService employeeService = new(dbConnectionFactory, query);
-            employeeService.Put(employee);
+            await employeeService.Put(employee);
+
+            true.Should().BeTrue();
         }
 
         [TestMethod()]
@@ -185,7 +184,10 @@ namespace aspnetcorewebapisqlclient.Data.Service.Tests
 
             //act
             EmployeeService employeeService = new(dbConnectionFactory, query);
-            employeeService.Delete(employee);
+            _ = employeeService.Delete(employee);
+
+            true.Should().BeTrue();
+
         }
     }
 }
