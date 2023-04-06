@@ -1,5 +1,6 @@
 using aspnetcorewebapisqlclient.Business;
 using aspnetcorewebapisqlclient.Business.Interfaces;
+using aspnetcorewebapisqlclient.Data.Database;
 using aspnetcorewebapisqlclient.Data.Service;
 using aspnetcorewebapisqlclient.Models.Data;
 
@@ -26,6 +27,9 @@ ConnectionStrings connectionStrings = new()
 };
 
 builder.Services.AddSingleton(connectionStrings);
+
+builder.Services.AddScoped<IConnectionStringFactory, ConnectionStringFactory>();
+builder.Services.AddScoped<IQuery, Query>();
 
 builder.Services
     .AddScoped<IGetAllEmployee, GetAllEmployee>()

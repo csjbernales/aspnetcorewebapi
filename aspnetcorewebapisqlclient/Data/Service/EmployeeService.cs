@@ -6,24 +6,28 @@ using System.Data.SqlClient;
 
 namespace aspnetcorewebapisqlclient.Data.Service
 {
-    public class EmployeeService : Query, IEmployeeService
+    public class EmployeeService : IEmployeeService
     {
-        public readonly ConnectionStrings Options;
+        private readonly IConnectionStringFactory connectionStringFactory;
+        private readonly ConnectionStrings Options;
+        private readonly IQuery query;
 
-        public EmployeeService(ConnectionStrings options)
+        public EmployeeService(ConnectionStrings options, IConnectionStringFactory connectionStringFactory, IQuery query)
         {
+            this.query = query;
             Options = options;
+            this.connectionStringFactory = connectionStringFactory;
         }
 
         public async Task<List<Employees>> Get()
         {
             List<Employees> employees = new();
-            using (SqlConnection conn = new(ConnectionStringFactory.ConnectionString(Options)))
+            using (SqlConnection conn = new(connectionStringFactory.ConnectionString(Options)))
             {
                 conn.Open();
                 using SqlCommand cmd = new();
                 cmd.Connection = conn;
-                cmd.CommandText = SelectAllEmployees();
+                cmd.CommandText = query.SelectAllEmployees();
 
                 SqlDataReader reader = await cmd.ExecuteReaderAsync();
 
@@ -45,12 +49,12 @@ namespace aspnetcorewebapisqlclient.Data.Service
         public async Task<List<Employees>> Get(int id)
         {
             List<Employees> employees = new();
-            using (SqlConnection conn = new(ConnectionStringFactory.ConnectionString(Options)))
+            using (SqlConnection conn = new(connectionStringFactory.ConnectionString(Options)))
             {
                 conn.Open();
                 using SqlCommand cmd = new();
                 cmd.Connection = conn;
-                cmd.CommandText = SelectEmployeeById(id);
+                cmd.CommandText = query.SelectEmployeeById(id);
 
                 SqlDataReader reader = await cmd.ExecuteReaderAsync();
 
@@ -70,12 +74,12 @@ namespace aspnetcorewebapisqlclient.Data.Service
 
         public async Task<List<Employees>> Post(Employees employee)
         {
-            using (SqlConnection conn = new(ConnectionStringFactory.ConnectionString(Options)))
+            using (SqlConnection conn = new(connectionStringFactory.ConnectionString(Options)))
             {
                 conn.Open();
                 using SqlCommand cmd = new();
                 cmd.Connection = conn;
-                cmd.CommandText = AddEmployee(employee);
+                cmd.CommandText = query.AddEmployee(employee);
 
                 await cmd.ExecuteNonQueryAsync();
                 conn.Close();
@@ -86,12 +90,12 @@ namespace aspnetcorewebapisqlclient.Data.Service
 
         public async Task<List<Employees>> Put(int id, Employees employee)
         {
-            using (SqlConnection conn = new(ConnectionStringFactory.ConnectionString(Options)))
+            using (SqlConnection conn = new(connectionStringFactory.ConnectionString(Options)))
             {
                 conn.Open();
                 using SqlCommand cmd = new();
                 cmd.Connection = conn;
-                cmd.CommandText = UpdateEmployee(id, employee);
+                cmd.CommandText = query.UpdateEmployee(id, employee);
 
                 await cmd.ExecuteNonQueryAsync();
                 conn.Close();
@@ -102,12 +106,12 @@ namespace aspnetcorewebapisqlclient.Data.Service
 
         public async Task<List<Employees>> Delete(int id)
         {
-            using (SqlConnection conn = new(ConnectionStringFactory.ConnectionString(Options)))
+            using (SqlConnection conn = new(connectionStringFactory.ConnectionString(Options)))
             {
                 conn.Open();
                 using SqlCommand cmd = new();
                 cmd.Connection = conn;
-                cmd.CommandText = RemoveEmployee(id);
+                cmd.CommandText = query.RemoveEmployee(id);
 
                 await cmd.ExecuteNonQueryAsync();
                 conn.Close();

@@ -2,10 +2,10 @@
 
 namespace aspnetcorewebapisqlclient.Data.Database
 {
-    public static class ConnectionStringFactory
+    public class ConnectionStringFactory : IConnectionStringFactory
     {
 
-        public static string ConnectionString(ConnectionStrings Options)
+        public string ConnectionString(ConnectionStrings Options)
         {
             if (Options is not null)
             {

@@ -2,7 +2,7 @@
 
 namespace aspnetcorewebapisqlclient.Data.Database
 {
-    public abstract class Query
+    public class Query : IQuery
     {
 
         public string SelectAllEmployees()
@@ -25,7 +25,7 @@ namespace aspnetcorewebapisqlclient.Data.Database
             return $"update employees set firstname = '{employee.Firstname}', middlename = '{employee.Middlename}', lastname= '{employee.Lastname}' where id = {id}";
         }
 
-        public static string RemoveEmployee(int id)
+        public string RemoveEmployee(int id)
         {
             return $"delete from employees where id = {id}";
         }
