@@ -11,9 +11,9 @@ namespace aspnetcorewebapisqlclient.Business
             this.employeeService = employeeService;
         }
 
-        public async Task<List<Employees>> UpdateEmployeeData(int id, Employees employees)
+        public async Task<List<Employees>> UpdateEmployeeData(Employees employees)
         {
-            return await employeeService.Put(id, employees);
+            return await employeeService.Put(employees);
         }
     }
 }

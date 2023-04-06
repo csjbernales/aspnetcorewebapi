@@ -101,17 +101,17 @@ namespace aspnetcorewebapisqlclient.Controllers.Tests
             //arrange
             List<Employees> employees = new() { employee };
 
-            A.CallTo(() => updateEmployee.UpdateEmployeeData(A<int>.Ignored, A<Employees>.Ignored)).Returns(employees);
+            A.CallTo(() => updateEmployee.UpdateEmployeeData(A<Employees>.Ignored)).Returns(employees);
 
             //act
             EmployeesController employeesController = new(getAllEmployee, getEmployeeById, addNewEmployee, updateEmployee, removeEmployee);
 
-            OkObjectResult rawresult = employeesController.Put(1, employee).GetAwaiter().GetResult() as OkObjectResult;
+            OkObjectResult rawresult = employeesController.Put(employee).GetAwaiter().GetResult() as OkObjectResult;
 
             List<Employees> resultModel = rawresult.Value as List<Employees>;
 
             //assert
-            A.CallTo(() => updateEmployee.UpdateEmployeeData(1, employee)).MustHaveHappenedOnceExactly();
+            A.CallTo(() => updateEmployee.UpdateEmployeeData(employee)).MustHaveHappenedOnceExactly();
 
             Assertion(employees, resultModel);
         }
@@ -122,17 +122,17 @@ namespace aspnetcorewebapisqlclient.Controllers.Tests
             //arrange
             List<Employees> employees = new() { employee };
 
-            A.CallTo(() => removeEmployee.RemoveEmployeeData(A<int>.Ignored)).Returns(employees);
+            A.CallTo(() => removeEmployee.RemoveEmployeeData(A<Employees>.Ignored)).Returns(employees);
 
             //act
             EmployeesController employeesController = new(getAllEmployee, getEmployeeById, addNewEmployee, updateEmployee, removeEmployee);
 
-            OkObjectResult rawresult = employeesController.Delete(1).GetAwaiter().GetResult() as OkObjectResult;
+            OkObjectResult rawresult = employeesController.Delete(employee).GetAwaiter().GetResult() as OkObjectResult;
 
             List<Employees> resultModel = rawresult.Value as List<Employees>;
 
             //assert
-            A.CallTo(() => removeEmployee.RemoveEmployeeData(1)).MustHaveHappenedOnceExactly();
+            A.CallTo(() => removeEmployee.RemoveEmployeeData(A<Employees>.Ignored)).MustHaveHappenedOnceExactly();
             Assertion(employees, resultModel);
         }
 

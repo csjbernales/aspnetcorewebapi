@@ -1,45 +1,34 @@
 ﻿using aspnetcorewebapisqlclient.Models.Business;
 
-using System.Data.SqlClient;
+using System.Data;
 
 namespace aspnetcorewebapisqlclient.Data.Service
 {
     public class EmployeeService : IEmployeeService
     {
-        private readonly IConnectionStringFactory connectionStringFactory;
-        private readonly ConnectionStrings Options;
         private readonly IQuery query;
+        private readonly IDbConnectionFactory dbConnectionFactory;
 
-        public EmployeeService(ConnectionStrings options, IConnectionStringFactory connectionStringFactory, IQuery query)
+        public EmployeeService(IDbConnectionFactory dbConnectionFactory, IQuery query)
         {
             this.query = query;
-            Options = options;
-            this.connectionStringFactory = connectionStringFactory;
+            this.dbConnectionFactory = dbConnectionFactory;
         }
 
         public async Task<List<Employees>> Get()
         {
             List<Employees> employees = new();
-            using (SqlConnection conn = new(connectionStringFactory.ConnectionString(Options)))
-            {
-                conn.Open();
-                using SqlCommand cmd = new();
-                cmd.Connection = conn;
-                cmd.CommandText = query.SelectAllEmployees();
 
-                SqlDataReader reader = await cmd.ExecuteReaderAsync();
+            using IDbConnection connection = dbConnectionFactory.Create();
+            await connection.OpenAsync();
 
-                while (reader.Read())
-                {
-                    employees.Add(new Employees
-                    {
-                        Firstname = reader["firstname"].ToString()!,
-                        Middlename = reader["middlename"] is not null ? reader["middlename"].ToString()! : "",
-                        Lastname = reader["lastname"].ToString()!,
-                    });
-                }
-                conn.Close();
-            }
+            IDbCommand command = connection.CreateCommand();
+            command.CommandText = query.SelectAllEmployees();
+            using IDataReader reader = await command.ExecuteReaderAsync();
+
+            await ReaderAsyc(employees, reader);
+
+            connection.Close();
 
             return employees;
         }
@@ -47,75 +36,93 @@ namespace aspnetcorewebapisqlclient.Data.Service
         public async Task<List<Employees>> Get(int id)
         {
             List<Employees> employees = new();
-            using (SqlConnection conn = new(connectionStringFactory.ConnectionString(Options)))
-            {
-                conn.Open();
-                using SqlCommand cmd = new();
-                cmd.Connection = conn;
-                cmd.CommandText = query.SelectEmployeeById(id);
 
-                SqlDataReader reader = await cmd.ExecuteReaderAsync();
+            using IDbConnection connection = dbConnectionFactory.Create();
+            await connection.OpenAsync();
 
-                while (reader.Read())
-                {
-                    employees.Add(new Employees
-                    {
-                        Firstname = reader["firstname"].ToString()!,
-                        Middlename = reader["middlename"] is not null ? reader["middlename"].ToString()! : "",
-                        Lastname = reader["lastname"].ToString()!,
-                    });
-                }
-                conn.Close();
-            }
+            IDbCommand command = connection.CreateCommand();
+            command.CommandText = query.SelectEmployeeById(id);
+            using IDataReader reader = await command.ExecuteReaderAsync();
+
+            await ReaderAsyc(employees, reader);
+
             return employees;
         }
 
         public async Task<List<Employees>> Post(Employees employee)
         {
-            using (SqlConnection conn = new(connectionStringFactory.ConnectionString(Options)))
-            {
-                conn.Open();
-                using SqlCommand cmd = new();
-                cmd.Connection = conn;
-                cmd.CommandText = query.AddEmployee(employee);
+            using IDbConnection connection = dbConnectionFactory.Create();
+            await connection.OpenAsync();
 
-                await cmd.ExecuteNonQueryAsync();
-                conn.Close();
+            IDbCommand command = connection.CreateCommand();
+            command.CommandText = query.AddEmployee(employee);
+            int affected = await command.ExecuteNonQueryAsync();
+
+            connection.Close();
+
+            if (affected > 0)
+            {
+                return await Get();
             }
 
-            return await Get();
+            throw new InvalidOperationException();
         }
 
-        public async Task<List<Employees>> Put(int id, Employees employee)
+        public async Task<List<Employees>> Put(Employees employee)
         {
-            using (SqlConnection conn = new(connectionStringFactory.ConnectionString(Options)))
-            {
-                conn.Open();
-                using SqlCommand cmd = new();
-                cmd.Connection = conn;
-                cmd.CommandText = query.UpdateEmployee(id, employee);
+            using IDbConnection connection = dbConnectionFactory.Create();
+            await connection.OpenAsync();
 
-                await cmd.ExecuteNonQueryAsync();
-                conn.Close();
+            IDbCommand command = connection.CreateCommand();
+            command.CommandText = query.UpdateEmployee(employee);
+            int affected = await command.ExecuteNonQueryAsync();
+
+            connection.Close();
+
+            if (affected > 0)
+            {
+                return await Get();
             }
 
-            return await Get();
+            throw new InvalidOperationException();
         }
 
-        public async Task<List<Employees>> Delete(int id)
+        public async Task<List<Employees>> Delete(Employees employee)
         {
-            using (SqlConnection conn = new(connectionStringFactory.ConnectionString(Options)))
-            {
-                conn.Open();
-                using SqlCommand cmd = new();
-                cmd.Connection = conn;
-                cmd.CommandText = query.RemoveEmployee(id);
+            using IDbConnection connection = dbConnectionFactory.Create();
+            await connection.OpenAsync();
 
-                await cmd.ExecuteNonQueryAsync();
-                conn.Close();
+            IDbCommand command = connection.CreateCommand();
+            command.CommandText = query.RemoveEmployee(employee);
+            int affected = await command.ExecuteNonQueryAsync();
+
+            connection.Close();
+
+            if (affected > 0)
+            {
+                return await Get();
             }
 
-            return await Get();
+            throw new InvalidOperationException();
+        }
+        private static async Task ReaderAsyc(List<Employees> employees, IDataReader reader)
+        {
+            do
+            {
+                while (await reader.ReadAsync())
+                {
+                    if (!await reader.IsDBNullAsync(0))
+                    {
+                        employees.Add(new Employees
+                        {
+                            Firstname = reader["firstname"].ToString()!,
+                            Middlename = reader["middlename"] is not null ? reader["middlename"].ToString()! : "",
+                            Lastname = reader["lastname"].ToString()!,
+                        });
+                    }
+                }
+            } while (await reader.NextResultAsync());
         }
     }
+
 }

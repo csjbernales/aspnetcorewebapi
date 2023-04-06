@@ -4,6 +4,6 @@ namespace aspnetcorewebapisqlclient.Business.Interfaces
 {
     public interface IRemoveEmployee
     {
-        Task<List<Employees>> RemoveEmployeeData(int id);
+        Task<List<Employees>> RemoveEmployeeData(Employees employees);
     }
 }

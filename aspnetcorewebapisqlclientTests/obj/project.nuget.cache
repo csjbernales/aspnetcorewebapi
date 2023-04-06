@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "6JSXUN3Xpc0Gi3hyxff/d4NQwNocFTlSqX09TTbQBY/d0BttYHjZlxFwSsXnywBiAc6TZNh9KzdLnlhSueTBRg==",
+  "dgSpecHash": "aVhh2532cK8wD2i0uLLrQKtLwPjzAu4OjmvJDTTiTo66eJbjeE3MvBGEzA2VeTWFziW0gB5KdyDibJtn5+xejg==",
   "success": true,
   "projectFilePath": "D:\\Users\\NonPS\\Documents\\repositories\\aspnetcorewebapi\\aspnetcorewebapisqlclientTests\\aspnetcorewebapisqlclientTests.csproj",
   "expectedPackageFiles": [
@@ -26,6 +26,7 @@
     "C:\\Users\\NonPS\\.nuget\\packages\\microsoft.aspnetcore.openapi\\7.0.4\\microsoft.aspnetcore.openapi.7.0.4.nupkg.sha512",
     "C:\\Users\\NonPS\\.nuget\\packages\\microsoft.aspnetcore.webutilities\\2.1.1\\microsoft.aspnetcore.webutilities.2.1.1.nupkg.sha512",
     "C:\\Users\\NonPS\\.nuget\\packages\\microsoft.codecoverage\\17.5.0\\microsoft.codecoverage.17.5.0.nupkg.sha512",
+    "C:\\Users\\NonPS\\.nuget\\packages\\microsoft.csharp\\4.3.0\\microsoft.csharp.4.3.0.nupkg.sha512",
     "C:\\Users\\NonPS\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
     "C:\\Users\\NonPS\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\1.0.0\\microsoft.extensions.caching.abstractions.1.0.0.nupkg.sha512",
     "C:\\Users\\NonPS\\.nuget\\packages\\microsoft.extensions.caching.memory\\1.0.0\\microsoft.extensions.caching.memory.1.0.0.nupkg.sha512",
@@ -97,6 +98,7 @@
     "C:\\Users\\NonPS\\.nuget\\packages\\system.componentmodel.typeconverter\\4.3.0\\system.componentmodel.typeconverter.4.3.0.nupkg.sha512",
     "C:\\Users\\NonPS\\.nuget\\packages\\system.configuration.configurationmanager\\4.7.0\\system.configuration.configurationmanager.4.7.0.nupkg.sha512",
     "C:\\Users\\NonPS\\.nuget\\packages\\system.console\\4.3.0\\system.console.4.3.0.nupkg.sha512",
+    "C:\\Users\\NonPS\\.nuget\\packages\\system.data.common\\4.3.0\\system.data.common.4.3.0.nupkg.sha512",
     "C:\\Users\\NonPS\\.nuget\\packages\\system.data.sqlclient\\4.8.5\\system.data.sqlclient.4.8.5.nupkg.sha512",
     "C:\\Users\\NonPS\\.nuget\\packages\\system.diagnostics.debug\\4.3.0\\system.diagnostics.debug.4.3.0.nupkg.sha512",
     "C:\\Users\\NonPS\\.nuget\\packages\\system.diagnostics.diagnosticsource\\5.0.0\\system.diagnostics.diagnosticsource.5.0.0.nupkg.sha512",
@@ -158,7 +160,8 @@
     "C:\\Users\\NonPS\\.nuget\\packages\\system.windows.extensions\\4.7.0\\system.windows.extensions.4.7.0.nupkg.sha512",
     "C:\\Users\\NonPS\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\NonPS\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
-    "C:\\Users\\NonPS\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512"
+    "C:\\Users\\NonPS\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
+    "C:\\Users\\NonPS\\.nuget\\packages\\ttrider.idbconnection-async\\1.1.2\\ttrider.idbconnection-async.1.1.2.nupkg.sha512"
   ],
   "logs": []
 }

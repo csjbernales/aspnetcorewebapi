@@ -1,9 +1,4 @@
 D:\Users\NonPS\Documents\repositories\aspnetcorewebapi\aspnetcorewebapisqlclientTests\bin\Debug\net7.0\CoverletSourceRootsMapping
-D:\Users\NonPS\Documents\repositories\aspnetcorewebapi\aspnetcorewebapisqlclientTests\obj\Debug\net7.0\aspnetcorewebapisqlclientTests.csproj.AssemblyReference.cache
-D:\Users\NonPS\Documents\repositories\aspnetcorewebapi\aspnetcorewebapisqlclientTests\obj\Debug\net7.0\aspnetcorewebapisqlclientTests.GeneratedMSBuildEditorConfig.editorconfig
-D:\Users\NonPS\Documents\repositories\aspnetcorewebapi\aspnetcorewebapisqlclientTests\obj\Debug\net7.0\aspnetcorewebapisqlclientTests.AssemblyInfoInputs.cache
-D:\Users\NonPS\Documents\repositories\aspnetcorewebapi\aspnetcorewebapisqlclientTests\obj\Debug\net7.0\aspnetcorewebapisqlclientTests.AssemblyInfo.cs
-D:\Users\NonPS\Documents\repositories\aspnetcorewebapi\aspnetcorewebapisqlclientTests\obj\Debug\net7.0\aspnetcorewebapisqlclientTests.csproj.CoreCompileInputs.cache
 D:\Users\NonPS\Documents\repositories\aspnetcorewebapi\aspnetcorewebapisqlclientTests\bin\Debug\net7.0\testhost.dll
 D:\Users\NonPS\Documents\repositories\aspnetcorewebapi\aspnetcorewebapisqlclientTests\bin\Debug\net7.0\aspnetcorewebapisqlclient.deps.json
 D:\Users\NonPS\Documents\repositories\aspnetcorewebapi\aspnetcorewebapisqlclientTests\bin\Debug\net7.0\aspnetcorewebapisqlclient.runtimeconfig.json
@@ -53,6 +48,7 @@ D:\Users\NonPS\Documents\repositories\aspnetcorewebapi\aspnetcorewebapisqlclient
 D:\Users\NonPS\Documents\repositories\aspnetcorewebapi\aspnetcorewebapisqlclientTests\bin\Debug\net7.0\System.Security.Cryptography.ProtectedData.dll
 D:\Users\NonPS\Documents\repositories\aspnetcorewebapi\aspnetcorewebapisqlclientTests\bin\Debug\net7.0\System.Security.Permissions.dll
 D:\Users\NonPS\Documents\repositories\aspnetcorewebapi\aspnetcorewebapisqlclientTests\bin\Debug\net7.0\System.Windows.Extensions.dll
+D:\Users\NonPS\Documents\repositories\aspnetcorewebapi\aspnetcorewebapisqlclientTests\bin\Debug\net7.0\TTRider.IDbConnection-Async.dll
 D:\Users\NonPS\Documents\repositories\aspnetcorewebapi\aspnetcorewebapisqlclientTests\bin\Debug\net7.0\cs\Microsoft.TestPlatform.CoreUtilities.resources.dll
 D:\Users\NonPS\Documents\repositories\aspnetcorewebapi\aspnetcorewebapisqlclientTests\bin\Debug\net7.0\cs\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
 D:\Users\NonPS\Documents\repositories\aspnetcorewebapi\aspnetcorewebapisqlclientTests\bin\Debug\net7.0\de\Microsoft.TestPlatform.CoreUtilities.resources.dll
@@ -146,6 +142,11 @@ D:\Users\NonPS\Documents\repositories\aspnetcorewebapi\aspnetcorewebapisqlclient
 D:\Users\NonPS\Documents\repositories\aspnetcorewebapi\aspnetcorewebapisqlclientTests\bin\Debug\net7.0\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
 D:\Users\NonPS\Documents\repositories\aspnetcorewebapi\aspnetcorewebapisqlclientTests\bin\Debug\net7.0\aspnetcorewebapisqlclient.pdb
 D:\Users\NonPS\Documents\repositories\aspnetcorewebapi\aspnetcorewebapisqlclientTests\bin\Debug\net7.0\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+D:\Users\NonPS\Documents\repositories\aspnetcorewebapi\aspnetcorewebapisqlclientTests\obj\Debug\net7.0\aspnetcorewebapisqlclientTests.csproj.AssemblyReference.cache
+D:\Users\NonPS\Documents\repositories\aspnetcorewebapi\aspnetcorewebapisqlclientTests\obj\Debug\net7.0\aspnetcorewebapisqlclientTests.GeneratedMSBuildEditorConfig.editorconfig
+D:\Users\NonPS\Documents\repositories\aspnetcorewebapi\aspnetcorewebapisqlclientTests\obj\Debug\net7.0\aspnetcorewebapisqlclientTests.AssemblyInfoInputs.cache
+D:\Users\NonPS\Documents\repositories\aspnetcorewebapi\aspnetcorewebapisqlclientTests\obj\Debug\net7.0\aspnetcorewebapisqlclientTests.AssemblyInfo.cs
+D:\Users\NonPS\Documents\repositories\aspnetcorewebapi\aspnetcorewebapisqlclientTests\obj\Debug\net7.0\aspnetcorewebapisqlclientTests.csproj.CoreCompileInputs.cache
 D:\Users\NonPS\Documents\repositories\aspnetcorewebapi\aspnetcorewebapisqlclientTests\obj\Debug\net7.0\aspnetcorewebapisqlclientTests.csproj.CopyComplete
 D:\Users\NonPS\Documents\repositories\aspnetcorewebapi\aspnetcorewebapisqlclientTests\obj\Debug\net7.0\aspnetcorewebapisqlclientTests.dll
 D:\Users\NonPS\Documents\repositories\aspnetcorewebapi\aspnetcorewebapisqlclientTests\obj\Debug\net7.0\refint\aspnetcorewebapisqlclientTests.dll

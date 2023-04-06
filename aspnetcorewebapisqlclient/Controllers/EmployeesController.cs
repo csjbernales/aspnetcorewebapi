@@ -43,15 +43,15 @@ namespace aspnetcorewebapisqlclient.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> Put(int id, [FromBody] Employees employee)
+        public async Task<IActionResult> Put([FromBody] Employees employee)
         {
-            return Ok(await updateEmployee.UpdateEmployeeData(id, employee));
+            return Ok(await updateEmployee.UpdateEmployeeData(employee));
         }
 
         [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(int id)
+        public async Task<IActionResult> Delete(Employees employees)
         {
-            return Ok(await removeEmployee.RemoveEmployeeData(id));
+            return Ok(await removeEmployee.RemoveEmployeeData(employees));
         }
     }
 }

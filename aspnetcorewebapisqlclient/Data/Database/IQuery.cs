@@ -7,7 +7,7 @@ namespace aspnetcorewebapisqlclient.Data.Database
         string AddEmployee(Employees employee);
         string SelectAllEmployees();
         string SelectEmployeeById(int id);
-        string UpdateEmployee(int id, Employees employee);
-        string RemoveEmployee(int id);
+        string UpdateEmployee(Employees employee);
+        string RemoveEmployee(Employees employee);
     }
 }

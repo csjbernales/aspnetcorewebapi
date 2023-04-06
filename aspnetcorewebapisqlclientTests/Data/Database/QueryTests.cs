@@ -34,7 +34,7 @@
         public void UpdateEmployeeTest()
         {
             Query query = new Query();
-            var result = query.UpdateEmployee(1, new Employees());
+            var result = query.UpdateEmployee(new Employees());
 
             result.Should().NotBeEmpty();
         }
@@ -43,7 +43,7 @@
         public void RemoveEmployeeTest()
         {
             Query query = new Query();
-            var result = query.RemoveEmployee(1);
+            var result = query.RemoveEmployee(new Employees());
 
             result.Should().NotBeEmpty();
         }

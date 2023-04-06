@@ -20,14 +20,14 @@ namespace aspnetcorewebapisqlclient.Data.Database
             return $"insert into employees (firstname, middlename, lastname) values ('{employee.Firstname}', '{employee.Middlename}', '{employee.Lastname}');";
         }
 
-        public string UpdateEmployee(int id, Employees employee)
+        public string UpdateEmployee(Employees employee)
         {
-            return $"update employees set firstname = '{employee.Firstname}', middlename = '{employee.Middlename}', lastname= '{employee.Lastname}' where id = {id}";
+            return $"update employees set firstname = '{employee.Firstname}', middlename = '{employee.Middlename}', lastname= '{employee.Lastname}' where firstname = '{employee.Firstname}'";
         }
 
-        public string RemoveEmployee(int id)
+        public string RemoveEmployee(Employees employee)
         {
-            return $"delete from employees where id = {id}";
+            return $"delete from employees where firstname = '{employee.Firstname}'";
         }
     }
 }

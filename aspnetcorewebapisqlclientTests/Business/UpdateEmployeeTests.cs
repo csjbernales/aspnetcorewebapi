@@ -16,15 +16,15 @@
             };
             IEmployeeService service = A.Fake<IEmployeeService>();
             List<Employees> employeeList = new() { employees };
-            A.CallTo(() => service.Put(A<int>.Ignored, A<Employees>.Ignored)).Returns(employeeList);
+            A.CallTo(() => service.Put(A<Employees>.Ignored)).Returns(employeeList);
 
             //act
             UpdateEmployee pdateEmployee = new(service);
-            var rawResult = pdateEmployee.UpdateEmployeeData(id, employees);
+            var rawResult = pdateEmployee.UpdateEmployeeData(employees);
             var result = rawResult.GetAwaiter().GetResult();
 
             //assert
-            A.CallTo(() => service.Put(A<int>.Ignored, A<Employees>.Ignored)).MustHaveHappenedOnceExactly();
+            A.CallTo(() => service.Put(A<Employees>.Ignored)).MustHaveHappenedOnceExactly();
 
             result.Should().NotBeNull();
             result.Should().Contain(employees);

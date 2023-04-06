@@ -31,6 +31,8 @@ builder.Services.AddSingleton(connectionStrings);
 builder.Services.AddScoped<IConnectionStringFactory, ConnectionStringFactory>();
 builder.Services.AddScoped<IQuery, Query>();
 
+builder.Services.AddScoped<IDbConnectionFactory, DbConnectionFactory>();
+
 builder.Services
     .AddScoped<IGetAllEmployee, GetAllEmployee>()
     .AddScoped<IGetEmployeeById, GetEmployeeById>()

@@ -16,15 +16,15 @@
             };
             IEmployeeService service = A.Fake<IEmployeeService>();
             List<Employees> employeeList = new() { employees, employees };
-            A.CallTo(() => service.Delete(3)).Returns(employeeList);
+            A.CallTo(() => service.Delete(employees)).Returns(employeeList);
 
             //act
             RemoveEmployee removeEmployee = new(service);
-            var rawResult = removeEmployee.RemoveEmployeeData(3);
+            var rawResult = removeEmployee.RemoveEmployeeData(employees);
             var result = rawResult.GetAwaiter().GetResult();
 
             //assert
-            A.CallTo(() => service.Delete(3)).MustHaveHappenedOnceExactly();
+            A.CallTo(() => service.Delete(employees)).MustHaveHappenedOnceExactly();
 
             result.Should().NotBeNull();
             result.Should().Contain(employees);
