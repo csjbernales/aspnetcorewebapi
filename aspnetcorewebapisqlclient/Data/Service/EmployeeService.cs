@@ -1,22 +1,29 @@
-﻿using aspnetcorewebapisqlclient.Models;
+﻿using aspnetcorewebapisqlclient.Data.Database;
+using aspnetcorewebapisqlclient.Models.Business;
+using aspnetcorewebapisqlclient.Models.Data;
 
 using System.Data.SqlClient;
 
-namespace aspnetcorewebapisqlclient.Service
+namespace aspnetcorewebapisqlclient.Data.Service
 {
-    public class EmployeeService : IEmployeeService
+    public class EmployeeService : Query, IEmployeeService
     {
-        private const string connectionString = "Server=laptop-nonps;Database=maindb;Trusted_Connection=True;TrustServerCertificate=true;";
+        public readonly ConnectionStrings Options;
+
+        public EmployeeService(ConnectionStrings options)
+        {
+            Options = options;
+        }
 
         public async Task<List<Employees>> Get()
         {
             List<Employees> employees = new();
-            using (SqlConnection conn = new(connectionString))
+            using (SqlConnection conn = new(ConnectionStringFactory.ConnectionString(Options)))
             {
                 conn.Open();
                 using SqlCommand cmd = new();
                 cmd.Connection = conn;
-                cmd.CommandText = "select * from employees";
+                cmd.CommandText = SelectAllEmployees();
 
                 SqlDataReader reader = await cmd.ExecuteReaderAsync();
 
@@ -38,12 +45,12 @@ namespace aspnetcorewebapisqlclient.Service
         public async Task<List<Employees>> Get(int id)
         {
             List<Employees> employees = new();
-            using (SqlConnection conn = new(connectionString))
+            using (SqlConnection conn = new(ConnectionStringFactory.ConnectionString(Options)))
             {
                 conn.Open();
                 using SqlCommand cmd = new();
                 cmd.Connection = conn;
-                cmd.CommandText = $"select * from employees where id = {id}";
+                cmd.CommandText = SelectEmployeeById(id);
 
                 SqlDataReader reader = await cmd.ExecuteReaderAsync();
 
@@ -61,14 +68,14 @@ namespace aspnetcorewebapisqlclient.Service
             return employees;
         }
 
-        public async Task<List<Employees>> Put(int id, Employees employee)
+        public async Task<List<Employees>> Post(Employees employee)
         {
-            using (SqlConnection conn = new(connectionString))
+            using (SqlConnection conn = new(ConnectionStringFactory.ConnectionString(Options)))
             {
                 conn.Open();
                 using SqlCommand cmd = new();
                 cmd.Connection = conn;
-                cmd.CommandText = $"update employees set firstname = '{employee.Firstname}', middlename = '{employee.Middlename}', lastname= '{employee.Lastname}' where id = {id}";
+                cmd.CommandText = AddEmployee(employee);
 
                 await cmd.ExecuteNonQueryAsync();
                 conn.Close();
@@ -77,14 +84,14 @@ namespace aspnetcorewebapisqlclient.Service
             return await Get();
         }
 
-        public async Task<List<Employees>> Post(Employees employee)
+        public async Task<List<Employees>> Put(int id, Employees employee)
         {
-            using (SqlConnection conn = new(connectionString))
+            using (SqlConnection conn = new(ConnectionStringFactory.ConnectionString(Options)))
             {
                 conn.Open();
                 using SqlCommand cmd = new();
                 cmd.Connection = conn;
-                cmd.CommandText = $"insert into employees (firstname, middlename, lastname) values ('{employee.Firstname}', '{employee.Middlename}', '{employee.Lastname}');";
+                cmd.CommandText = UpdateEmployee(id, employee);
 
                 await cmd.ExecuteNonQueryAsync();
                 conn.Close();
@@ -95,12 +102,12 @@ namespace aspnetcorewebapisqlclient.Service
 
         public async Task<List<Employees>> Delete(int id)
         {
-            using (SqlConnection conn = new(connectionString))
+            using (SqlConnection conn = new(ConnectionStringFactory.ConnectionString(Options)))
             {
                 conn.Open();
                 using SqlCommand cmd = new();
                 cmd.Connection = conn;
-                cmd.CommandText = $"delete from employees where id = {id}";
+                cmd.CommandText = RemoveEmployee(id);
 
                 await cmd.ExecuteNonQueryAsync();
                 conn.Close();

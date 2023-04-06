@@ -1,4 +1,7 @@
-using aspnetcorewebapisqlclient.Service;
+using aspnetcorewebapisqlclient.Business;
+using aspnetcorewebapisqlclient.Business.Interfaces;
+using aspnetcorewebapisqlclient.Data.Service;
+using aspnetcorewebapisqlclient.Models.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +13,27 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<IEmployeeService, EmployeeService>();
+
+
+var conn = builder.Configuration.GetSection("ConnectionStrings");
+
+ConnectionStrings connectionStrings = new()
+{
+    Database = conn["Database"]!,
+    Server = conn["Server"]!,
+    Trusted_Connection = conn["Trusted_Connection"]!,
+    TrustServerCertificate = conn["TrustServerCertificate"]!
+};
+
+builder.Services.AddSingleton(connectionStrings);
+
+builder.Services
+    .AddScoped<IGetAllEmployee, GetAllEmployee>()
+    .AddScoped<IGetEmployeeById, GetEmployeeById>()
+    .AddScoped<IAddNewEmployee, AddNewEmployee>()
+    .AddScoped<IUpdateEmployee, UpdateEmployee>()
+    .AddScoped<IRemoveEmployee, RemoveEmployee>();
+
 builder.Services.AddApplicationInsightsTelemetry();
 
 var app = builder.Build();
