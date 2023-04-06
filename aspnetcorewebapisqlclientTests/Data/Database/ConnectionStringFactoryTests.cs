@@ -28,7 +28,7 @@ namespace aspnetcorewebapisqlclient.Data.Database.Tests
         public void ConnectionStringTest_Fail()
         {
             //arrange
-            ConnectionStrings? connectionStrings = null;
+            ConnectionStrings connectionStrings = null;
 
             //act
             ConnectionStringFactory connectionStringFactory = new();
