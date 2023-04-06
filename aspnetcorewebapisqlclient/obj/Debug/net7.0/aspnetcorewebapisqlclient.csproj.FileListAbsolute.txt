@@ -13,12 +13,9 @@ D:\Users\NonPS\Documents\repositories\aspnetcorewebapi\aspnetcorewebapisqlclient
 D:\Users\NonPS\Documents\repositories\aspnetcorewebapi\aspnetcorewebapisqlclient\bin\Debug\net7.0\Microsoft.AI.WindowsServer.dll
 D:\Users\NonPS\Documents\repositories\aspnetcorewebapi\aspnetcorewebapisqlclient\bin\Debug\net7.0\Microsoft.AI.ServerTelemetryChannel.dll
 D:\Users\NonPS\Documents\repositories\aspnetcorewebapi\aspnetcorewebapisqlclient\bin\Debug\net7.0\Microsoft.AspNetCore.OpenApi.dll
-D:\Users\NonPS\Documents\repositories\aspnetcorewebapi\aspnetcorewebapisqlclient\bin\Debug\net7.0\Microsoft.Extensions.DiagnosticAdapter.dll
 D:\Users\NonPS\Documents\repositories\aspnetcorewebapi\aspnetcorewebapisqlclient\bin\Debug\net7.0\Microsoft.Extensions.Logging.ApplicationInsights.dll
-D:\Users\NonPS\Documents\repositories\aspnetcorewebapi\aspnetcorewebapisqlclient\bin\Debug\net7.0\Microsoft.Extensions.PlatformAbstractions.dll
 D:\Users\NonPS\Documents\repositories\aspnetcorewebapi\aspnetcorewebapisqlclient\bin\Debug\net7.0\Microsoft.OpenApi.dll
 D:\Users\NonPS\Documents\repositories\aspnetcorewebapi\aspnetcorewebapisqlclient\bin\Debug\net7.0\Microsoft.Win32.SystemEvents.dll
-D:\Users\NonPS\Documents\repositories\aspnetcorewebapi\aspnetcorewebapisqlclient\bin\Debug\net7.0\Newtonsoft.Json.dll
 D:\Users\NonPS\Documents\repositories\aspnetcorewebapi\aspnetcorewebapisqlclient\bin\Debug\net7.0\Swashbuckle.AspNetCore.Swagger.dll
 D:\Users\NonPS\Documents\repositories\aspnetcorewebapi\aspnetcorewebapisqlclient\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 D:\Users\NonPS\Documents\repositories\aspnetcorewebapi\aspnetcorewebapisqlclient\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerUI.dll

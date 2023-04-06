@@ -1,0 +1,177 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\Users\\NonPS\\Documents\\repositories\\aspnetcorewebapi\\aspnetcorewebapisqlclientTests\\aspnetcorewebapisqlclientTests.csproj": {}
+  },
+  "projects": {
+    "D:\\Users\\NonPS\\Documents\\repositories\\aspnetcorewebapi\\aspnetcorewebapisqlclientTests\\aspnetcorewebapisqlclientTests.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Users\\NonPS\\Documents\\repositories\\aspnetcorewebapi\\aspnetcorewebapisqlclientTests\\aspnetcorewebapisqlclientTests.csproj",
+        "projectName": "aspnetcorewebapisqlclientTests",
+        "projectPath": "D:\\Users\\NonPS\\Documents\\repositories\\aspnetcorewebapi\\aspnetcorewebapisqlclientTests\\aspnetcorewebapisqlclientTests.csproj",
+        "packagesPath": "C:\\Users\\NonPS\\.nuget\\packages\\",
+        "outputPath": "D:\\Users\\NonPS\\Documents\\repositories\\aspnetcorewebapi\\aspnetcorewebapisqlclientTests\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\NonPS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "D:\\Users\\NonPS\\Documents\\repositories\\aspnetcorewebapi\\aspnetcorewebapisqlclient\\aspnetcorewebapisqlclient.csproj": {
+                "projectPath": "D:\\Users\\NonPS\\Documents\\repositories\\aspnetcorewebapi\\aspnetcorewebapisqlclient\\aspnetcorewebapisqlclient.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "FakeItEasy": {
+              "target": "Package",
+              "version": "[7.3.1, )"
+            },
+            "FakeItEasy.Analyzer.CSharp": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.1.1, )"
+            },
+            "FluentAssertions": {
+              "target": "Package",
+              "version": "[6.10.0, )"
+            },
+            "MSTest.TestAdapter": {
+              "target": "Package",
+              "version": "[3.0.2, )"
+            },
+            "MSTest.TestFramework": {
+              "target": "Package",
+              "version": "[3.0.2, )"
+            },
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[17.5.0, )"
+            },
+            "coverlet.collector": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.2.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Users\\NonPS\\Documents\\repositories\\aspnetcorewebapi\\aspnetcorewebapisqlclient\\aspnetcorewebapisqlclient.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Users\\NonPS\\Documents\\repositories\\aspnetcorewebapi\\aspnetcorewebapisqlclient\\aspnetcorewebapisqlclient.csproj",
+        "projectName": "aspnetcorewebapisqlclient",
+        "projectPath": "D:\\Users\\NonPS\\Documents\\repositories\\aspnetcorewebapi\\aspnetcorewebapisqlclient\\aspnetcorewebapisqlclient.csproj",
+        "packagesPath": "C:\\Users\\NonPS\\.nuget\\packages\\",
+        "outputPath": "D:\\Users\\NonPS\\Documents\\repositories\\aspnetcorewebapi\\aspnetcorewebapisqlclient\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\NonPS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.ApplicationInsights.AspNetCore": {
+              "target": "Package",
+              "version": "[2.21.0, )"
+            },
+            "Microsoft.AspNetCore.OpenApi": {
+              "target": "Package",
+              "version": "[7.0.4, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.5.0, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.5, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
