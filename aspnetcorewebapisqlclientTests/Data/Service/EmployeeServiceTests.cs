@@ -121,7 +121,28 @@ namespace aspnetcorewebapisqlclient.Data.Service.Tests
         }
 
         [TestMethod()]
-        public void E_DeleteTest()
+        public void E_PutTest()
+        {
+            //arrange
+            string connstring = connectionStringFactory.ConnectionString(connectionStrings);
+            SqlConnection connection = new(connstring);
+
+            A.CallTo(() => dbConnectionFactory.Create()).Returns(connection);
+
+            Employees employee = new()
+            {
+                Firstname = "demo",
+                Middlename = "test",
+                Lastname = "test"
+            };
+
+            //act
+            EmployeeService employeeService = new(dbConnectionFactory, query);
+            employeeService.Put(employee);
+        }
+
+        [TestMethod()]
+        public void F_DeleteTest()
         {
             //arrange
             string connstring = connectionStringFactory.ConnectionString(connectionStrings);
@@ -144,6 +165,27 @@ namespace aspnetcorewebapisqlclient.Data.Service.Tests
             result.Result.Should().BeOfType<List<Employees>>();
             result.Result.Should().NotBeNull();
             result.Result.Count.Should().BeGreaterThan(0);
+        }
+
+        [TestMethod()]
+        public void G_DeleteTest()
+        {
+            //arrange
+            string connstring = connectionStringFactory.ConnectionString(connectionStrings);
+            SqlConnection connection = new(connstring);
+
+            A.CallTo(() => dbConnectionFactory.Create()).Returns(connection);
+
+            Employees employee = new()
+            {
+                Firstname = "demo",
+                Middlename = "test",
+                Lastname = "test"
+            };
+
+            //act
+            EmployeeService employeeService = new(dbConnectionFactory, query);
+            employeeService.Delete(employee);
         }
     }
 }

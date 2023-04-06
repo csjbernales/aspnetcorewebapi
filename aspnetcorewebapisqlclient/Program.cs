@@ -4,6 +4,8 @@ global using aspnetcorewebapisqlclient.Data.Database;
 global using aspnetcorewebapisqlclient.Data.Service;
 global using aspnetcorewebapisqlclient.Models.Data;
 
+using System.Diagnostics.CodeAnalysis;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -58,3 +60,7 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
+
+[ExcludeFromCodeCoverage]
+public static partial class Program { }

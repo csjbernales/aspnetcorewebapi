@@ -1,0 +1,1418 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
+<coverage line-rate="0.997979797979798" branch-rate="1" lines-covered="494" lines-valid="495" branches-covered="14" branches-valid="14" complexity="78" version="0" timestamp="1680825050">
+  <sources>
+    <source>D:\Users\NonPS\Documents\repositories\aspnetcorewebapi\</source>
+    <source>C:\</source>
+  </sources>
+  <packages>
+    <package name="aspnetcorewebapisqlclient" line-rate="1" branch-rate="1" complexity="48">
+      <classes>
+        <class name="aspnetcorewebapisqlclient.Business.AddNewEmployee" filename="D:\Users\NonPS\Documents\repositories\aspnetcorewebapi\aspnetcorewebapisqlclient\Business\AddNewEmployee.cs" line-rate="1" branch-rate="1" complexity="2">
+          <methods>
+            <method name=".ctor" signature="(...)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="9" hits="1" branch="false" />
+                <line number="10" hits="1" branch="false" />
+                <line number="11" hits="1" branch="false" />
+                <line number="12" hits="1" branch="false" />
+              </lines>
+            </method>
+            <method name="AddEmployee" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="15" hits="1" branch="false" />
+                <line number="16" hits="1" branch="false" />
+                <line number="17" hits="1" branch="false" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="9" hits="1" branch="false" />
+            <line number="10" hits="1" branch="false" />
+            <line number="11" hits="1" branch="false" />
+            <line number="12" hits="1" branch="false" />
+            <line number="15" hits="1" branch="false" />
+            <line number="16" hits="1" branch="false" />
+            <line number="17" hits="1" branch="false" />
+          </lines>
+        </class>
+        <class name="aspnetcorewebapisqlclient.Business.GetAllEmployee" filename="D:\Users\NonPS\Documents\repositories\aspnetcorewebapi\aspnetcorewebapisqlclient\Business\GetAllEmployee.cs" line-rate="1" branch-rate="1" complexity="2">
+          <methods>
+            <method name=".ctor" signature="(...)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="9" hits="1" branch="false" />
+                <line number="10" hits="1" branch="false" />
+                <line number="11" hits="1" branch="false" />
+                <line number="12" hits="1" branch="false" />
+              </lines>
+            </method>
+            <method name="GetAllEmployees" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="15" hits="1" branch="false" />
+                <line number="16" hits="1" branch="false" />
+                <line number="17" hits="1" branch="false" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="9" hits="1" branch="false" />
+            <line number="10" hits="1" branch="false" />
+            <line number="11" hits="1" branch="false" />
+            <line number="12" hits="1" branch="false" />
+            <line number="15" hits="1" branch="false" />
+            <line number="16" hits="1" branch="false" />
+            <line number="17" hits="1" branch="false" />
+          </lines>
+        </class>
+        <class name="aspnetcorewebapisqlclient.Business.GetEmployeeById" filename="D:\Users\NonPS\Documents\repositories\aspnetcorewebapi\aspnetcorewebapisqlclient\Business\GetEmployeeById.cs" line-rate="1" branch-rate="1" complexity="2">
+          <methods>
+            <method name=".ctor" signature="(...)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="9" hits="1" branch="false" />
+                <line number="10" hits="1" branch="false" />
+                <line number="11" hits="1" branch="false" />
+                <line number="12" hits="1" branch="false" />
+              </lines>
+            </method>
+            <method name="GetEmployee" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="15" hits="1" branch="false" />
+                <line number="16" hits="1" branch="false" />
+                <line number="17" hits="1" branch="false" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="9" hits="1" branch="false" />
+            <line number="10" hits="1" branch="false" />
+            <line number="11" hits="1" branch="false" />
+            <line number="12" hits="1" branch="false" />
+            <line number="15" hits="1" branch="false" />
+            <line number="16" hits="1" branch="false" />
+            <line number="17" hits="1" branch="false" />
+          </lines>
+        </class>
+        <class name="aspnetcorewebapisqlclient.Business.RemoveEmployee" filename="D:\Users\NonPS\Documents\repositories\aspnetcorewebapi\aspnetcorewebapisqlclient\Business\RemoveEmployee.cs" line-rate="1" branch-rate="1" complexity="2">
+          <methods>
+            <method name=".ctor" signature="(...)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="9" hits="1" branch="false" />
+                <line number="10" hits="1" branch="false" />
+                <line number="11" hits="1" branch="false" />
+                <line number="12" hits="1" branch="false" />
+              </lines>
+            </method>
+            <method name="RemoveEmployeeData" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="15" hits="1" branch="false" />
+                <line number="16" hits="1" branch="false" />
+                <line number="17" hits="1" branch="false" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="9" hits="1" branch="false" />
+            <line number="10" hits="1" branch="false" />
+            <line number="11" hits="1" branch="false" />
+            <line number="12" hits="1" branch="false" />
+            <line number="15" hits="1" branch="false" />
+            <line number="16" hits="1" branch="false" />
+            <line number="17" hits="1" branch="false" />
+          </lines>
+        </class>
+        <class name="aspnetcorewebapisqlclient.Business.UpdateEmployee" filename="D:\Users\NonPS\Documents\repositories\aspnetcorewebapi\aspnetcorewebapisqlclient\Business\UpdateEmployee.cs" line-rate="1" branch-rate="1" complexity="2">
+          <methods>
+            <method name=".ctor" signature="(...)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="9" hits="1" branch="false" />
+                <line number="10" hits="1" branch="false" />
+                <line number="11" hits="1" branch="false" />
+                <line number="12" hits="1" branch="false" />
+              </lines>
+            </method>
+            <method name="UpdateEmployeeData" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="15" hits="1" branch="false" />
+                <line number="16" hits="1" branch="false" />
+                <line number="17" hits="1" branch="false" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="9" hits="1" branch="false" />
+            <line number="10" hits="1" branch="false" />
+            <line number="11" hits="1" branch="false" />
+            <line number="12" hits="1" branch="false" />
+            <line number="15" hits="1" branch="false" />
+            <line number="16" hits="1" branch="false" />
+            <line number="17" hits="1" branch="false" />
+          </lines>
+        </class>
+        <class name="aspnetcorewebapisqlclient.Controllers.EmployeesController" filename="D:\Users\NonPS\Documents\repositories\aspnetcorewebapi\aspnetcorewebapisqlclient\Controllers\EmployeesController.cs" line-rate="1" branch-rate="1" complexity="6">
+          <methods>
+            <method name=".ctor" signature="(...)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="18" hits="5" branch="false" />
+                <line number="19" hits="5" branch="false" />
+                <line number="20" hits="5" branch="false" />
+                <line number="21" hits="5" branch="false" />
+                <line number="22" hits="5" branch="false" />
+                <line number="23" hits="5" branch="false" />
+                <line number="24" hits="5" branch="false" />
+                <line number="25" hits="5" branch="false" />
+              </lines>
+            </method>
+            <method name="Delete" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="53" hits="1" branch="false" />
+                <line number="54" hits="1" branch="false" />
+                <line number="55" hits="1" branch="false" />
+              </lines>
+            </method>
+            <method name="Get" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="29" hits="1" branch="false" />
+                <line number="30" hits="1" branch="false" />
+                <line number="31" hits="1" branch="false" />
+              </lines>
+            </method>
+            <method name="Get" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="35" hits="1" branch="false" />
+                <line number="36" hits="1" branch="false" />
+                <line number="37" hits="1" branch="false" />
+              </lines>
+            </method>
+            <method name="Post" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="41" hits="1" branch="false" />
+                <line number="42" hits="1" branch="false" />
+                <line number="43" hits="1" branch="false" />
+              </lines>
+            </method>
+            <method name="Put" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="47" hits="1" branch="false" />
+                <line number="48" hits="1" branch="false" />
+                <line number="49" hits="1" branch="false" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="18" hits="5" branch="false" />
+            <line number="19" hits="5" branch="false" />
+            <line number="20" hits="5" branch="false" />
+            <line number="21" hits="5" branch="false" />
+            <line number="22" hits="5" branch="false" />
+            <line number="23" hits="5" branch="false" />
+            <line number="24" hits="5" branch="false" />
+            <line number="25" hits="5" branch="false" />
+            <line number="29" hits="1" branch="false" />
+            <line number="30" hits="1" branch="false" />
+            <line number="31" hits="1" branch="false" />
+            <line number="35" hits="1" branch="false" />
+            <line number="36" hits="1" branch="false" />
+            <line number="37" hits="1" branch="false" />
+            <line number="41" hits="1" branch="false" />
+            <line number="42" hits="1" branch="false" />
+            <line number="43" hits="1" branch="false" />
+            <line number="47" hits="1" branch="false" />
+            <line number="48" hits="1" branch="false" />
+            <line number="49" hits="1" branch="false" />
+            <line number="53" hits="1" branch="false" />
+            <line number="54" hits="1" branch="false" />
+            <line number="55" hits="1" branch="false" />
+          </lines>
+        </class>
+        <class name="aspnetcorewebapisqlclient.Data.Database.ConnectionStringFactory" filename="D:\Users\NonPS\Documents\repositories\aspnetcorewebapi\aspnetcorewebapisqlclient\Data\Database\ConnectionStringFactory.cs" line-rate="1" branch-rate="1" complexity="2">
+          <methods>
+            <method name="ConnectionString" signature="(...)" line-rate="1" branch-rate="1" complexity="2">
+              <lines>
+                <line number="7" hits="9" branch="false" />
+                <line number="8" hits="9" branch="true" condition-coverage="100% (2/2)" />
+                <line number="9" hits="8" branch="false" />
+                <line number="10" hits="8" branch="false" />
+                <line number="11" hits="8" branch="false" />
+                <line number="12" hits="8" branch="false" />
+                <line number="13" hits="8" branch="false" />
+                <line number="15" hits="8" branch="false" />
+                <line number="16" hits="8" branch="false" />
+                <line number="17" hits="8" branch="false" />
+                <line number="18" hits="8" branch="false" />
+                <line number="21" hits="1" branch="false" />
+                <line number="22" hits="9" branch="false" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="7" hits="9" branch="false" />
+            <line number="8" hits="9" branch="true" condition-coverage="100% (2/2)" />
+            <line number="9" hits="8" branch="false" />
+            <line number="10" hits="8" branch="false" />
+            <line number="11" hits="8" branch="false" />
+            <line number="12" hits="8" branch="false" />
+            <line number="13" hits="8" branch="false" />
+            <line number="15" hits="8" branch="false" />
+            <line number="16" hits="8" branch="false" />
+            <line number="17" hits="8" branch="false" />
+            <line number="18" hits="8" branch="false" />
+            <line number="21" hits="1" branch="false" />
+            <line number="22" hits="9" branch="false" />
+          </lines>
+        </class>
+        <class name="aspnetcorewebapisqlclient.Data.Database.DbConnectionFactory" filename="D:\Users\NonPS\Documents\repositories\aspnetcorewebapi\aspnetcorewebapisqlclient\Data\Database\DbConnectionFactory.cs" line-rate="1" branch-rate="1" complexity="2">
+          <methods>
+            <method name="Create" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="17" hits="1" branch="false" />
+                <line number="19" hits="1" branch="false" />
+                <line number="21" hits="1" branch="false" />
+                <line number="22" hits="1" branch="false" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="(...)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="11" hits="1" branch="false" />
+                <line number="12" hits="1" branch="false" />
+                <line number="13" hits="1" branch="false" />
+                <line number="14" hits="1" branch="false" />
+                <line number="15" hits="1" branch="false" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="11" hits="1" branch="false" />
+            <line number="12" hits="1" branch="false" />
+            <line number="13" hits="1" branch="false" />
+            <line number="14" hits="1" branch="false" />
+            <line number="15" hits="1" branch="false" />
+            <line number="17" hits="1" branch="false" />
+            <line number="19" hits="1" branch="false" />
+            <line number="21" hits="1" branch="false" />
+            <line number="22" hits="1" branch="false" />
+          </lines>
+        </class>
+        <class name="aspnetcorewebapisqlclient.Data.Database.Query" filename="D:\Users\NonPS\Documents\repositories\aspnetcorewebapi\aspnetcorewebapisqlclient\Data\Database\Query.cs" line-rate="1" branch-rate="1" complexity="5">
+          <methods>
+            <method name="SelectAllEmployees" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="9" hits="5" branch="false" />
+                <line number="10" hits="5" branch="false" />
+                <line number="11" hits="5" branch="false" />
+              </lines>
+            </method>
+            <method name="SelectEmployeeById" signature="(...)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="14" hits="2" branch="false" />
+                <line number="15" hits="2" branch="false" />
+                <line number="16" hits="2" branch="false" />
+              </lines>
+            </method>
+            <method name="AddEmployee" signature="(...)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="19" hits="2" branch="false" />
+                <line number="20" hits="2" branch="false" />
+                <line number="21" hits="2" branch="false" />
+              </lines>
+            </method>
+            <method name="UpdateEmployee" signature="(...)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="24" hits="3" branch="false" />
+                <line number="25" hits="3" branch="false" />
+                <line number="26" hits="3" branch="false" />
+              </lines>
+            </method>
+            <method name="RemoveEmployee" signature="(...)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="29" hits="3" branch="false" />
+                <line number="30" hits="3" branch="false" />
+                <line number="31" hits="3" branch="false" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="9" hits="5" branch="false" />
+            <line number="10" hits="5" branch="false" />
+            <line number="11" hits="5" branch="false" />
+            <line number="14" hits="2" branch="false" />
+            <line number="15" hits="2" branch="false" />
+            <line number="16" hits="2" branch="false" />
+            <line number="19" hits="2" branch="false" />
+            <line number="20" hits="2" branch="false" />
+            <line number="21" hits="2" branch="false" />
+            <line number="24" hits="3" branch="false" />
+            <line number="25" hits="3" branch="false" />
+            <line number="26" hits="3" branch="false" />
+            <line number="29" hits="3" branch="false" />
+            <line number="30" hits="3" branch="false" />
+            <line number="31" hits="3" branch="false" />
+          </lines>
+        </class>
+        <class name="aspnetcorewebapisqlclient.Data.Service.EmployeeService" filename="D:\Users\NonPS\Documents\repositories\aspnetcorewebapi\aspnetcorewebapisqlclient\Data\Service\EmployeeService.cs" line-rate="1" branch-rate="1" complexity="16">
+          <methods>
+            <method name=".ctor" signature="(...)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="12" hits="7" branch="false" />
+                <line number="13" hits="7" branch="false" />
+                <line number="14" hits="7" branch="false" />
+                <line number="15" hits="7" branch="false" />
+                <line number="16" hits="7" branch="false" />
+              </lines>
+            </method>
+            <method name="Delete" signature="()" line-rate="1" branch-rate="1" complexity="2">
+              <lines>
+                <line number="86" hits="2" branch="false" />
+                <line number="87" hits="2" branch="false" />
+                <line number="88" hits="2" branch="false" />
+                <line number="90" hits="2" branch="false" />
+                <line number="91" hits="2" branch="false" />
+                <line number="92" hits="2" branch="false" />
+                <line number="94" hits="2" branch="false" />
+                <line number="96" hits="2" branch="true" condition-coverage="100% (2/2)" />
+                <line number="97" hits="1" branch="false" />
+                <line number="98" hits="1" branch="false" />
+                <line number="101" hits="1" branch="false" />
+                <line number="102" hits="1" branch="false" />
+              </lines>
+            </method>
+            <method name="Get" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="19" hits="4" branch="false" />
+                <line number="20" hits="4" branch="false" />
+                <line number="22" hits="4" branch="false" />
+                <line number="23" hits="4" branch="false" />
+                <line number="25" hits="4" branch="false" />
+                <line number="26" hits="4" branch="false" />
+                <line number="27" hits="4" branch="false" />
+                <line number="29" hits="4" branch="false" />
+                <line number="31" hits="4" branch="false" />
+                <line number="33" hits="4" branch="false" />
+                <line number="34" hits="4" branch="false" />
+              </lines>
+            </method>
+            <method name="Get" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="37" hits="1" branch="false" />
+                <line number="38" hits="1" branch="false" />
+                <line number="40" hits="1" branch="false" />
+                <line number="41" hits="1" branch="false" />
+                <line number="43" hits="1" branch="false" />
+                <line number="44" hits="1" branch="false" />
+                <line number="45" hits="1" branch="false" />
+                <line number="47" hits="1" branch="false" />
+                <line number="49" hits="1" branch="false" />
+                <line number="50" hits="1" branch="false" />
+              </lines>
+            </method>
+            <method name="Post" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="53" hits="1" branch="false" />
+                <line number="54" hits="1" branch="false" />
+                <line number="55" hits="1" branch="false" />
+                <line number="57" hits="1" branch="false" />
+                <line number="58" hits="1" branch="false" />
+                <line number="59" hits="1" branch="false" />
+                <line number="61" hits="1" branch="false" />
+                <line number="63" hits="1" branch="false" />
+                <line number="64" hits="1" branch="false" />
+              </lines>
+            </method>
+            <method name="Put" signature="()" line-rate="1" branch-rate="1" complexity="2">
+              <lines>
+                <line number="67" hits="2" branch="false" />
+                <line number="68" hits="2" branch="false" />
+                <line number="69" hits="2" branch="false" />
+                <line number="71" hits="2" branch="false" />
+                <line number="72" hits="2" branch="false" />
+                <line number="73" hits="2" branch="false" />
+                <line number="75" hits="2" branch="false" />
+                <line number="77" hits="2" branch="true" condition-coverage="100% (2/2)" />
+                <line number="78" hits="1" branch="false" />
+                <line number="79" hits="1" branch="false" />
+                <line number="82" hits="1" branch="false" />
+                <line number="83" hits="1" branch="false" />
+              </lines>
+            </method>
+            <method name="ReaderAsyc" signature="()" line-rate="1" branch-rate="1" complexity="8">
+              <lines>
+                <line number="105" hits="5" branch="false" />
+                <line number="107" hits="5" branch="false" />
+                <line number="108" hits="16" branch="true" condition-coverage="100% (2/2)" />
+                <line number="109" hits="11" branch="false" />
+                <line number="110" hits="11" branch="true" condition-coverage="100% (2/2)" />
+                <line number="111" hits="11" branch="false" />
+                <line number="112" hits="11" branch="true" condition-coverage="100% (2/2)" />
+                <line number="113" hits="11" branch="false" />
+                <line number="114" hits="11" branch="false" />
+                <line number="115" hits="11" branch="false" />
+                <line number="116" hits="11" branch="false" />
+                <line number="117" hits="11" branch="false" />
+                <line number="118" hits="11" branch="false" />
+                <line number="119" hits="11" branch="false" />
+                <line number="120" hits="10" branch="true" condition-coverage="100% (2/2)" />
+                <line number="121" hits="5" branch="false" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="12" hits="7" branch="false" />
+            <line number="13" hits="7" branch="false" />
+            <line number="14" hits="7" branch="false" />
+            <line number="15" hits="7" branch="false" />
+            <line number="16" hits="7" branch="false" />
+            <line number="19" hits="4" branch="false" />
+            <line number="20" hits="4" branch="false" />
+            <line number="22" hits="4" branch="false" />
+            <line number="23" hits="4" branch="false" />
+            <line number="25" hits="4" branch="false" />
+            <line number="26" hits="4" branch="false" />
+            <line number="27" hits="4" branch="false" />
+            <line number="29" hits="4" branch="false" />
+            <line number="31" hits="4" branch="false" />
+            <line number="33" hits="4" branch="false" />
+            <line number="34" hits="4" branch="false" />
+            <line number="37" hits="1" branch="false" />
+            <line number="38" hits="1" branch="false" />
+            <line number="40" hits="1" branch="false" />
+            <line number="41" hits="1" branch="false" />
+            <line number="43" hits="1" branch="false" />
+            <line number="44" hits="1" branch="false" />
+            <line number="45" hits="1" branch="false" />
+            <line number="47" hits="1" branch="false" />
+            <line number="49" hits="1" branch="false" />
+            <line number="50" hits="1" branch="false" />
+            <line number="53" hits="1" branch="false" />
+            <line number="54" hits="1" branch="false" />
+            <line number="55" hits="1" branch="false" />
+            <line number="57" hits="1" branch="false" />
+            <line number="58" hits="1" branch="false" />
+            <line number="59" hits="1" branch="false" />
+            <line number="61" hits="1" branch="false" />
+            <line number="63" hits="1" branch="false" />
+            <line number="64" hits="1" branch="false" />
+            <line number="67" hits="2" branch="false" />
+            <line number="68" hits="2" branch="false" />
+            <line number="69" hits="2" branch="false" />
+            <line number="71" hits="2" branch="false" />
+            <line number="72" hits="2" branch="false" />
+            <line number="73" hits="2" branch="false" />
+            <line number="75" hits="2" branch="false" />
+            <line number="77" hits="2" branch="true" condition-coverage="100% (2/2)" />
+            <line number="78" hits="1" branch="false" />
+            <line number="79" hits="1" branch="false" />
+            <line number="82" hits="1" branch="false" />
+            <line number="83" hits="1" branch="false" />
+            <line number="86" hits="2" branch="false" />
+            <line number="87" hits="2" branch="false" />
+            <line number="88" hits="2" branch="false" />
+            <line number="90" hits="2" branch="false" />
+            <line number="91" hits="2" branch="false" />
+            <line number="92" hits="2" branch="false" />
+            <line number="94" hits="2" branch="false" />
+            <line number="96" hits="2" branch="true" condition-coverage="100% (2/2)" />
+            <line number="97" hits="1" branch="false" />
+            <line number="98" hits="1" branch="false" />
+            <line number="101" hits="1" branch="false" />
+            <line number="102" hits="1" branch="false" />
+            <line number="105" hits="5" branch="false" />
+            <line number="107" hits="5" branch="false" />
+            <line number="108" hits="16" branch="true" condition-coverage="100% (2/2)" />
+            <line number="109" hits="11" branch="false" />
+            <line number="110" hits="11" branch="true" condition-coverage="100% (2/2)" />
+            <line number="111" hits="11" branch="false" />
+            <line number="112" hits="11" branch="true" condition-coverage="100% (2/2)" />
+            <line number="113" hits="11" branch="false" />
+            <line number="114" hits="11" branch="false" />
+            <line number="115" hits="11" branch="false" />
+            <line number="116" hits="11" branch="false" />
+            <line number="117" hits="11" branch="false" />
+            <line number="118" hits="11" branch="false" />
+            <line number="119" hits="11" branch="false" />
+            <line number="120" hits="10" branch="true" condition-coverage="100% (2/2)" />
+            <line number="121" hits="5" branch="false" />
+          </lines>
+        </class>
+        <class name="aspnetcorewebapisqlclient.Models.Business.Employees" filename="D:\Users\NonPS\Documents\repositories\aspnetcorewebapi\aspnetcorewebapisqlclient\Models\Business\Employees.cs" line-rate="1" branch-rate="1" complexity="3">
+          <methods>
+            <method name="get_Firstname" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="5" hits="66" branch="false" />
+              </lines>
+            </method>
+            <method name="get_Middlename" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="6" hits="60" branch="false" />
+              </lines>
+            </method>
+            <method name="get_Lastname" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="7" hits="60" branch="false" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="5" hits="66" branch="false" />
+            <line number="6" hits="60" branch="false" />
+            <line number="7" hits="60" branch="false" />
+          </lines>
+        </class>
+        <class name="aspnetcorewebapisqlclient.Models.Data.ConnectionStrings" filename="D:\Users\NonPS\Documents\repositories\aspnetcorewebapi\aspnetcorewebapisqlclient\Models\Data\ConnectionStrings.cs" line-rate="1" branch-rate="1" complexity="4">
+          <methods>
+            <method name="get_Server" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="5" hits="26" branch="false" />
+              </lines>
+            </method>
+            <method name="get_Database" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="6" hits="26" branch="false" />
+              </lines>
+            </method>
+            <method name="get_Trusted_Connection" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="7" hits="26" branch="false" />
+              </lines>
+            </method>
+            <method name="get_TrustServerCertificate" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="8" hits="26" branch="false" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="5" hits="26" branch="false" />
+            <line number="6" hits="26" branch="false" />
+            <line number="7" hits="26" branch="false" />
+            <line number="8" hits="26" branch="false" />
+          </lines>
+        </class>
+      </classes>
+    </package>
+    <package name="aspnetcorewebapisqlclientTests" line-rate="0.99685534591195" branch-rate="1" complexity="30">
+      <classes>
+        <class name="aspnetcorewebapisqlclient.Business.Tests.AddNewEmployeeTests" filename="D:\Users\NonPS\Documents\repositories\aspnetcorewebapi\aspnetcorewebapisqlclientTests\Business\AddNewEmployeeTests.cs" line-rate="1" branch-rate="1" complexity="1">
+          <methods>
+            <method name="AddEmployeeTest" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="8" hits="1" branch="false" />
+                <line number="10" hits="1" branch="false" />
+                <line number="11" hits="1" branch="false" />
+                <line number="12" hits="1" branch="false" />
+                <line number="13" hits="1" branch="false" />
+                <line number="14" hits="1" branch="false" />
+                <line number="15" hits="1" branch="false" />
+                <line number="16" hits="1" branch="false" />
+                <line number="17" hits="1" branch="false" />
+                <line number="18" hits="1" branch="false" />
+                <line number="21" hits="1" branch="false" />
+                <line number="22" hits="1" branch="false" />
+                <line number="23" hits="1" branch="false" />
+                <line number="26" hits="1" branch="false" />
+                <line number="28" hits="1" branch="false" />
+                <line number="29" hits="1" branch="false" />
+                <line number="30" hits="1" branch="false" />
+                <line number="31" hits="1" branch="false" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="8" hits="1" branch="false" />
+            <line number="10" hits="1" branch="false" />
+            <line number="11" hits="1" branch="false" />
+            <line number="12" hits="1" branch="false" />
+            <line number="13" hits="1" branch="false" />
+            <line number="14" hits="1" branch="false" />
+            <line number="15" hits="1" branch="false" />
+            <line number="16" hits="1" branch="false" />
+            <line number="17" hits="1" branch="false" />
+            <line number="18" hits="1" branch="false" />
+            <line number="21" hits="1" branch="false" />
+            <line number="22" hits="1" branch="false" />
+            <line number="23" hits="1" branch="false" />
+            <line number="26" hits="1" branch="false" />
+            <line number="28" hits="1" branch="false" />
+            <line number="29" hits="1" branch="false" />
+            <line number="30" hits="1" branch="false" />
+            <line number="31" hits="1" branch="false" />
+          </lines>
+        </class>
+        <class name="aspnetcorewebapisqlclient.Business.Tests.GetAllEmployeeTests" filename="D:\Users\NonPS\Documents\repositories\aspnetcorewebapi\aspnetcorewebapisqlclientTests\Business\GetAllEmployeeTests.cs" line-rate="1" branch-rate="1" complexity="1">
+          <methods>
+            <method name="GetAllEmployeesTest" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="9" hits="1" branch="false" />
+                <line number="11" hits="1" branch="false" />
+                <line number="12" hits="1" branch="false" />
+                <line number="13" hits="1" branch="false" />
+                <line number="14" hits="1" branch="false" />
+                <line number="15" hits="1" branch="false" />
+                <line number="16" hits="1" branch="false" />
+                <line number="17" hits="1" branch="false" />
+                <line number="18" hits="1" branch="false" />
+                <line number="19" hits="1" branch="false" />
+                <line number="22" hits="1" branch="false" />
+                <line number="23" hits="1" branch="false" />
+                <line number="24" hits="1" branch="false" />
+                <line number="27" hits="1" branch="false" />
+                <line number="29" hits="1" branch="false" />
+                <line number="30" hits="1" branch="false" />
+                <line number="31" hits="1" branch="false" />
+                <line number="32" hits="1" branch="false" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="9" hits="1" branch="false" />
+            <line number="11" hits="1" branch="false" />
+            <line number="12" hits="1" branch="false" />
+            <line number="13" hits="1" branch="false" />
+            <line number="14" hits="1" branch="false" />
+            <line number="15" hits="1" branch="false" />
+            <line number="16" hits="1" branch="false" />
+            <line number="17" hits="1" branch="false" />
+            <line number="18" hits="1" branch="false" />
+            <line number="19" hits="1" branch="false" />
+            <line number="22" hits="1" branch="false" />
+            <line number="23" hits="1" branch="false" />
+            <line number="24" hits="1" branch="false" />
+            <line number="27" hits="1" branch="false" />
+            <line number="29" hits="1" branch="false" />
+            <line number="30" hits="1" branch="false" />
+            <line number="31" hits="1" branch="false" />
+            <line number="32" hits="1" branch="false" />
+          </lines>
+        </class>
+        <class name="aspnetcorewebapisqlclient.Business.Tests.GetEmployeeByIdTests" filename="D:\Users\NonPS\Documents\repositories\aspnetcorewebapi\aspnetcorewebapisqlclientTests\Business\GetEmployeeByIdTests.cs" line-rate="1" branch-rate="1" complexity="1">
+          <methods>
+            <method name="GetEmployeeTest" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="9" hits="1" branch="false" />
+                <line number="11" hits="1" branch="false" />
+                <line number="12" hits="1" branch="false" />
+                <line number="13" hits="1" branch="false" />
+                <line number="14" hits="1" branch="false" />
+                <line number="15" hits="1" branch="false" />
+                <line number="16" hits="1" branch="false" />
+                <line number="17" hits="1" branch="false" />
+                <line number="18" hits="1" branch="false" />
+                <line number="19" hits="1" branch="false" />
+                <line number="22" hits="1" branch="false" />
+                <line number="23" hits="1" branch="false" />
+                <line number="24" hits="1" branch="false" />
+                <line number="27" hits="1" branch="false" />
+                <line number="29" hits="1" branch="false" />
+                <line number="30" hits="1" branch="false" />
+                <line number="31" hits="1" branch="false" />
+                <line number="32" hits="1" branch="false" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="9" hits="1" branch="false" />
+            <line number="11" hits="1" branch="false" />
+            <line number="12" hits="1" branch="false" />
+            <line number="13" hits="1" branch="false" />
+            <line number="14" hits="1" branch="false" />
+            <line number="15" hits="1" branch="false" />
+            <line number="16" hits="1" branch="false" />
+            <line number="17" hits="1" branch="false" />
+            <line number="18" hits="1" branch="false" />
+            <line number="19" hits="1" branch="false" />
+            <line number="22" hits="1" branch="false" />
+            <line number="23" hits="1" branch="false" />
+            <line number="24" hits="1" branch="false" />
+            <line number="27" hits="1" branch="false" />
+            <line number="29" hits="1" branch="false" />
+            <line number="30" hits="1" branch="false" />
+            <line number="31" hits="1" branch="false" />
+            <line number="32" hits="1" branch="false" />
+          </lines>
+        </class>
+        <class name="aspnetcorewebapisqlclient.Business.Tests.RemoveEmployeeTests" filename="D:\Users\NonPS\Documents\repositories\aspnetcorewebapi\aspnetcorewebapisqlclientTests\Business\RemoveEmployeeTests.cs" line-rate="1" branch-rate="1" complexity="1">
+          <methods>
+            <method name="RemoveEmployeeDataTest" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="9" hits="1" branch="false" />
+                <line number="11" hits="1" branch="false" />
+                <line number="12" hits="1" branch="false" />
+                <line number="13" hits="1" branch="false" />
+                <line number="14" hits="1" branch="false" />
+                <line number="15" hits="1" branch="false" />
+                <line number="16" hits="1" branch="false" />
+                <line number="17" hits="1" branch="false" />
+                <line number="18" hits="1" branch="false" />
+                <line number="19" hits="1" branch="false" />
+                <line number="22" hits="1" branch="false" />
+                <line number="23" hits="1" branch="false" />
+                <line number="24" hits="1" branch="false" />
+                <line number="27" hits="1" branch="false" />
+                <line number="29" hits="1" branch="false" />
+                <line number="30" hits="1" branch="false" />
+                <line number="31" hits="1" branch="false" />
+                <line number="32" hits="1" branch="false" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="9" hits="1" branch="false" />
+            <line number="11" hits="1" branch="false" />
+            <line number="12" hits="1" branch="false" />
+            <line number="13" hits="1" branch="false" />
+            <line number="14" hits="1" branch="false" />
+            <line number="15" hits="1" branch="false" />
+            <line number="16" hits="1" branch="false" />
+            <line number="17" hits="1" branch="false" />
+            <line number="18" hits="1" branch="false" />
+            <line number="19" hits="1" branch="false" />
+            <line number="22" hits="1" branch="false" />
+            <line number="23" hits="1" branch="false" />
+            <line number="24" hits="1" branch="false" />
+            <line number="27" hits="1" branch="false" />
+            <line number="29" hits="1" branch="false" />
+            <line number="30" hits="1" branch="false" />
+            <line number="31" hits="1" branch="false" />
+            <line number="32" hits="1" branch="false" />
+          </lines>
+        </class>
+        <class name="aspnetcorewebapisqlclient.Business.Tests.UpdateEmployeeTests" filename="D:\Users\NonPS\Documents\repositories\aspnetcorewebapi\aspnetcorewebapisqlclientTests\Business\UpdateEmployeeTests.cs" line-rate="1" branch-rate="1" complexity="1">
+          <methods>
+            <method name="UpdateEmployeeDataTest" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="8" hits="1" branch="false" />
+                <line number="10" hits="1" branch="false" />
+                <line number="11" hits="1" branch="false" />
+                <line number="12" hits="1" branch="false" />
+                <line number="13" hits="1" branch="false" />
+                <line number="14" hits="1" branch="false" />
+                <line number="15" hits="1" branch="false" />
+                <line number="16" hits="1" branch="false" />
+                <line number="17" hits="1" branch="false" />
+                <line number="18" hits="1" branch="false" />
+                <line number="19" hits="1" branch="false" />
+                <line number="22" hits="1" branch="false" />
+                <line number="23" hits="1" branch="false" />
+                <line number="24" hits="1" branch="false" />
+                <line number="27" hits="1" branch="false" />
+                <line number="29" hits="1" branch="false" />
+                <line number="30" hits="1" branch="false" />
+                <line number="31" hits="1" branch="false" />
+                <line number="32" hits="1" branch="false" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="8" hits="1" branch="false" />
+            <line number="10" hits="1" branch="false" />
+            <line number="11" hits="1" branch="false" />
+            <line number="12" hits="1" branch="false" />
+            <line number="13" hits="1" branch="false" />
+            <line number="14" hits="1" branch="false" />
+            <line number="15" hits="1" branch="false" />
+            <line number="16" hits="1" branch="false" />
+            <line number="17" hits="1" branch="false" />
+            <line number="18" hits="1" branch="false" />
+            <line number="19" hits="1" branch="false" />
+            <line number="22" hits="1" branch="false" />
+            <line number="23" hits="1" branch="false" />
+            <line number="24" hits="1" branch="false" />
+            <line number="27" hits="1" branch="false" />
+            <line number="29" hits="1" branch="false" />
+            <line number="30" hits="1" branch="false" />
+            <line number="31" hits="1" branch="false" />
+            <line number="32" hits="1" branch="false" />
+          </lines>
+        </class>
+        <class name="aspnetcorewebapisqlclient.Controllers.Tests.EmployeesControllerTests" filename="D:\Users\NonPS\Documents\repositories\aspnetcorewebapi\aspnetcorewebapisqlclientTests\Controllers\EmployeesControllerTests.cs" line-rate="1" branch-rate="1" complexity="7">
+          <methods>
+            <method name="Setup" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="21" hits="5" branch="false" />
+                <line number="22" hits="5" branch="false" />
+                <line number="23" hits="5" branch="false" />
+                <line number="24" hits="5" branch="false" />
+                <line number="25" hits="5" branch="false" />
+                <line number="26" hits="5" branch="false" />
+                <line number="27" hits="5" branch="false" />
+                <line number="28" hits="5" branch="false" />
+                <line number="29" hits="5" branch="false" />
+                <line number="30" hits="5" branch="false" />
+                <line number="31" hits="5" branch="false" />
+                <line number="32" hits="5" branch="false" />
+                <line number="33" hits="5" branch="false" />
+                <line number="34" hits="5" branch="false" />
+              </lines>
+            </method>
+            <method name="GetTest" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="38" hits="1" branch="false" />
+                <line number="41" hits="1" branch="false" />
+                <line number="44" hits="1" branch="false" />
+                <line number="46" hits="1" branch="false" />
+                <line number="48" hits="1" branch="false" />
+                <line number="51" hits="1" branch="false" />
+                <line number="53" hits="1" branch="false" />
+                <line number="54" hits="1" branch="false" />
+              </lines>
+            </method>
+            <method name="GetTestById" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="58" hits="1" branch="false" />
+                <line number="61" hits="1" branch="false" />
+                <line number="64" hits="1" branch="false" />
+                <line number="66" hits="1" branch="false" />
+                <line number="68" hits="1" branch="false" />
+                <line number="71" hits="1" branch="false" />
+                <line number="73" hits="1" branch="false" />
+                <line number="74" hits="1" branch="false" />
+              </lines>
+            </method>
+            <method name="PostTest" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="78" hits="1" branch="false" />
+                <line number="81" hits="1" branch="false" />
+                <line number="83" hits="1" branch="false" />
+                <line number="86" hits="1" branch="false" />
+                <line number="88" hits="1" branch="false" />
+                <line number="90" hits="1" branch="false" />
+                <line number="93" hits="1" branch="false" />
+                <line number="95" hits="1" branch="false" />
+                <line number="96" hits="1" branch="false" />
+              </lines>
+            </method>
+            <method name="PutTest" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="100" hits="1" branch="false" />
+                <line number="102" hits="1" branch="false" />
+                <line number="104" hits="1" branch="false" />
+                <line number="107" hits="1" branch="false" />
+                <line number="109" hits="1" branch="false" />
+                <line number="111" hits="1" branch="false" />
+                <line number="114" hits="1" branch="false" />
+                <line number="116" hits="1" branch="false" />
+                <line number="117" hits="1" branch="false" />
+              </lines>
+            </method>
+            <method name="DeleteTest" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="121" hits="1" branch="false" />
+                <line number="123" hits="1" branch="false" />
+                <line number="125" hits="1" branch="false" />
+                <line number="128" hits="1" branch="false" />
+                <line number="130" hits="1" branch="false" />
+                <line number="132" hits="1" branch="false" />
+                <line number="135" hits="1" branch="false" />
+                <line number="136" hits="1" branch="false" />
+                <line number="137" hits="1" branch="false" />
+              </lines>
+            </method>
+            <method name="Assertion" signature="(...)" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="140" hits="5" branch="false" />
+                <line number="141" hits="5" branch="false" />
+                <line number="142" hits="5" branch="false" />
+                <line number="143" hits="5" branch="false" />
+                <line number="144" hits="5" branch="false" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="21" hits="5" branch="false" />
+            <line number="22" hits="5" branch="false" />
+            <line number="23" hits="5" branch="false" />
+            <line number="24" hits="5" branch="false" />
+            <line number="25" hits="5" branch="false" />
+            <line number="26" hits="5" branch="false" />
+            <line number="27" hits="5" branch="false" />
+            <line number="28" hits="5" branch="false" />
+            <line number="29" hits="5" branch="false" />
+            <line number="30" hits="5" branch="false" />
+            <line number="31" hits="5" branch="false" />
+            <line number="32" hits="5" branch="false" />
+            <line number="33" hits="5" branch="false" />
+            <line number="34" hits="5" branch="false" />
+            <line number="38" hits="1" branch="false" />
+            <line number="41" hits="1" branch="false" />
+            <line number="44" hits="1" branch="false" />
+            <line number="46" hits="1" branch="false" />
+            <line number="48" hits="1" branch="false" />
+            <line number="51" hits="1" branch="false" />
+            <line number="53" hits="1" branch="false" />
+            <line number="54" hits="1" branch="false" />
+            <line number="58" hits="1" branch="false" />
+            <line number="61" hits="1" branch="false" />
+            <line number="64" hits="1" branch="false" />
+            <line number="66" hits="1" branch="false" />
+            <line number="68" hits="1" branch="false" />
+            <line number="71" hits="1" branch="false" />
+            <line number="73" hits="1" branch="false" />
+            <line number="74" hits="1" branch="false" />
+            <line number="78" hits="1" branch="false" />
+            <line number="81" hits="1" branch="false" />
+            <line number="83" hits="1" branch="false" />
+            <line number="86" hits="1" branch="false" />
+            <line number="88" hits="1" branch="false" />
+            <line number="90" hits="1" branch="false" />
+            <line number="93" hits="1" branch="false" />
+            <line number="95" hits="1" branch="false" />
+            <line number="96" hits="1" branch="false" />
+            <line number="100" hits="1" branch="false" />
+            <line number="102" hits="1" branch="false" />
+            <line number="104" hits="1" branch="false" />
+            <line number="107" hits="1" branch="false" />
+            <line number="109" hits="1" branch="false" />
+            <line number="111" hits="1" branch="false" />
+            <line number="114" hits="1" branch="false" />
+            <line number="116" hits="1" branch="false" />
+            <line number="117" hits="1" branch="false" />
+            <line number="121" hits="1" branch="false" />
+            <line number="123" hits="1" branch="false" />
+            <line number="125" hits="1" branch="false" />
+            <line number="128" hits="1" branch="false" />
+            <line number="130" hits="1" branch="false" />
+            <line number="132" hits="1" branch="false" />
+            <line number="135" hits="1" branch="false" />
+            <line number="136" hits="1" branch="false" />
+            <line number="137" hits="1" branch="false" />
+            <line number="140" hits="5" branch="false" />
+            <line number="141" hits="5" branch="false" />
+            <line number="142" hits="5" branch="false" />
+            <line number="143" hits="5" branch="false" />
+            <line number="144" hits="5" branch="false" />
+          </lines>
+        </class>
+        <class name="aspnetcorewebapisqlclient.Data.Database.Tests.ConnectionStringFactoryTests" filename="D:\Users\NonPS\Documents\repositories\aspnetcorewebapi\aspnetcorewebapisqlclientTests\Data\Database\ConnectionStringFactoryTests.cs" line-rate="1" branch-rate="1" complexity="2">
+          <methods>
+            <method name="ConnectionStringTest" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="10" hits="1" branch="false" />
+                <line number="12" hits="1" branch="false" />
+                <line number="13" hits="1" branch="false" />
+                <line number="14" hits="1" branch="false" />
+                <line number="15" hits="1" branch="false" />
+                <line number="16" hits="1" branch="false" />
+                <line number="17" hits="1" branch="false" />
+                <line number="18" hits="1" branch="false" />
+                <line number="21" hits="1" branch="false" />
+                <line number="22" hits="1" branch="false" />
+                <line number="25" hits="1" branch="false" />
+                <line number="26" hits="1" branch="false" />
+              </lines>
+            </method>
+            <method name="ConnectionStringTest_Fail" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="29" hits="1" branch="false" />
+                <line number="31" hits="1" branch="false" />
+                <line number="34" hits="1" branch="false" />
+                <line number="35" hits="1" branch="false" />
+                <line number="38" hits="1" branch="false" />
+                <line number="39" hits="1" branch="false" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="10" hits="1" branch="false" />
+            <line number="12" hits="1" branch="false" />
+            <line number="13" hits="1" branch="false" />
+            <line number="14" hits="1" branch="false" />
+            <line number="15" hits="1" branch="false" />
+            <line number="16" hits="1" branch="false" />
+            <line number="17" hits="1" branch="false" />
+            <line number="18" hits="1" branch="false" />
+            <line number="21" hits="1" branch="false" />
+            <line number="22" hits="1" branch="false" />
+            <line number="25" hits="1" branch="false" />
+            <line number="26" hits="1" branch="false" />
+            <line number="29" hits="1" branch="false" />
+            <line number="31" hits="1" branch="false" />
+            <line number="34" hits="1" branch="false" />
+            <line number="35" hits="1" branch="false" />
+            <line number="38" hits="1" branch="false" />
+            <line number="39" hits="1" branch="false" />
+          </lines>
+        </class>
+        <class name="aspnetcorewebapisqlclient.Data.Database.Tests.DbConnectionFactoryTests" filename="D:\Users\NonPS\Documents\repositories\aspnetcorewebapi\aspnetcorewebapisqlclientTests\Data\Database\DbConnectionFactoryTests.cs" line-rate="1" branch-rate="1" complexity="1">
+          <methods>
+            <method name="CreateTest" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="13" hits="1" branch="false" />
+                <line number="14" hits="1" branch="false" />
+                <line number="15" hits="1" branch="false" />
+                <line number="16" hits="1" branch="false" />
+                <line number="17" hits="1" branch="false" />
+                <line number="18" hits="1" branch="false" />
+                <line number="19" hits="1" branch="false" />
+                <line number="20" hits="1" branch="false" />
+                <line number="21" hits="1" branch="false" />
+                <line number="23" hits="2" branch="false" />
+                <line number="24" hits="1" branch="false" />
+                <line number="26" hits="1" branch="false" />
+                <line number="27" hits="1" branch="false" />
+                <line number="28" hits="1" branch="false" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="13" hits="1" branch="false" />
+            <line number="14" hits="1" branch="false" />
+            <line number="15" hits="1" branch="false" />
+            <line number="16" hits="1" branch="false" />
+            <line number="17" hits="1" branch="false" />
+            <line number="18" hits="1" branch="false" />
+            <line number="19" hits="1" branch="false" />
+            <line number="20" hits="1" branch="false" />
+            <line number="21" hits="1" branch="false" />
+            <line number="23" hits="2" branch="false" />
+            <line number="24" hits="1" branch="false" />
+            <line number="26" hits="1" branch="false" />
+            <line number="27" hits="1" branch="false" />
+            <line number="28" hits="1" branch="false" />
+          </lines>
+        </class>
+        <class name="aspnetcorewebapisqlclient.Data.Database.Tests.QueryTests" filename="D:\Users\NonPS\Documents\repositories\aspnetcorewebapi\aspnetcorewebapisqlclientTests\Data\Database\QueryTests.cs" line-rate="1" branch-rate="1" complexity="5">
+          <methods>
+            <method name="SelectAllEmployeesTest" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="8" hits="1" branch="false" />
+                <line number="9" hits="1" branch="false" />
+                <line number="10" hits="1" branch="false" />
+                <line number="12" hits="1" branch="false" />
+                <line number="13" hits="1" branch="false" />
+              </lines>
+            </method>
+            <method name="SelectEmployeeByIdTest" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="17" hits="1" branch="false" />
+                <line number="18" hits="1" branch="false" />
+                <line number="19" hits="1" branch="false" />
+                <line number="21" hits="1" branch="false" />
+                <line number="22" hits="1" branch="false" />
+              </lines>
+            </method>
+            <method name="AddEmployeeTest" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="26" hits="1" branch="false" />
+                <line number="27" hits="1" branch="false" />
+                <line number="28" hits="1" branch="false" />
+                <line number="30" hits="1" branch="false" />
+                <line number="31" hits="1" branch="false" />
+              </lines>
+            </method>
+            <method name="UpdateEmployeeTest" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="35" hits="1" branch="false" />
+                <line number="36" hits="1" branch="false" />
+                <line number="37" hits="1" branch="false" />
+                <line number="39" hits="1" branch="false" />
+                <line number="40" hits="1" branch="false" />
+              </lines>
+            </method>
+            <method name="RemoveEmployeeTest" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="44" hits="1" branch="false" />
+                <line number="45" hits="1" branch="false" />
+                <line number="46" hits="1" branch="false" />
+                <line number="48" hits="1" branch="false" />
+                <line number="49" hits="1" branch="false" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="8" hits="1" branch="false" />
+            <line number="9" hits="1" branch="false" />
+            <line number="10" hits="1" branch="false" />
+            <line number="12" hits="1" branch="false" />
+            <line number="13" hits="1" branch="false" />
+            <line number="17" hits="1" branch="false" />
+            <line number="18" hits="1" branch="false" />
+            <line number="19" hits="1" branch="false" />
+            <line number="21" hits="1" branch="false" />
+            <line number="22" hits="1" branch="false" />
+            <line number="26" hits="1" branch="false" />
+            <line number="27" hits="1" branch="false" />
+            <line number="28" hits="1" branch="false" />
+            <line number="30" hits="1" branch="false" />
+            <line number="31" hits="1" branch="false" />
+            <line number="35" hits="1" branch="false" />
+            <line number="36" hits="1" branch="false" />
+            <line number="37" hits="1" branch="false" />
+            <line number="39" hits="1" branch="false" />
+            <line number="40" hits="1" branch="false" />
+            <line number="44" hits="1" branch="false" />
+            <line number="45" hits="1" branch="false" />
+            <line number="46" hits="1" branch="false" />
+            <line number="48" hits="1" branch="false" />
+            <line number="49" hits="1" branch="false" />
+          </lines>
+        </class>
+        <class name="aspnetcorewebapisqlclient.Data.Service.Tests.EmployeeServiceTests" filename="D:\Users\NonPS\Documents\repositories\aspnetcorewebapi\aspnetcorewebapisqlclientTests\Data\Service\EmployeeServiceTests.cs" line-rate="1" branch-rate="1" complexity="9">
+          <methods>
+            <method name="Setup" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="20" hits="7" branch="false" />
+                <line number="21" hits="7" branch="false" />
+                <line number="22" hits="7" branch="false" />
+                <line number="23" hits="7" branch="false" />
+                <line number="24" hits="7" branch="false" />
+                <line number="25" hits="7" branch="false" />
+                <line number="26" hits="7" branch="false" />
+                <line number="27" hits="7" branch="false" />
+                <line number="28" hits="7" branch="false" />
+                <line number="29" hits="7" branch="false" />
+              </lines>
+            </method>
+            <method name="A_GetTest" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="33" hits="1" branch="false" />
+                <line number="35" hits="1" branch="false" />
+                <line number="36" hits="1" branch="false" />
+                <line number="38" hits="1" branch="false" />
+                <line number="41" hits="1" branch="false" />
+                <line number="42" hits="1" branch="false" />
+                <line number="45" hits="1" branch="false" />
+                <line number="46" hits="1" branch="false" />
+                <line number="47" hits="1" branch="false" />
+                <line number="48" hits="1" branch="false" />
+              </lines>
+            </method>
+            <method name="B_GetSingleTest" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="52" hits="1" branch="false" />
+                <line number="54" hits="1" branch="false" />
+                <line number="55" hits="1" branch="false" />
+                <line number="57" hits="1" branch="false" />
+                <line number="60" hits="1" branch="false" />
+                <line number="61" hits="1" branch="false" />
+                <line number="64" hits="1" branch="false" />
+                <line number="65" hits="1" branch="false" />
+                <line number="66" hits="1" branch="false" />
+                <line number="67" hits="1" branch="false" />
+              </lines>
+            </method>
+            <method name="C_PostTest" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="71" hits="1" branch="false" />
+                <line number="73" hits="1" branch="false" />
+                <line number="74" hits="1" branch="false" />
+                <line number="76" hits="1" branch="false" />
+                <line number="78" hits="1" branch="false" />
+                <line number="79" hits="1" branch="false" />
+                <line number="80" hits="1" branch="false" />
+                <line number="81" hits="1" branch="false" />
+                <line number="82" hits="1" branch="false" />
+                <line number="83" hits="1" branch="false" />
+                <line number="86" hits="1" branch="false" />
+                <line number="87" hits="1" branch="false" />
+                <line number="90" hits="1" branch="false" />
+                <line number="91" hits="1" branch="false" />
+                <line number="92" hits="1" branch="false" />
+                <line number="94" hits="1" branch="false" />
+                <line number="95" hits="1" branch="false" />
+              </lines>
+            </method>
+            <method name="D_PutTest" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="99" hits="1" branch="false" />
+                <line number="101" hits="1" branch="false" />
+                <line number="102" hits="1" branch="false" />
+                <line number="104" hits="1" branch="false" />
+                <line number="106" hits="1" branch="false" />
+                <line number="107" hits="1" branch="false" />
+                <line number="108" hits="1" branch="false" />
+                <line number="109" hits="1" branch="false" />
+                <line number="110" hits="1" branch="false" />
+                <line number="111" hits="1" branch="false" />
+                <line number="114" hits="1" branch="false" />
+                <line number="115" hits="1" branch="false" />
+                <line number="118" hits="1" branch="false" />
+                <line number="119" hits="1" branch="false" />
+                <line number="120" hits="1" branch="false" />
+                <line number="121" hits="1" branch="false" />
+              </lines>
+            </method>
+            <method name="E_PutTest" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="125" hits="1" branch="false" />
+                <line number="127" hits="1" branch="false" />
+                <line number="128" hits="1" branch="false" />
+                <line number="130" hits="1" branch="false" />
+                <line number="132" hits="1" branch="false" />
+                <line number="133" hits="1" branch="false" />
+                <line number="134" hits="1" branch="false" />
+                <line number="135" hits="1" branch="false" />
+                <line number="136" hits="1" branch="false" />
+                <line number="137" hits="1" branch="false" />
+                <line number="140" hits="1" branch="false" />
+                <line number="141" hits="1" branch="false" />
+                <line number="142" hits="1" branch="false" />
+              </lines>
+            </method>
+            <method name="F_DeleteTest" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="146" hits="1" branch="false" />
+                <line number="148" hits="1" branch="false" />
+                <line number="149" hits="1" branch="false" />
+                <line number="151" hits="1" branch="false" />
+                <line number="153" hits="1" branch="false" />
+                <line number="154" hits="1" branch="false" />
+                <line number="155" hits="1" branch="false" />
+                <line number="156" hits="1" branch="false" />
+                <line number="157" hits="1" branch="false" />
+                <line number="158" hits="1" branch="false" />
+                <line number="161" hits="1" branch="false" />
+                <line number="162" hits="1" branch="false" />
+                <line number="165" hits="1" branch="false" />
+                <line number="166" hits="1" branch="false" />
+                <line number="167" hits="1" branch="false" />
+                <line number="168" hits="1" branch="false" />
+              </lines>
+            </method>
+            <method name="G_DeleteTest" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="172" hits="1" branch="false" />
+                <line number="174" hits="1" branch="false" />
+                <line number="175" hits="1" branch="false" />
+                <line number="177" hits="1" branch="false" />
+                <line number="179" hits="1" branch="false" />
+                <line number="180" hits="1" branch="false" />
+                <line number="181" hits="1" branch="false" />
+                <line number="182" hits="1" branch="false" />
+                <line number="183" hits="1" branch="false" />
+                <line number="184" hits="1" branch="false" />
+                <line number="187" hits="1" branch="false" />
+                <line number="188" hits="1" branch="false" />
+                <line number="189" hits="1" branch="false" />
+              </lines>
+            </method>
+            <method name=".ctor" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="13" hits="7" branch="false" />
+                <line number="14" hits="7" branch="false" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="13" hits="7" branch="false" />
+            <line number="14" hits="7" branch="false" />
+            <line number="20" hits="7" branch="false" />
+            <line number="21" hits="7" branch="false" />
+            <line number="22" hits="7" branch="false" />
+            <line number="23" hits="7" branch="false" />
+            <line number="24" hits="7" branch="false" />
+            <line number="25" hits="7" branch="false" />
+            <line number="26" hits="7" branch="false" />
+            <line number="27" hits="7" branch="false" />
+            <line number="28" hits="7" branch="false" />
+            <line number="29" hits="7" branch="false" />
+            <line number="33" hits="1" branch="false" />
+            <line number="35" hits="1" branch="false" />
+            <line number="36" hits="1" branch="false" />
+            <line number="38" hits="1" branch="false" />
+            <line number="41" hits="1" branch="false" />
+            <line number="42" hits="1" branch="false" />
+            <line number="45" hits="1" branch="false" />
+            <line number="46" hits="1" branch="false" />
+            <line number="47" hits="1" branch="false" />
+            <line number="48" hits="1" branch="false" />
+            <line number="52" hits="1" branch="false" />
+            <line number="54" hits="1" branch="false" />
+            <line number="55" hits="1" branch="false" />
+            <line number="57" hits="1" branch="false" />
+            <line number="60" hits="1" branch="false" />
+            <line number="61" hits="1" branch="false" />
+            <line number="64" hits="1" branch="false" />
+            <line number="65" hits="1" branch="false" />
+            <line number="66" hits="1" branch="false" />
+            <line number="67" hits="1" branch="false" />
+            <line number="71" hits="1" branch="false" />
+            <line number="73" hits="1" branch="false" />
+            <line number="74" hits="1" branch="false" />
+            <line number="76" hits="1" branch="false" />
+            <line number="78" hits="1" branch="false" />
+            <line number="79" hits="1" branch="false" />
+            <line number="80" hits="1" branch="false" />
+            <line number="81" hits="1" branch="false" />
+            <line number="82" hits="1" branch="false" />
+            <line number="83" hits="1" branch="false" />
+            <line number="86" hits="1" branch="false" />
+            <line number="87" hits="1" branch="false" />
+            <line number="90" hits="1" branch="false" />
+            <line number="91" hits="1" branch="false" />
+            <line number="92" hits="1" branch="false" />
+            <line number="94" hits="1" branch="false" />
+            <line number="95" hits="1" branch="false" />
+            <line number="99" hits="1" branch="false" />
+            <line number="101" hits="1" branch="false" />
+            <line number="102" hits="1" branch="false" />
+            <line number="104" hits="1" branch="false" />
+            <line number="106" hits="1" branch="false" />
+            <line number="107" hits="1" branch="false" />
+            <line number="108" hits="1" branch="false" />
+            <line number="109" hits="1" branch="false" />
+            <line number="110" hits="1" branch="false" />
+            <line number="111" hits="1" branch="false" />
+            <line number="114" hits="1" branch="false" />
+            <line number="115" hits="1" branch="false" />
+            <line number="118" hits="1" branch="false" />
+            <line number="119" hits="1" branch="false" />
+            <line number="120" hits="1" branch="false" />
+            <line number="121" hits="1" branch="false" />
+            <line number="125" hits="1" branch="false" />
+            <line number="127" hits="1" branch="false" />
+            <line number="128" hits="1" branch="false" />
+            <line number="130" hits="1" branch="false" />
+            <line number="132" hits="1" branch="false" />
+            <line number="133" hits="1" branch="false" />
+            <line number="134" hits="1" branch="false" />
+            <line number="135" hits="1" branch="false" />
+            <line number="136" hits="1" branch="false" />
+            <line number="137" hits="1" branch="false" />
+            <line number="140" hits="1" branch="false" />
+            <line number="141" hits="1" branch="false" />
+            <line number="142" hits="1" branch="false" />
+            <line number="146" hits="1" branch="false" />
+            <line number="148" hits="1" branch="false" />
+            <line number="149" hits="1" branch="false" />
+            <line number="151" hits="1" branch="false" />
+            <line number="153" hits="1" branch="false" />
+            <line number="154" hits="1" branch="false" />
+            <line number="155" hits="1" branch="false" />
+            <line number="156" hits="1" branch="false" />
+            <line number="157" hits="1" branch="false" />
+            <line number="158" hits="1" branch="false" />
+            <line number="161" hits="1" branch="false" />
+            <line number="162" hits="1" branch="false" />
+            <line number="165" hits="1" branch="false" />
+            <line number="166" hits="1" branch="false" />
+            <line number="167" hits="1" branch="false" />
+            <line number="168" hits="1" branch="false" />
+            <line number="172" hits="1" branch="false" />
+            <line number="174" hits="1" branch="false" />
+            <line number="175" hits="1" branch="false" />
+            <line number="177" hits="1" branch="false" />
+            <line number="179" hits="1" branch="false" />
+            <line number="180" hits="1" branch="false" />
+            <line number="181" hits="1" branch="false" />
+            <line number="182" hits="1" branch="false" />
+            <line number="183" hits="1" branch="false" />
+            <line number="184" hits="1" branch="false" />
+            <line number="187" hits="1" branch="false" />
+            <line number="188" hits="1" branch="false" />
+            <line number="189" hits="1" branch="false" />
+          </lines>
+        </class>
+        <class name="AutoGeneratedProgram" filename="C:\Users\NonPS\.nuget\packages\microsoft.net.test.sdk\17.5.0\build\netcoreapp3.1\Microsoft.NET.Test.Sdk.Program.cs" line-rate="0" branch-rate="1" complexity="1">
+          <methods>
+            <method name="Main" signature="(...)" line-rate="0" branch-rate="1" complexity="1">
+              <lines>
+                <line number="4" hits="0" branch="false" />
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="4" hits="0" branch="false" />
+          </lines>
+        </class>
+      </classes>
+    </package>
+  </packages>
+</coverage>
