@@ -1,6 +1,4 @@
-﻿using aspnetcorewebapisqlclient.Data.Database;
-using aspnetcorewebapisqlclient.Models.Business;
-using aspnetcorewebapisqlclient.Models.Data;
+﻿using aspnetcorewebapisqlclient.Models.Business;
 
 using System.Data.SqlClient;
 

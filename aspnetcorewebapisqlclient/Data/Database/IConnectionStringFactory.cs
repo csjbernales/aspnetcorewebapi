@@ -1,6 +1,4 @@
-﻿using aspnetcorewebapisqlclient.Models.Data;
-
-namespace aspnetcorewebapisqlclient.Data.Database
+﻿namespace aspnetcorewebapisqlclient.Data.Database
 {
     public interface IConnectionStringFactory
     {

@@ -1,4 +1,3 @@
-using aspnetcorewebapisqlclient.Business.Interfaces;
 using aspnetcorewebapisqlclient.Models.Business;
 
 using Microsoft.AspNetCore.Mvc;

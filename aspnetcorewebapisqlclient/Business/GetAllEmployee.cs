@@ -1,6 +1,4 @@
-﻿using aspnetcorewebapisqlclient.Business.Interfaces;
-using aspnetcorewebapisqlclient.Data.Service;
-using aspnetcorewebapisqlclient.Models.Business;
+﻿using aspnetcorewebapisqlclient.Models.Business;
 
 namespace aspnetcorewebapisqlclient.Business
 {

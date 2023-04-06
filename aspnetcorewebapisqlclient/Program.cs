@@ -1,8 +1,8 @@
-using aspnetcorewebapisqlclient.Business;
-using aspnetcorewebapisqlclient.Business.Interfaces;
-using aspnetcorewebapisqlclient.Data.Database;
-using aspnetcorewebapisqlclient.Data.Service;
-using aspnetcorewebapisqlclient.Models.Data;
+global using aspnetcorewebapisqlclient.Business;
+global using aspnetcorewebapisqlclient.Business.Interfaces;
+global using aspnetcorewebapisqlclient.Data.Database;
+global using aspnetcorewebapisqlclient.Data.Service;
+global using aspnetcorewebapisqlclient.Models.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
