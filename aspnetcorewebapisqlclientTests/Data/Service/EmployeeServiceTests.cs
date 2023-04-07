@@ -13,6 +13,8 @@ namespace aspnetcorewebapisqlclient.Data.Service.Tests
         private readonly ConnectionStringFactory connectionStringFactory = new();
         private readonly IQuery query = new Query();
         private ConnectionStrings connectionStrings;
+        string connstring;
+        SqlConnection connection;
 
         [TestInitialize]
         public void Setup()
@@ -25,15 +27,14 @@ namespace aspnetcorewebapisqlclient.Data.Service.Tests
                 Trusted_Connection = "True",
                 TrustServerCertificate = "True"
             };
+            connstring = connectionStringFactory.ConnectionString(connectionStrings);
+            connection = new(connstring);
         }
 
         [TestMethod()]
         public void A_GetTest()
         {
             //arrange
-            string connstring = connectionStringFactory.ConnectionString(connectionStrings);
-            SqlConnection connection = new(connstring);
-
             A.CallTo(() => dbConnectionFactory.Create()).Returns(connection);
 
             //act
@@ -41,18 +42,13 @@ namespace aspnetcorewebapisqlclient.Data.Service.Tests
             var result = employeeService.Get();
 
             //assert
-            result.Result.Should().BeOfType<List<Employees>>();
-            result.Result.Should().NotBeNull();
-            result.Result.Count.Should().BeGreaterThan(0);
+            Assertions(result);
         }
 
         [TestMethod()]
         public void B_GetSingleTest()
         {
             //arrange
-            string connstring = connectionStringFactory.ConnectionString(connectionStrings);
-            SqlConnection connection = new(connstring);
-
             A.CallTo(() => dbConnectionFactory.Create()).Returns(connection);
 
             //act
@@ -60,18 +56,13 @@ namespace aspnetcorewebapisqlclient.Data.Service.Tests
             var result = employeeService.Get(1);
 
             //assert
-            result.Result.Should().BeOfType<List<Employees>>();
-            result.Result.Should().NotBeNull();
-            result.Result.Count.Should().BeGreaterThan(0);
+            Assertions(result);
         }
 
         [TestMethod()]
         public void C_PostTest()
         {
             //arrange
-            string connstring = connectionStringFactory.ConnectionString(connectionStrings);
-            SqlConnection connection = new(connstring);
-
             A.CallTo(() => dbConnectionFactory.Create()).Returns(connection);
 
             Employees employee = new()
@@ -86,18 +77,13 @@ namespace aspnetcorewebapisqlclient.Data.Service.Tests
             var result = employeeService.Post(employee);
 
             //assert
-            result.Result.Should().BeOfType<List<Employees>>();
-            result.Result.Should().NotBeNull();
-            result.Result.Count.Should().BeGreaterThan(0);
+            Assertions(result);
         }
 
         [TestMethod()]
         public void D_PutTest()
         {
             //arrange
-            string connstring = connectionStringFactory.ConnectionString(connectionStrings);
-            SqlConnection connection = new(connstring);
-
             A.CallTo(() => dbConnectionFactory.Create()).Returns(connection);
 
             Employees employee = new()
@@ -112,18 +98,13 @@ namespace aspnetcorewebapisqlclient.Data.Service.Tests
             var result = employeeService.Put(employee);
 
             //assert
-            result.Result.Should().BeOfType<List<Employees>>();
-            result.Result.Should().NotBeNull();
-            result.Result.Count.Should().BeGreaterThan(0);
+            Assertions(result);
         }
 
         [TestMethod()]
         public async Task E_PutTest()
         {
             //arrange
-            string connstring = connectionStringFactory.ConnectionString(connectionStrings);
-            SqlConnection connection = new(connstring);
-
             A.CallTo(() => dbConnectionFactory.Create()).Returns(connection);
 
             Employees employee = new()
@@ -144,9 +125,6 @@ namespace aspnetcorewebapisqlclient.Data.Service.Tests
         public void F_DeleteTest()
         {
             //arrange
-            string connstring = connectionStringFactory.ConnectionString(connectionStrings);
-            SqlConnection connection = new(connstring);
-
             A.CallTo(() => dbConnectionFactory.Create()).Returns(connection);
 
             Employees employee = new()
@@ -161,18 +139,13 @@ namespace aspnetcorewebapisqlclient.Data.Service.Tests
             var result = employeeService.Delete(employee);
 
             //assert
-            result.Result.Should().BeOfType<List<Employees>>();
-            result.Result.Should().NotBeNull();
-            result.Result.Count.Should().BeGreaterThan(0);
+            Assertions(result);
         }
 
         [TestMethod()]
         public void G_DeleteTest()
         {
             //arrange
-            string connstring = connectionStringFactory.ConnectionString(connectionStrings);
-            SqlConnection connection = new(connstring);
-
             A.CallTo(() => dbConnectionFactory.Create()).Returns(connection);
 
             Employees employee = new()
@@ -187,7 +160,13 @@ namespace aspnetcorewebapisqlclient.Data.Service.Tests
             _ = employeeService.Delete(employee);
 
             true.Should().BeTrue();
+        }
 
+        private static void Assertions(Task<List<Employees>> result)
+        {
+            result.Result.Should().BeOfType<List<Employees>>();
+            result.Result.Should().NotBeNull();
+            result.Result.Count.Should().BeGreaterThan(0);
         }
     }
 }

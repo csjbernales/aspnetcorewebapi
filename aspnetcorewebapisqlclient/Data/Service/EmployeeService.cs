@@ -74,12 +74,7 @@ namespace aspnetcorewebapisqlclient.Data.Service
 
             connection.Close();
 
-            if (affected > 0)
-            {
-                return await Get();
-            }
-
-            throw new InvalidOperationException();
+            return await Get();
         }
 
         public async Task<List<Employees>> Delete(Employees employee)
@@ -93,12 +88,7 @@ namespace aspnetcorewebapisqlclient.Data.Service
 
             connection.Close();
 
-            if (affected > 0)
-            {
-                return await Get();
-            }
-
-            throw new InvalidOperationException();
+            return await Get();
         }
 
         private static async Task ReaderAsyc(List<Employees> employees, IDataReader reader)
