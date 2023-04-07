@@ -17,7 +17,7 @@
             }
             catch
             {
-                throw new NotImplementedException();
+                throw new InvalidOperationException();
             }
         }
     }
