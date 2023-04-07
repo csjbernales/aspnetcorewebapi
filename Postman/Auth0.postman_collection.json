@@ -1,0 +1,40 @@
+{
+	"info": {
+		"_postman_id": "c8b91a69-af25-44dd-9b40-3e4e76dc2ba1",
+		"name": "Auth0",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "AuthRequest",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"client_id\": \"2LANaHdl2Jenb0xs1o9Fvo6YPnKOwKUW\",\r\n    \"client_secret\": \"QJb1RokQ0Diii5FB8pA_RjCr6vPnKIliG-OAJWRhRdjteRh9NzKJ2Y98CKUyB2qq\",\r\n    \"audience\": \"https://dev-48yt3g6lxsb6vr82.eu.auth0.com/api/v2/\",\r\n    \"grant_type\": \"client_credentials\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://dev-48yt3g6lxsb6vr82.eu.auth0.com/oauth/token",
+					"protocol": "https",
+					"host": [
+						"dev-48yt3g6lxsb6vr82",
+						"eu",
+						"auth0",
+						"com"
+					],
+					"path": [
+						"oauth",
+						"token"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

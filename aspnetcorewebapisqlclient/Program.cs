@@ -4,6 +4,8 @@ global using aspnetcorewebapisqlclient.Data.Database;
 global using aspnetcorewebapisqlclient.Data.Service;
 global using aspnetcorewebapisqlclient.Models.Data;
 
+using Gateway.Middleware;
+
 using System.Diagnostics.CodeAnalysis;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -46,6 +48,10 @@ builder.Services.AddHealthChecks();
 
 builder.Services.AddApplicationInsightsTelemetry();
 
+builder.Services.AddAuthentication().AddJwtBearer();
+
+builder.Services.AddAuthorization();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -54,6 +60,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseMiddleware<AuthHandler>();
 
 app.MapHealthChecks("/health");
 

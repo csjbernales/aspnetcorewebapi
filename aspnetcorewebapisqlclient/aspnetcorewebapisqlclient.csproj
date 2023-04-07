@@ -9,17 +9,17 @@
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-	  <Optimize>False</Optimize>
-	  <NoWarn>1701;1702;</NoWarn>
+		<Optimize>False</Optimize>
+		<NoWarn>1701;1702;</NoWarn>
 		<NoWarn>CS8618</NoWarn>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-	  <NoWarn>1701;1702;</NoWarn>
+		<NoWarn>1701;1702;</NoWarn>
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <None Include="..\.editorconfig" Link=".editorconfig" />
+		<None Include="..\.editorconfig" Link=".editorconfig" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -28,6 +28,7 @@
 		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
 		<PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
 		<PackageReference Include="TTRider.IDbConnection-Async" Version="1.1.2" />
+		<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="7.0.4" />
 	</ItemGroup>
 
 </Project>

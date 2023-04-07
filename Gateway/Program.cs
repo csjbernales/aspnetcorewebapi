@@ -23,7 +23,6 @@ else
         .AddReverseProxy()
         .LoadFromConfig(builder.Configuration.GetSection("ReverseProxy"));
 }
-
 builder.Services.AddHealthChecks();
 
 var app = builder.Build();
