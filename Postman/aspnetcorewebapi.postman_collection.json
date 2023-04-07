@@ -1,0 +1,155 @@
+{
+	"info": {
+		"_postman_id": "23231252-6098-4329-934e-1a5d73178f23",
+		"name": "aspnetcorewebapi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "HealthCheck",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/service/health",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"service",
+						"health"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAllEmployees",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/service/employees",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"service",
+						"employees"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetEmployeeById",
+			"protocolProfileBehavior": {
+				"strictSSL": false
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/service/employees/1",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"service",
+						"employees",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddNewEmployee",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstname\": \"app\",\r\n    \"middlename\": \"demo\",\r\n    \"lastname\": \"test\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/service/employees",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"service",
+						"employees"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "EditEmployeeDetails",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstname\": \"app\",\r\n    \"middlename\": \"sample\",\r\n    \"lastname\": \"execute\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/service/employees/",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"service",
+						"employees",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAllEmployees Copy",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstname\": \"app\",\r\n    \"middlename\": \"sample\",\r\n    \"lastname\": \"execute\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/service/employees",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"service",
+						"employees"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
