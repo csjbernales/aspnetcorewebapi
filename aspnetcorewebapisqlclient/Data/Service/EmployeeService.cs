@@ -70,7 +70,7 @@ namespace aspnetcorewebapisqlclient.Data.Service
 
             IDbCommand command = connection.CreateCommand();
             command.CommandText = query.UpdateEmployee(employee);
-            int affected = await command.ExecuteNonQueryAsync();
+            await command.ExecuteNonQueryAsync();
 
             connection.Close();
 
@@ -84,7 +84,7 @@ namespace aspnetcorewebapisqlclient.Data.Service
 
             IDbCommand command = connection.CreateCommand();
             command.CommandText = query.RemoveEmployee(employee);
-            int affected = await command.ExecuteNonQueryAsync();
+            await command.ExecuteNonQueryAsync();
 
             connection.Close();
 
@@ -102,7 +102,7 @@ namespace aspnetcorewebapisqlclient.Data.Service
                         employees.Add(new Employees
                         {
                             Firstname = reader["firstname"].ToString()!,
-                            Middlename = reader["middlename"].Equals(string.Empty) ? reader["middlename"].ToString()! : "",
+                            Middlename = !reader["middlename"].ToString().Equals(string.Empty) ? reader["middlename"].ToString()! : "",
                             Lastname = reader["lastname"].ToString()!,
                         });
                     }

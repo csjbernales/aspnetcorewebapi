@@ -42,6 +42,8 @@ builder.Services
     .AddScoped<IUpdateEmployee, UpdateEmployee>()
     .AddScoped<IRemoveEmployee, RemoveEmployee>();
 
+builder.Services.AddHealthChecks();
+
 builder.Services.AddApplicationInsightsTelemetry();
 
 var app = builder.Build();
@@ -52,6 +54,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.MapHealthChecks("/health");
 
 app.UseHttpsRedirection();
 
