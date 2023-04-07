@@ -1,4 +1,4 @@
-﻿using System.Security.Authentication;
+﻿using System.Diagnostics;
 
 namespace Gateway.Middleware
 {
@@ -13,16 +13,19 @@ namespace Gateway.Middleware
 
         public async Task Invoke(HttpContext context)
         {
-            var claims = context.User.Claims.ToList();
-            var issuer = claims.First().Issuer;
+            var claims = context.User.Claims;
 
+            var claim = claims.FirstOrDefault();
 
-            if (issuer == null)
+            if (claim != null) //add logic here
             {
-                throw new AuthenticationException();//todo: add errormodel and condition here for valid authentication
+                await this.next(context);
             }
-
-            await this.next(context);
+            else
+            {
+                Debug.WriteLine("Authentication failed"); //add logic here
+                //also add auth for swaggertest specific
+            }
         }
     }
 }

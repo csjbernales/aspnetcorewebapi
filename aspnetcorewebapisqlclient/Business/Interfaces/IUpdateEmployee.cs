@@ -1,6 +1,4 @@
-﻿using aspnetcorewebapisqlclient.Models.Business;
-
-namespace aspnetcorewebapisqlclient.Business.Interfaces
+﻿namespace aspnetcorewebapisqlclient.Business.Interfaces
 {
     public interface IUpdateEmployee
     {

@@ -1,17 +1,13 @@
-﻿using aspnetcorewebapisqlclient.Models.Business;
-
-using System.Data;
+﻿using System.Data;
 
 namespace aspnetcorewebapisqlclient.Data.Service
 {
-    public class EmployeeService : IEmployeeService
+    public class EmployeeService : Query, IEmployeeService
     {
-        private readonly IQuery query;
         private readonly IDbConnectionFactory dbConnectionFactory;
 
-        public EmployeeService(IDbConnectionFactory dbConnectionFactory, IQuery query)
+        public EmployeeService(IDbConnectionFactory dbConnectionFactory)
         {
-            this.query = query;
             this.dbConnectionFactory = dbConnectionFactory;
         }
 
@@ -23,7 +19,7 @@ namespace aspnetcorewebapisqlclient.Data.Service
             await connection.OpenAsync();
 
             IDbCommand command = connection.CreateCommand();
-            command.CommandText = query.SelectAllEmployees();
+            command.CommandText = SelectAllEmployees();
             using IDataReader reader = await command.ExecuteReaderAsync();
 
             await ReaderAsyc(employees, reader);
@@ -41,7 +37,7 @@ namespace aspnetcorewebapisqlclient.Data.Service
             await connection.OpenAsync();
 
             IDbCommand command = connection.CreateCommand();
-            command.CommandText = query.SelectEmployeeById(id);
+            command.CommandText = SelectEmployeeById(id);
             using IDataReader reader = await command.ExecuteReaderAsync();
 
             await ReaderAsyc(employees, reader);
@@ -55,7 +51,7 @@ namespace aspnetcorewebapisqlclient.Data.Service
             await connection.OpenAsync();
 
             IDbCommand command = connection.CreateCommand();
-            command.CommandText = query.AddEmployee(employee);
+            command.CommandText = AddEmployee(employee);
             await command.ExecuteNonQueryAsync();
 
             connection.Close();
@@ -69,7 +65,7 @@ namespace aspnetcorewebapisqlclient.Data.Service
             await connection.OpenAsync();
 
             IDbCommand command = connection.CreateCommand();
-            command.CommandText = query.UpdateEmployee(employee);
+            command.CommandText = UpdateEmployee(employee);
             await command.ExecuteNonQueryAsync();
 
             connection.Close();
@@ -83,7 +79,7 @@ namespace aspnetcorewebapisqlclient.Data.Service
             await connection.OpenAsync();
 
             IDbCommand command = connection.CreateCommand();
-            command.CommandText = query.RemoveEmployee(employee);
+            command.CommandText = RemoveEmployee(employee);
             await command.ExecuteNonQueryAsync();
 
             connection.Close();
@@ -101,8 +97,8 @@ namespace aspnetcorewebapisqlclient.Data.Service
                     {
                         employees.Add(new Employees
                         {
-                            Firstname = reader["firstname"].ToString()!,
-                            Middlename = !reader["middlename"].ToString().Equals(string.Empty) ? reader["middlename"].ToString()! : "",
+                            Firstname = reader["firstname"].ToString(),
+                            Middlename = reader["middlename"].ToString(),
                             Lastname = reader["lastname"].ToString()!,
                         });
                     }

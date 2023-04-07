@@ -1,11 +1,9 @@
-using aspnetcorewebapisqlclient.Models.Business;
-
 using Microsoft.AspNetCore.Mvc;
 
 namespace aspnetcorewebapisqlclient.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("[controller]")] //Employees
     public class EmployeesController : ControllerBase
     {
         private readonly IGetAllEmployee getAllEmployee;

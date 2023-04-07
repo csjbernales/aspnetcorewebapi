@@ -11,7 +11,6 @@ namespace aspnetcorewebapisqlclient.Data.Service.Tests
     {
         private IDbConnectionFactory dbConnectionFactory;
         private readonly ConnectionStringFactory connectionStringFactory = new();
-        private readonly IQuery query = new Query();
         private ConnectionStrings connectionStrings;
         string connstring;
         SqlConnection connection;
@@ -38,7 +37,7 @@ namespace aspnetcorewebapisqlclient.Data.Service.Tests
             A.CallTo(() => dbConnectionFactory.Create()).Returns(connection);
 
             //act
-            EmployeeService employeeService = new(dbConnectionFactory, query);
+            EmployeeService employeeService = new(dbConnectionFactory);
             var result = employeeService.Get();
 
             //assert
@@ -52,7 +51,7 @@ namespace aspnetcorewebapisqlclient.Data.Service.Tests
             A.CallTo(() => dbConnectionFactory.Create()).Returns(connection);
 
             //act
-            EmployeeService employeeService = new(dbConnectionFactory, query);
+            EmployeeService employeeService = new(dbConnectionFactory);
             var result = employeeService.Get(1);
 
             //assert
@@ -73,7 +72,7 @@ namespace aspnetcorewebapisqlclient.Data.Service.Tests
             };
 
             //act
-            EmployeeService employeeService = new(dbConnectionFactory, query);
+            EmployeeService employeeService = new(dbConnectionFactory);
             var result = employeeService.Post(employee);
 
             //assert
@@ -94,7 +93,7 @@ namespace aspnetcorewebapisqlclient.Data.Service.Tests
             };
 
             //act
-            EmployeeService employeeService = new(dbConnectionFactory, query);
+            EmployeeService employeeService = new(dbConnectionFactory);
             var result = employeeService.Put(employee);
 
             //assert
@@ -115,7 +114,7 @@ namespace aspnetcorewebapisqlclient.Data.Service.Tests
             };
 
             //act
-            EmployeeService employeeService = new(dbConnectionFactory, query);
+            EmployeeService employeeService = new(dbConnectionFactory);
             await employeeService.Put(employee);
 
             true.Should().BeTrue();
@@ -135,7 +134,7 @@ namespace aspnetcorewebapisqlclient.Data.Service.Tests
             };
 
             //act
-            EmployeeService employeeService = new(dbConnectionFactory, query);
+            EmployeeService employeeService = new(dbConnectionFactory);
             var result = employeeService.Delete(employee);
 
             //assert
@@ -156,7 +155,7 @@ namespace aspnetcorewebapisqlclient.Data.Service.Tests
             };
 
             //act
-            EmployeeService employeeService = new(dbConnectionFactory, query);
+            EmployeeService employeeService = new(dbConnectionFactory);
             _ = employeeService.Delete(employee);
 
             true.Should().BeTrue();

@@ -1,6 +1,4 @@
-﻿using aspnetcorewebapisqlclient.Models.Business;
-
-namespace aspnetcorewebapisqlclient.Business
+﻿namespace aspnetcorewebapisqlclient.Business
 {
     public class AddNewEmployee : IAddNewEmployee
     {

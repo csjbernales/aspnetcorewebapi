@@ -1,8 +1,4 @@
-global using aspnetcorewebapisqlclient.Business;
-global using aspnetcorewebapisqlclient.Business.Interfaces;
-global using aspnetcorewebapisqlclient.Data.Database;
-global using aspnetcorewebapisqlclient.Data.Service;
-global using aspnetcorewebapisqlclient.Models.Data;
+
 
 using Gateway.Middleware;
 
@@ -33,7 +29,6 @@ ConnectionStrings connectionStrings = new()
 builder.Services.AddSingleton(connectionStrings);
 
 builder.Services.AddScoped<IConnectionStringFactory, ConnectionStringFactory>();
-builder.Services.AddScoped<IQuery, Query>();
 
 builder.Services.AddScoped<IDbConnectionFactory, DbConnectionFactory>();
 

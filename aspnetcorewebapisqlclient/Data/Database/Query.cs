@@ -1,8 +1,6 @@
-﻿using aspnetcorewebapisqlclient.Models.Business;
-
-namespace aspnetcorewebapisqlclient.Data.Database
+﻿namespace aspnetcorewebapisqlclient.Data.Database
 {
-    public class Query : IQuery
+    public abstract class Query
     {
 
         public string SelectAllEmployees()

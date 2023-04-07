@@ -2,9 +2,9 @@
 {
     public class ConnectionStrings
     {
-        public string Server { get; set; } = string.Empty;
-        public string Database { get; set; } = string.Empty;
-        public string Trusted_Connection { get; set; } = string.Empty;
-        public string TrustServerCertificate { get; set; } = string.Empty;
+        public required string Server { get; set; }
+        public required string Database { get; set; }
+        public required string Trusted_Connection { get; set; }
+        public required string TrustServerCertificate { get; set; }
     }
 }

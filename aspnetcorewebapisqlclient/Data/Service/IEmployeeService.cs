@@ -1,6 +1,4 @@
-﻿using aspnetcorewebapisqlclient.Models.Business;
-
-namespace aspnetcorewebapisqlclient.Data.Service
+﻿namespace aspnetcorewebapisqlclient.Data.Service
 {
     public interface IEmployeeService
     {
