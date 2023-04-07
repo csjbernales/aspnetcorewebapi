@@ -1,8 +1,9 @@
 ﻿using aspnetcorewebapisqlclient.Business.Interfaces;
+using aspnetcorewebapisqlclient.Controllers;
 
 using Microsoft.AspNetCore.Mvc;
 
-namespace aspnetcorewebapisqlclient.Controllers.Tests
+namespace aspnetcorewebapisqlclientTests.Controllers
 {
     [TestClass()]
     public class EmployeesControllerTests

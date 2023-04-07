@@ -3,7 +3,7 @@ using aspnetcorewebapisqlclient.Models.Data;
 
 using System.Data.SqlClient;
 
-namespace aspnetcorewebapisqlclient.Data.Service.Tests
+namespace aspnetcorewebapisqlclientTests.Data.Service
 {
     [TestClass()]
     [DoNotParallelize]

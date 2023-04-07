@@ -12,7 +12,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"client_id\": \"2LANaHdl2Jenb0xs1o9Fvo6YPnKOwKUW\",\r\n    \"client_secret\": \"QJb1RokQ0Diii5FB8pA_RjCr6vPnKIliG-OAJWRhRdjteRh9NzKJ2Y98CKUyB2qq\",\r\n    \"audience\": \"https://dev-48yt3g6lxsb6vr82.eu.auth0.com/api/v2/\",\r\n    \"grant_type\": \"client_credentials\"\r\n}",
+					"raw": "{\r\n    \"client_id\": \"2LANaHdl2Jenb0xs1o9Fvo6YPnKOwKUW\",\r\n    \"client_secret\": \"QJb1RokQ0Diii5FB8pA_RjCr6vPnKIliG-OAJWRhRdjteRh9NzKJ2Y98CKUyB2qq\",\r\n    \"audience\": \"https://dev-48yt3g6lxsb6vr82.eu.auth0.com/api/v2/\",\r\n    \"grant_type\": \"client_credentials\"\r\n}\r\n",
 					"options": {
 						"raw": {
 							"language": "json"

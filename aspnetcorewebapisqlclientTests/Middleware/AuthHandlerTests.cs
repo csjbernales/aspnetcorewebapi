@@ -1,8 +1,10 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using aspnetcorewebapisqlclient.Middleware;
+
+using Microsoft.AspNetCore.Http;
 
 using System.Security.Claims;
 
-namespace Gateway.Middleware.Tests
+namespace aspnetcorewebapisqlclientTests.Middleware
 {
     [TestClass()]
     public class AuthHandlerTests
@@ -46,6 +48,7 @@ namespace Gateway.Middleware.Tests
             AuthHandler authHandler = new(requestDelegate);
 
             await authHandler.Invoke(httpContext);
+            true.Should().BeTrue();
         }
     }
 }

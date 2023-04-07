@@ -1,20 +1,10 @@
 
 
-using Gateway.Middleware;
+using aspnetcorewebapisqlclient.Middleware;
 
 using System.Diagnostics.CodeAnalysis;
 
 var builder = WebApplication.CreateBuilder(args);
-
-// Add services to the container.
-
-builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
-
-builder.Services.AddScoped<IEmployeeService, EmployeeService>();
-
 
 var conn = builder.Configuration.GetSection("ConnectionStrings");
 
@@ -26,7 +16,16 @@ ConnectionStrings connectionStrings = new()
     TrustServerCertificate = conn["TrustServerCertificate"]!
 };
 
+// Add services to the container.
+
+builder.Services.AddControllers();
+// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
 builder.Services.AddSingleton(connectionStrings);
+
+builder.Services.AddScoped<IEmployeeService, EmployeeService>();
 
 builder.Services.AddScoped<IConnectionStringFactory, ConnectionStringFactory>();
 
@@ -56,6 +55,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseMiddleware<ExceptionHandler>();
 app.UseMiddleware<AuthHandler>();
 
 app.MapHealthChecks("/health");

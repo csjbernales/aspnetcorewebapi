@@ -1,8 +1,9 @@
-﻿using aspnetcorewebapisqlclient.Models.Data;
+﻿using aspnetcorewebapisqlclient.Data.Database;
+using aspnetcorewebapisqlclient.Models.Data;
 
 using System.Data.SqlClient;
 
-namespace aspnetcorewebapisqlclient.Data.Database.Tests
+namespace aspnetcorewebapisqlclientTests.Data.Database
 {
     [TestClass()]
     public class DbConnectionFactoryTests

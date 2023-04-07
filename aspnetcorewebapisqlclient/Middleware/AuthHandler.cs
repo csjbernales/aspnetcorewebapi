@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics;
 
-namespace Gateway.Middleware
+namespace aspnetcorewebapisqlclient.Middleware
 {
     public class AuthHandler
     {
@@ -13,13 +13,13 @@ namespace Gateway.Middleware
 
         public async Task Invoke(HttpContext context)
         {
-            var claims = context.User.Claims;
+            var claims = context.User.Claims.ToList();
 
             var claim = claims.FirstOrDefault();
 
-            if (claim != null) //add logic here
+            if (claim != null) //add checker here
             {
-                await this.next(context);
+                await next(context);
             }
             else
             {

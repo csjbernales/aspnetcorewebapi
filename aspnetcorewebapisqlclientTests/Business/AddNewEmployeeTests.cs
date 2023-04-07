@@ -1,4 +1,6 @@
-﻿namespace aspnetcorewebapisqlclient.Business.Tests
+﻿using aspnetcorewebapisqlclient.Business;
+
+namespace aspnetcorewebapisqlclientTests.Business
 {
     [TestClass()]
     public class AddNewEmployeeTests

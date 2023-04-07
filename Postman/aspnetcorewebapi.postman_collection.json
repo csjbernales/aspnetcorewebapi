@@ -52,7 +52,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{baseUrl}}/api/service/employees/1",
+					"raw": "{{baseUrl}}/api/service/employees/2",
 					"host": [
 						"{{baseUrl}}"
 					],
@@ -60,7 +60,7 @@
 						"api",
 						"service",
 						"employees",
-						"1"
+						"2"
 					]
 				}
 			},
@@ -124,7 +124,7 @@
 			"response": []
 		},
 		{
-			"name": "GetAllEmployees Copy",
+			"name": "RemoveEmployee",
 			"request": {
 				"method": "DELETE",
 				"header": [],
@@ -150,6 +150,36 @@
 				}
 			},
 			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{access-token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
 		}
 	]
 }
