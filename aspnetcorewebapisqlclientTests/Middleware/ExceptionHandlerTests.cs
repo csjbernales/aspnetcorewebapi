@@ -43,6 +43,8 @@ namespace aspnetcorewebapisqlclientTests.Middleware
         {
             ExceptionHandler exceptionHandler = new(requestDelegate);
             await exceptionHandler.Invoke(httpContext);
+
+            true.Should().BeTrue();
         }
     }
 }

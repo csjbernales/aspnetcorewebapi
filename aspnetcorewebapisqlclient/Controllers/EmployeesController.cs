@@ -6,50 +6,40 @@ namespace aspnetcorewebapisqlclient.Controllers
     [Route("[controller]")] //Employees
     public class EmployeesController : ControllerBase
     {
-        private readonly IGetAllEmployee getAllEmployee;
-        private readonly IGetEmployeeById getEmployeeById;
-        private readonly IAddNewEmployee addNewEmployee;
-        private readonly IUpdateEmployee updateEmployee;
-        private readonly IRemoveEmployee removeEmployee;
+        private readonly IEmployeeDependency employeeDependency;
 
-
-        public EmployeesController(IGetAllEmployee getAllEmployee, IGetEmployeeById getEmployeeById, IAddNewEmployee addNewEmployee, IUpdateEmployee updateEmployee, IRemoveEmployee removeEmployee)
+        public EmployeesController(IEmployeeDependency employeeDependency)
         {
-            this.getAllEmployee = getAllEmployee;
-            this.getEmployeeById = getEmployeeById;
-            this.addNewEmployee = addNewEmployee;
-            this.updateEmployee = updateEmployee;
-            this.removeEmployee = removeEmployee;
+            this.employeeDependency = employeeDependency;
         }
-
         [HttpGet()]
         public async Task<IActionResult> Get()
         {
-            return Ok(await getAllEmployee.GetAllEmployees());
+            return Ok(await employeeDependency.Get());
         }
 
         [HttpGet("{id}")]
         public async Task<IActionResult> Get(int id)
         {
-            return Ok(await getEmployeeById.GetEmployee(id));
+            return Ok(await employeeDependency.Get(id));
         }
 
         [HttpPost()]
         public async Task<IActionResult> Post([FromBody] Employees employee)
         {
-            return Ok(await addNewEmployee.AddEmployee(employee));
+            return Ok(await employeeDependency.Post(employee));
         }
 
         [HttpPut()]
         public async Task<IActionResult> Put([FromBody] Employees employee)
         {
-            return Ok(await updateEmployee.UpdateEmployeeData(employee));
+            return Ok(await employeeDependency.Put(employee));
         }
 
         [HttpDelete()]
         public async Task<IActionResult> Delete(Employees employees)
         {
-            return Ok(await removeEmployee.RemoveEmployeeData(employees));
+            return Ok(await employeeDependency.Delete(employees));
         }
     }
 }

@@ -1,5 +1,6 @@
 
 
+using aspnetcorewebapisqlclient.Controllers;
 using aspnetcorewebapisqlclient.Middleware;
 
 using System.Diagnostics.CodeAnalysis;
@@ -37,6 +38,8 @@ builder.Services
     .AddScoped<IAddNewEmployee, AddNewEmployee>()
     .AddScoped<IUpdateEmployee, UpdateEmployee>()
     .AddScoped<IRemoveEmployee, RemoveEmployee>();
+
+builder.Services.AddScoped<IEmployeeDependency, EmployeeDependency>();
 
 builder.Services.AddHealthChecks();
 

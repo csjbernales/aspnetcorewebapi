@@ -1,5 +1,4 @@
-﻿using aspnetcorewebapisqlclient.Business.Interfaces;
-using aspnetcorewebapisqlclient.Controllers;
+﻿using aspnetcorewebapisqlclient.Controllers;
 
 using Microsoft.AspNetCore.Mvc;
 
@@ -8,12 +7,7 @@ namespace aspnetcorewebapisqlclientTests.Controllers
     [TestClass()]
     public class EmployeesControllerTests
     {
-        private IGetAllEmployee getAllEmployee;
-        private IGetEmployeeById getEmployeeById;
-        private IAddNewEmployee addNewEmployee;
-        private IUpdateEmployee updateEmployee;
-        private IRemoveEmployee removeEmployee;
-
+        private IEmployeeDependency employeeDependency;
         private Employees employee;
         private List<Employees> employees;
 
@@ -27,11 +21,7 @@ namespace aspnetcorewebapisqlclientTests.Controllers
                 Lastname = "Test"
             };
             employees = new() { employee };
-            getAllEmployee = A.Fake<IGetAllEmployee>();
-            getEmployeeById = A.Fake<IGetEmployeeById>();
-            addNewEmployee = A.Fake<IAddNewEmployee>();
-            updateEmployee = A.Fake<IUpdateEmployee>();
-            removeEmployee = A.Fake<IRemoveEmployee>();
+            employeeDependency = A.Fake<IEmployeeDependency>();
         }
 
         [TestMethod()]
@@ -39,17 +29,17 @@ namespace aspnetcorewebapisqlclientTests.Controllers
         {
             //arrange
 
-            A.CallTo(() => getAllEmployee.GetAllEmployees()).Returns(employees);
+            A.CallTo(() => employeeDependency.Get()).Returns(employees);
 
             //act
-            EmployeesController employeesController = new(getAllEmployee, getEmployeeById, addNewEmployee, updateEmployee, removeEmployee);
+            EmployeesController employeesController = new(employeeDependency);
 
             OkObjectResult rawresult = employeesController.Get().GetAwaiter().GetResult() as OkObjectResult;
 
             List<Employees> resultModel = rawresult.Value as List<Employees>;
 
             //assert
-            A.CallTo(() => getAllEmployee.GetAllEmployees()).MustHaveHappenedOnceExactly();
+            A.CallTo(() => employeeDependency.Get()).MustHaveHappenedOnceExactly();
 
             Assertion(employees, resultModel);
         }
@@ -59,17 +49,17 @@ namespace aspnetcorewebapisqlclientTests.Controllers
         {
             //arrange
 
-            A.CallTo(() => getEmployeeById.GetEmployee(A<int>.Ignored)).Returns(employees);
+            A.CallTo(() => employeeDependency.Get(A<int>.Ignored)).Returns(employees);
 
             //act
-            EmployeesController employeesController = new(getAllEmployee, getEmployeeById, addNewEmployee, updateEmployee, removeEmployee);
+            EmployeesController employeesController = new(employeeDependency);
 
             OkObjectResult rawresult = employeesController.Get(1).GetAwaiter().GetResult() as OkObjectResult;
 
             List<Employees> resultModel = rawresult.Value as List<Employees>;
 
             //assert
-            A.CallTo(() => getEmployeeById.GetEmployee(1)).MustHaveHappenedOnceExactly();
+            A.CallTo(() => employeeDependency.Get(1)).MustHaveHappenedOnceExactly();
 
             Assertion(employees, resultModel);
         }
@@ -81,17 +71,17 @@ namespace aspnetcorewebapisqlclientTests.Controllers
 
             List<Employees> employeesList = new() { employee };
 
-            A.CallTo(() => addNewEmployee.AddEmployee(A<Employees>.Ignored)).Returns(employeesList);
+            A.CallTo(() => employeeDependency.Post(A<Employees>.Ignored)).Returns(employeesList);
 
             //act
-            EmployeesController employeesController = new(getAllEmployee, getEmployeeById, addNewEmployee, updateEmployee, removeEmployee);
+            EmployeesController employeesController = new(employeeDependency);
 
             OkObjectResult rawresult = employeesController.Post(employee).GetAwaiter().GetResult() as OkObjectResult;
 
             List<Employees> resultModel = rawresult.Value as List<Employees>;
 
             //assert
-            A.CallTo(() => addNewEmployee.AddEmployee(employee)).MustHaveHappenedOnceExactly();
+            A.CallTo(() => employeeDependency.Post(employee)).MustHaveHappenedOnceExactly();
 
             Assertion(employeesList, resultModel);
         }
@@ -102,17 +92,17 @@ namespace aspnetcorewebapisqlclientTests.Controllers
             //arrange
             List<Employees> employeesList = new() { employee };
 
-            A.CallTo(() => updateEmployee.UpdateEmployeeData(A<Employees>.Ignored)).Returns(employeesList);
+            A.CallTo(() => employeeDependency.Put(A<Employees>.Ignored)).Returns(employeesList);
 
             //act
-            EmployeesController employeesController = new(getAllEmployee, getEmployeeById, addNewEmployee, updateEmployee, removeEmployee);
+            EmployeesController employeesController = new(employeeDependency);
 
             OkObjectResult rawresult = employeesController.Put(employee).GetAwaiter().GetResult() as OkObjectResult;
 
             List<Employees> resultModel = rawresult.Value as List<Employees>;
 
             //assert
-            A.CallTo(() => updateEmployee.UpdateEmployeeData(employee)).MustHaveHappenedOnceExactly();
+            A.CallTo(() => employeeDependency.Put(employee)).MustHaveHappenedOnceExactly();
 
             Assertion(employeesList, resultModel);
         }
@@ -123,17 +113,17 @@ namespace aspnetcorewebapisqlclientTests.Controllers
             //arrange
             List<Employees> employeesList = new() { employee };
 
-            A.CallTo(() => removeEmployee.RemoveEmployeeData(A<Employees>.Ignored)).Returns(employeesList);
+            A.CallTo(() => employeeDependency.Delete(A<Employees>.Ignored)).Returns(employeesList);
 
             //act
-            EmployeesController employeesController = new(getAllEmployee, getEmployeeById, addNewEmployee, updateEmployee, removeEmployee);
+            EmployeesController employeesController = new(employeeDependency);
 
             OkObjectResult rawresult = employeesController.Delete(employee).GetAwaiter().GetResult() as OkObjectResult;
 
             List<Employees> resultModel = rawresult.Value as List<Employees>;
 
             //assert
-            A.CallTo(() => removeEmployee.RemoveEmployeeData(A<Employees>.Ignored)).MustHaveHappenedOnceExactly();
+            A.CallTo(() => employeeDependency.Delete(A<Employees>.Ignored)).MustHaveHappenedOnceExactly();
             Assertion(employeesList, resultModel);
         }
 

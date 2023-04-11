@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "23231252-6098-4329-934e-1a5d73178f23",
-		"name": "aspnetcorewebapi",
+		"_postman_id": "cd27d933-6e81-4b1b-93f9-4e3b9b5cc4fc",
+		"name": "aspnetcorewebapilocal",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -11,13 +11,11 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{baseUrl}}/api/service/health",
+					"raw": "{{baseUrlLocal}}/health",
 					"host": [
-						"{{baseUrl}}"
+						"{{baseUrlLocal}}"
 					],
 					"path": [
-						"api",
-						"service",
 						"health"
 					]
 				}
@@ -30,13 +28,11 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{baseUrl}}/api/service/employees",
+					"raw": "{{baseUrlLocal}}/employees",
 					"host": [
-						"{{baseUrl}}"
+						"{{baseUrlLocal}}"
 					],
 					"path": [
-						"api",
-						"service",
 						"employees"
 					]
 				}
@@ -52,13 +48,11 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{baseUrl}}/api/service/employees/2",
+					"raw": "{{baseUrlLocal}}/employees/2",
 					"host": [
-						"{{baseUrl}}"
+						"{{baseUrlLocal}}"
 					],
 					"path": [
-						"api",
-						"service",
 						"employees",
 						"2"
 					]
@@ -81,13 +75,11 @@
 					}
 				},
 				"url": {
-					"raw": "{{baseUrl}}/api/service/employees",
+					"raw": "{{baseUrlLocal}}/employees",
 					"host": [
-						"{{baseUrl}}"
+						"{{baseUrlLocal}}"
 					],
 					"path": [
-						"api",
-						"service",
 						"employees"
 					]
 				}
@@ -109,13 +101,11 @@
 					}
 				},
 				"url": {
-					"raw": "{{baseUrl}}/api/service/employees",
+					"raw": "{{baseUrlLocal}}/employees",
 					"host": [
-						"{{baseUrl}}"
+						"{{baseUrlLocal}}"
 					],
 					"path": [
-						"api",
-						"service",
 						"employees"
 					]
 				}
@@ -137,13 +127,11 @@
 					}
 				},
 				"url": {
-					"raw": "{{baseUrl}}/api/service/employees",
+					"raw": "{{baseUrlLocal}}/employees",
 					"host": [
-						"{{baseUrl}}"
+						"{{baseUrlLocal}}"
 					],
 					"path": [
-						"api",
-						"service",
 						"employees"
 					]
 				}
