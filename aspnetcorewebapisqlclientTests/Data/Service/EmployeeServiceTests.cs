@@ -9,8 +9,8 @@ namespace aspnetcorewebapisqlclientTests.Data.Service
     [DoNotParallelize]
     public class EmployeeServiceTests
     {
-        private IDbConnectionFactory dbConnectionFactory;
-        private readonly ConnectionStringFactory connectionStringFactory = new();
+        private IDatabaseConnection dbConnectionFactory;
+        private readonly ConnectionStringBuilder connectionStringFactory = new();
         private ConnectionStrings connectionStrings;
         string connstring;
         SqlConnection connection;
@@ -18,7 +18,7 @@ namespace aspnetcorewebapisqlclientTests.Data.Service
         [TestInitialize]
         public void Setup()
         {
-            dbConnectionFactory = A.Fake<IDbConnectionFactory>();
+            dbConnectionFactory = A.Fake<IDatabaseConnection>();
             connectionStrings = new()
             {
                 Database = "maindb",

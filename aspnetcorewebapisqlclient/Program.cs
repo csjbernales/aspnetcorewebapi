@@ -27,9 +27,9 @@ builder.Services.AddSingleton(connectionStrings);
 
 builder.Services.AddScoped<IEmployeeService, EmployeeService>();
 
-builder.Services.AddScoped<IConnectionStringFactory, ConnectionStringFactory>();
+builder.Services.AddScoped<IConnectionStringBuilder, ConnectionStringBuilder>();
 
-builder.Services.AddScoped<IDbConnectionFactory, DbConnectionFactory>();
+builder.Services.AddScoped<IDatabaseConnection, DatabaseConnection>();
 
 builder.Services
     .AddScoped<IGetAllEmployee, GetAllEmployee>()

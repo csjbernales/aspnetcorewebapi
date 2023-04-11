@@ -2,7 +2,7 @@
 
 namespace aspnetcorewebapisqlclient.Data.Database
 {
-    public interface IDbConnectionFactory
+    public interface IDatabaseConnection
     {
         IDbConnection Create();
     }

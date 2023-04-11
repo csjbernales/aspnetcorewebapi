@@ -4,9 +4,9 @@ namespace aspnetcorewebapisqlclient.Data.Service
 {
     public class EmployeeService : Query, IEmployeeService
     {
-        private readonly IDbConnectionFactory dbConnectionFactory;
+        private readonly Database.IDatabaseConnection dbConnectionFactory;
 
-        public EmployeeService(IDbConnectionFactory dbConnectionFactory)
+        public EmployeeService(Database.IDatabaseConnection dbConnectionFactory)
         {
             this.dbConnectionFactory = dbConnectionFactory;
         }
@@ -15,7 +15,7 @@ namespace aspnetcorewebapisqlclient.Data.Service
         {
             List<Employees> employees = new();
 
-            using IDbConnection connection = dbConnectionFactory.Create();
+            using System.Data.IDbConnection connection = dbConnectionFactory.Create();
             await connection.OpenAsync();
 
             IDbCommand command = connection.CreateCommand();
@@ -33,7 +33,7 @@ namespace aspnetcorewebapisqlclient.Data.Service
         {
             List<Employees> employees = new();
 
-            using IDbConnection connection = dbConnectionFactory.Create();
+            using System.Data.IDbConnection connection = dbConnectionFactory.Create();
             await connection.OpenAsync();
 
             IDbCommand command = connection.CreateCommand();
@@ -47,7 +47,7 @@ namespace aspnetcorewebapisqlclient.Data.Service
 
         public async Task<List<Employees>> Post(Employees employee)
         {
-            using IDbConnection connection = dbConnectionFactory.Create();
+            using System.Data.IDbConnection connection = dbConnectionFactory.Create();
             await connection.OpenAsync();
 
             IDbCommand command = connection.CreateCommand();
@@ -61,7 +61,7 @@ namespace aspnetcorewebapisqlclient.Data.Service
 
         public async Task<List<Employees>> Put(Employees employee)
         {
-            using IDbConnection connection = dbConnectionFactory.Create();
+            using System.Data.IDbConnection connection = dbConnectionFactory.Create();
             await connection.OpenAsync();
 
             IDbCommand command = connection.CreateCommand();
@@ -75,7 +75,7 @@ namespace aspnetcorewebapisqlclient.Data.Service
 
         public async Task<List<Employees>> Delete(Employees employee)
         {
-            using IDbConnection connection = dbConnectionFactory.Create();
+            using System.Data.IDbConnection connection = dbConnectionFactory.Create();
             await connection.OpenAsync();
 
             IDbCommand command = connection.CreateCommand();

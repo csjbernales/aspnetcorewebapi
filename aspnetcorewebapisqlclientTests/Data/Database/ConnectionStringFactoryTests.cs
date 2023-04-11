@@ -19,7 +19,7 @@ namespace aspnetcorewebapisqlclientTests.Data.Database
             };
 
             //act
-            ConnectionStringFactory connectionStringFactory = new();
+            ConnectionStringBuilder connectionStringFactory = new();
             var result = connectionStringFactory.ConnectionString(connectionStrings);
 
             //assert
@@ -32,7 +32,7 @@ namespace aspnetcorewebapisqlclientTests.Data.Database
             ConnectionStrings connectionStrings = null;
 
             //act
-            ConnectionStringFactory connectionStringFactory = new();
+            ConnectionStringBuilder connectionStringFactory = new();
             var result = connectionStringFactory.ConnectionString(connectionStrings!);
 
             //assert

@@ -1,6 +1,6 @@
 ﻿namespace aspnetcorewebapisqlclient.Data.Database
 {
-    public class ConnectionStringFactory : IConnectionStringFactory
+    public class ConnectionStringBuilder : IConnectionStringBuilder
     {
 
         public string ConnectionString(ConnectionStrings Options)
