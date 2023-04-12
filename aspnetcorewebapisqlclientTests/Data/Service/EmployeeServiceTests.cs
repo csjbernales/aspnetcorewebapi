@@ -1,7 +1,6 @@
 ﻿using aspnetcorewebapisqlclient.Data.Database;
-using aspnetcorewebapisqlclient.Models.Data;
 
-using System.Data.SqlClient;
+using System.Data;
 
 namespace aspnetcorewebapisqlclientTests.Data.Service
 {
@@ -10,155 +9,221 @@ namespace aspnetcorewebapisqlclientTests.Data.Service
     public class EmployeeServiceTests
     {
         private IDatabaseConnection dbConnectionFactory;
-        private readonly ConnectionStringBuilder connectionStringFactory = new();
-        private ConnectionStrings connectionStrings;
-        string connstring;
-        SqlConnection connection;
 
         [TestInitialize]
         public void Setup()
         {
             dbConnectionFactory = A.Fake<IDatabaseConnection>();
-            connectionStrings = new()
-            {
-                Database = "maindb",
-                Server = "laptop-nonps",
-                Trusted_Connection = "True",
-                TrustServerCertificate = "True"
-            };
-            connstring = connectionStringFactory.ConnectionString(connectionStrings);
-            connection = new(connstring);
         }
 
         [TestMethod()]
         public void A_GetTest()
         {
             //arrange
-            A.CallTo(() => dbConnectionFactory.Create()).Returns(connection);
+            var conn = A.Dummy<IDbConnection>();
+            A.CallTo(() => conn.State).Returns(ConnectionState.Open);
 
-            //act
+            IDbCommand command = A.Dummy<IDbCommand>();
+            A.CallTo(() => conn.CreateCommand()).Returns(command);
+            command.CommandText = "select query";
+
+            IDataReader reader = A.Dummy<IDataReader>();
+            A.CallTo(() => reader.FieldCount).Returns(3);
+            A.CallTo(() => reader.Read()).Returns(true);
+            A.CallTo(() => reader["firstname"]).Returns("firstname");
+            A.CallTo(() => reader["middlename"]).Returns("middlename");
+            A.CallTo(() => reader["lastname"]).Returns("lastname");
+
+            A.CallTo(() => reader.GetFieldType(0)).Returns(typeof(string));
+            A.CallTo(() => reader.GetFieldType(1)).Returns(typeof(string));
+            A.CallTo(() => reader.GetFieldType(2)).Returns(typeof(string));
+
+            A.CallTo(() => command.ExecuteReader()).Returns(reader);
+            A.CallTo(() => reader.Read()).ReturnsNextFromSequence(true, false);
+            A.CallTo(() => reader.IsDBNull(0)).ReturnsNextFromSequence(false, false, false, true);
+            A.CallTo(() => reader.NextResult()).ReturnsNextFromSequence(false);
+            A.CallTo(() => dbConnectionFactory.Create()).Returns(conn);
+
+            ///act
             EmployeeService employeeService = new(dbConnectionFactory);
-            var result = employeeService.Get();
+            var response = employeeService.Get();
 
             //assert
-            Assertions(result);
+            Assertions(response);
         }
 
         [TestMethod()]
         public void B_GetSingleTest()
         {
             //arrange
-            A.CallTo(() => dbConnectionFactory.Create()).Returns(connection);
+            var conn = A.Dummy<IDbConnection>();
+            A.CallTo(() => conn.State).Returns(ConnectionState.Open);
 
-            //act
+            IDbCommand command = A.Dummy<IDbCommand>();
+            A.CallTo(() => conn.CreateCommand()).Returns(command);
+            command.CommandText = "select query";
+
+            IDataReader reader = A.Dummy<IDataReader>();
+            A.CallTo(() => reader.FieldCount).Returns(3);
+            A.CallTo(() => reader.Read()).Returns(true);
+            A.CallTo(() => reader["firstname"]).Returns("firstname");
+            A.CallTo(() => reader["middlename"]).Returns("middlename");
+            A.CallTo(() => reader["lastname"]).Returns("lastname");
+
+            A.CallTo(() => reader.GetFieldType(0)).Returns(typeof(string));
+            A.CallTo(() => reader.GetFieldType(1)).Returns(typeof(string));
+            A.CallTo(() => reader.GetFieldType(2)).Returns(typeof(string));
+
+            A.CallTo(() => command.ExecuteReader()).Returns(reader);
+            A.CallTo(() => reader.Read()).ReturnsNextFromSequence(true, false);
+            A.CallTo(() => reader.IsDBNull(0)).ReturnsNextFromSequence(false, false, false, true);
+            A.CallTo(() => reader.NextResult()).ReturnsNextFromSequence(false);
+            A.CallTo(() => dbConnectionFactory.Create()).Returns(conn);
+
+            ///act
             EmployeeService employeeService = new(dbConnectionFactory);
-            var result = employeeService.Get(1);
+            var response = employeeService.Get(1);
 
             //assert
-            Assertions(result);
+            Assertions(response);
         }
 
         [TestMethod()]
         public void C_PostTest()
         {
             //arrange
-            A.CallTo(() => dbConnectionFactory.Create()).Returns(connection);
+            Employees employees =
+                new()
+                {
+                    Firstname = "firstname",
+                    Middlename = "middlename",
+                    Lastname = "lastname"
+                };
 
-            Employees employee = new()
-            {
-                Firstname = "test",
-                Middlename = "test",
-                Lastname = "test"
-            };
+            var conn = A.Dummy<IDbConnection>();
+            A.CallTo(() => conn.State).Returns(ConnectionState.Open);
 
-            //act
+            IDbCommand command = A.Dummy<IDbCommand>();
+            A.CallTo(() => conn.CreateCommand()).Returns(command);
+            command.CommandText = "select query";
+
+            IDataReader reader = A.Dummy<IDataReader>();
+            A.CallTo(() => reader.FieldCount).Returns(3);
+            A.CallTo(() => reader.Read()).Returns(true);
+            A.CallTo(() => reader["firstname"]).Returns("firstname");
+            A.CallTo(() => reader["middlename"]).Returns("middlename");
+            A.CallTo(() => reader["lastname"]).Returns("lastname");
+
+            A.CallTo(() => reader.GetFieldType(0)).Returns(typeof(string));
+            A.CallTo(() => reader.GetFieldType(1)).Returns(typeof(string));
+            A.CallTo(() => reader.GetFieldType(2)).Returns(typeof(string));
+            A.CallTo(() => reader.Read()).ReturnsNextFromSequence(true, false);
+            A.CallTo(() => reader.IsDBNull(0)).ReturnsNextFromSequence(false, false, false, true);
+            A.CallTo(() => reader.NextResult()).ReturnsNextFromSequence(false);
+
+            A.CallTo(() => command.ExecuteReader()).Returns(reader);
+
+            A.CallTo(() => command.ExecuteNonQuery()).Returns(1);
+            A.CallTo(() => dbConnectionFactory.Create()).Returns(conn);
+
+            ///act
             EmployeeService employeeService = new(dbConnectionFactory);
-            var result = employeeService.Post(employee);
+            var response = employeeService.Post(employees);
 
             //assert
-            Assertions(result);
+            Assertions(response);
         }
 
         [TestMethod()]
         public void D_PutTest()
         {
             //arrange
-            A.CallTo(() => dbConnectionFactory.Create()).Returns(connection);
+            Employees employees =
+                new()
+                {
+                    Firstname = "firstname",
+                    Middlename = "middlename",
+                    Lastname = "lastname"
+                };
 
-            Employees employee = new()
-            {
-                Firstname = "test",
-                Middlename = "test",
-                Lastname = "test"
-            };
+            var conn = A.Dummy<IDbConnection>();
+            A.CallTo(() => conn.State).Returns(ConnectionState.Open);
 
-            //act
+            IDbCommand command = A.Dummy<IDbCommand>();
+            A.CallTo(() => conn.CreateCommand()).Returns(command);
+            command.CommandText = "select query";
+
+            IDataReader reader = A.Dummy<IDataReader>();
+            A.CallTo(() => reader.FieldCount).Returns(3);
+            A.CallTo(() => reader.Read()).Returns(true);
+            A.CallTo(() => reader["firstname"]).Returns("firstname");
+            A.CallTo(() => reader["middlename"]).Returns("middlename");
+            A.CallTo(() => reader["lastname"]).Returns("lastname");
+
+            A.CallTo(() => reader.GetFieldType(0)).Returns(typeof(string));
+            A.CallTo(() => reader.GetFieldType(1)).Returns(typeof(string));
+            A.CallTo(() => reader.GetFieldType(2)).Returns(typeof(string));
+            A.CallTo(() => reader.Read()).ReturnsNextFromSequence(true, false);
+            A.CallTo(() => reader.IsDBNull(0)).ReturnsNextFromSequence(false, false, false, true);
+            A.CallTo(() => reader.NextResult()).ReturnsNextFromSequence(false);
+
+            A.CallTo(() => command.ExecuteReader()).Returns(reader);
+
+            A.CallTo(() => command.ExecuteNonQuery()).Returns(1);
+            A.CallTo(() => dbConnectionFactory.Create()).Returns(conn);
+
+            ///act
             EmployeeService employeeService = new(dbConnectionFactory);
-            var result = employeeService.Put(employee);
+            var response = employeeService.Put(employees);
 
             //assert
-            Assertions(result);
+            Assertions(response);
         }
 
         [TestMethod()]
-        public async Task E_PutTest()
+        public void E_DeleteTest()
         {
             //arrange
-            A.CallTo(() => dbConnectionFactory.Create()).Returns(connection);
+            Employees employees =
+                new()
+                {
+                    Firstname = "firstname",
+                    Middlename = "middlename",
+                    Lastname = "lastname"
+                };
 
-            Employees employee = new()
-            {
-                Firstname = "demo",
-                Middlename = "test",
-                Lastname = "test"
-            };
+            var conn = A.Dummy<IDbConnection>();
+            A.CallTo(() => conn.State).Returns(ConnectionState.Open);
 
-            //act
+            IDbCommand command = A.Dummy<IDbCommand>();
+            A.CallTo(() => conn.CreateCommand()).Returns(command);
+            command.CommandText = "select query";
+
+            IDataReader reader = A.Dummy<IDataReader>();
+            A.CallTo(() => reader.FieldCount).Returns(3);
+            A.CallTo(() => reader.Read()).Returns(true);
+            A.CallTo(() => reader["firstname"]).Returns("firstname");
+            A.CallTo(() => reader["middlename"]).Returns("middlename");
+            A.CallTo(() => reader["lastname"]).Returns("lastname");
+
+            A.CallTo(() => reader.GetFieldType(0)).Returns(typeof(string));
+            A.CallTo(() => reader.GetFieldType(1)).Returns(typeof(string));
+            A.CallTo(() => reader.GetFieldType(2)).Returns(typeof(string));
+            A.CallTo(() => reader.Read()).ReturnsNextFromSequence(true, false);
+            A.CallTo(() => reader.IsDBNull(0)).ReturnsNextFromSequence(false, false, false, true);
+            A.CallTo(() => reader.NextResult()).ReturnsNextFromSequence(false);
+
+            A.CallTo(() => command.ExecuteReader()).Returns(reader);
+
+            A.CallTo(() => command.ExecuteNonQuery()).Returns(1);
+            A.CallTo(() => dbConnectionFactory.Create()).Returns(conn);
+
+            ///act
             EmployeeService employeeService = new(dbConnectionFactory);
-            await employeeService.Put(employee);
-
-            true.Should().BeTrue();
-        }
-
-        [TestMethod()]
-        public void F_DeleteTest()
-        {
-            //arrange
-            A.CallTo(() => dbConnectionFactory.Create()).Returns(connection);
-
-            Employees employee = new()
-            {
-                Firstname = "test",
-                Middlename = "test",
-                Lastname = "test"
-            };
-
-            //act
-            EmployeeService employeeService = new(dbConnectionFactory);
-            var result = employeeService.Delete(employee);
+            var response = employeeService.Delete(employees);
 
             //assert
-            Assertions(result);
-        }
-
-        [TestMethod()]
-        public void G_DeleteTest()
-        {
-            //arrange
-            A.CallTo(() => dbConnectionFactory.Create()).Returns(connection);
-
-            Employees employee = new()
-            {
-                Firstname = "demo",
-                Middlename = "test",
-                Lastname = "test"
-            };
-
-            //act
-            EmployeeService employeeService = new(dbConnectionFactory);
-            _ = employeeService.Delete(employee);
-
-            true.Should().BeTrue();
+            Assertions(response);
         }
 
         private static void Assertions(Task<List<Employees>> result)
