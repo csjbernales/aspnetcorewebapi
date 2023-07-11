@@ -24,7 +24,7 @@ namespace aspnetcorewebapisqlclient.Controllers.Tests
         [TestMethod()]
         public async Task GetTest()
         {
-            EmployeeDependency employeeDependency = new EmployeeDependency(getAllEmployee, getEmployeeById, addNewEmployee, updateEmployee, removeEmployee);
+            EmployeeDependency employeeDependency = new(getAllEmployee, getEmployeeById, addNewEmployee, updateEmployee, removeEmployee);
             var result = await employeeDependency.Get();
 
             Assertion(result);
@@ -33,7 +33,7 @@ namespace aspnetcorewebapisqlclient.Controllers.Tests
         [TestMethod()]
         public async Task GetTest1()
         {
-            EmployeeDependency employeeDependency = new EmployeeDependency(getAllEmployee, getEmployeeById, addNewEmployee, updateEmployee, removeEmployee);
+            EmployeeDependency employeeDependency = new(getAllEmployee, getEmployeeById, addNewEmployee, updateEmployee, removeEmployee);
             var result = await employeeDependency.Get(1);
 
             Assertion(result);
@@ -42,7 +42,7 @@ namespace aspnetcorewebapisqlclient.Controllers.Tests
         [TestMethod()]
         public async Task PostTest()
         {
-            EmployeeDependency employeeDependency = new EmployeeDependency(getAllEmployee, getEmployeeById, addNewEmployee, updateEmployee, removeEmployee);
+            EmployeeDependency employeeDependency = new(getAllEmployee, getEmployeeById, addNewEmployee, updateEmployee, removeEmployee);
             Employees employees = A.Dummy<Employees>();
             var result = await employeeDependency.Post(employees);
 
@@ -52,7 +52,7 @@ namespace aspnetcorewebapisqlclient.Controllers.Tests
         [TestMethod()]
         public async Task PutTest()
         {
-            EmployeeDependency employeeDependency = new EmployeeDependency(getAllEmployee, getEmployeeById, addNewEmployee, updateEmployee, removeEmployee);
+            EmployeeDependency employeeDependency = new(getAllEmployee, getEmployeeById, addNewEmployee, updateEmployee, removeEmployee);
             Employees employees = A.Dummy<Employees>();
             var result = await employeeDependency.Put(employees);
 
@@ -62,7 +62,7 @@ namespace aspnetcorewebapisqlclient.Controllers.Tests
         [TestMethod()]
         public async Task DeleteTest()
         {
-            EmployeeDependency employeeDependency = new EmployeeDependency(getAllEmployee, getEmployeeById, addNewEmployee, updateEmployee, removeEmployee);
+            EmployeeDependency employeeDependency = new(getAllEmployee, getEmployeeById, addNewEmployee, updateEmployee, removeEmployee);
             Employees employees = A.Dummy<Employees>();
             var result = await employeeDependency.Delete(employees);
 
