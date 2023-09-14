@@ -1,5 +1,3 @@
-
-
 using aspnetcorewebapisqlclient.Controllers;
 using aspnetcorewebapisqlclient.Middleware;
 
@@ -71,6 +69,6 @@ app.MapControllers();
 
 app.Run();
 
-
 [ExcludeFromCodeCoverage]
-public static partial class Program { }
+public static partial class Program
+{ }
