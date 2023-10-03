@@ -8,7 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 var conn = builder.Configuration.GetSection("ConnectionStrings");
 
 ConnectionStrings connectionStrings = new()
-{
+{ 
     Database = conn["Database"]!,
     Server = conn["Server"]!,
     Trusted_Connection = conn["Trusted_Connection"]!,
