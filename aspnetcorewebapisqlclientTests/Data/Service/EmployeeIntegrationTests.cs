@@ -22,7 +22,7 @@ namespace aspnetcorewebapisqlclientTests.Data.Service
             connectionStrings = new()
             {
                 Database = "maindb",
-                Server = "laptop-nonps",
+                Server = "TUF-FX504",
                 Trusted_Connection = "True",
                 TrustServerCertificate = "True"
             };
@@ -52,7 +52,7 @@ namespace aspnetcorewebapisqlclientTests.Data.Service
 
             //act
             EmployeeService employeeService = new(dbConnectionFactory);
-            var result = employeeService.Get(1);
+            var result = employeeService.Get(5);
 
             //assert
             Assertions(result);
