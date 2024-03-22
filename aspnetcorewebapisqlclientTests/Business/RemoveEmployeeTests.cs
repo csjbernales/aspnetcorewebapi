@@ -17,7 +17,7 @@ namespace aspnetcorewebapisqlclientTests.Business
                 Lastname = string.Empty
             };
             IEmployeeService service = A.Fake<IEmployeeService>();
-            List<Employees> employeeList = new() { employees, employees };
+            List<Employees> employeeList = [employees, employees];
             A.CallTo(() => service.Delete(employees)).Returns(employeeList);
 
             //act

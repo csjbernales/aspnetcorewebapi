@@ -4,14 +4,10 @@ namespace aspnetcorewebapisqlclient.Controllers
 {
     [ApiController]
     [Route("[controller]")] //Employees
-    public class EmployeesController : ControllerBase
+    public class EmployeesController(IEmployeeDependency employeeDependency) : ControllerBase
     {
-        private readonly IEmployeeDependency employeeDependency;
+        private readonly IEmployeeDependency employeeDependency = employeeDependency;
 
-        public EmployeesController(IEmployeeDependency employeeDependency)
-        {
-            this.employeeDependency = employeeDependency;
-        }
         [HttpGet()]
         public async Task<IActionResult> Get()
         {

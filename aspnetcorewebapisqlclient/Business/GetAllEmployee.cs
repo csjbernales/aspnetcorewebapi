@@ -1,14 +1,7 @@
 ﻿namespace aspnetcorewebapisqlclient.Business
 {
-    public class GetAllEmployee : IGetAllEmployee
+    public class GetAllEmployee(IEmployeeService employeeService) : IGetAllEmployee
     {
-        private readonly IEmployeeService employeeService;
-
-        public GetAllEmployee(IEmployeeService employeeService)
-        {
-            this.employeeService = employeeService;
-        }
-
         public async Task<List<Employees>> GetAllEmployees()
         {
             return await employeeService.Get();

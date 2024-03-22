@@ -1,22 +1,7 @@
 ﻿namespace aspnetcorewebapisqlclient.Controllers
 {
-    public class EmployeeDependency : IEmployeeDependency
+    public class EmployeeDependency(IGetAllEmployee getAllEmployee, IGetEmployeeById getEmployeeById, IAddNewEmployee addNewEmployee, IUpdateEmployee updateEmployee, IRemoveEmployee removeEmployee) : IEmployeeDependency
     {
-        private readonly IGetAllEmployee getAllEmployee;
-        private readonly IGetEmployeeById getEmployeeById;
-        private readonly IAddNewEmployee addNewEmployee;
-        private readonly IUpdateEmployee updateEmployee;
-        private readonly IRemoveEmployee removeEmployee;
-
-        public EmployeeDependency(IGetAllEmployee getAllEmployee, IGetEmployeeById getEmployeeById, IAddNewEmployee addNewEmployee, IUpdateEmployee updateEmployee, IRemoveEmployee removeEmployee)
-        {
-            this.getAllEmployee = getAllEmployee;
-            this.getEmployeeById = getEmployeeById;
-            this.addNewEmployee = addNewEmployee;
-            this.updateEmployee = updateEmployee;
-            this.removeEmployee = removeEmployee;
-        }
-
         public async Task<List<Employees>> Get()
         {
             return await getAllEmployee.GetAllEmployees();

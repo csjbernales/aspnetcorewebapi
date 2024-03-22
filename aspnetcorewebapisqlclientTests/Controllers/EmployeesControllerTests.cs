@@ -20,7 +20,7 @@ namespace aspnetcorewebapisqlclientTests.Controllers
                 Middlename = "Test",
                 Lastname = "Test"
             };
-            employees = new() { employee };
+            employees = [employee];
             employeeDependency = A.Fake<IEmployeeDependency>();
         }
 
@@ -69,7 +69,7 @@ namespace aspnetcorewebapisqlclientTests.Controllers
         {
             //arrange
 
-            List<Employees> employeesList = new() { employee };
+            List<Employees> employeesList = [employee];
 
             A.CallTo(() => employeeDependency.Post(A<Employees>.Ignored)).Returns(employeesList);
 
@@ -90,7 +90,7 @@ namespace aspnetcorewebapisqlclientTests.Controllers
         public void PutTest()
         {
             //arrange
-            List<Employees> employeesList = new() { employee };
+            List<Employees> employeesList = [employee];
 
             A.CallTo(() => employeeDependency.Put(A<Employees>.Ignored)).Returns(employeesList);
 
@@ -111,7 +111,7 @@ namespace aspnetcorewebapisqlclientTests.Controllers
         public void DeleteTest()
         {
             //arrange
-            List<Employees> employeesList = new() { employee };
+            List<Employees> employeesList = [employee];
 
             A.CallTo(() => employeeDependency.Delete(A<Employees>.Ignored)).Returns(employeesList);
 

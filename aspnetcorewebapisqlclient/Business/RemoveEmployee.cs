@@ -1,14 +1,7 @@
 ﻿namespace aspnetcorewebapisqlclient.Business
 {
-    public class RemoveEmployee : IRemoveEmployee
+    public class RemoveEmployee(IEmployeeService employeeService) : IRemoveEmployee
     {
-        private readonly IEmployeeService employeeService;
-
-        public RemoveEmployee(IEmployeeService employeeService)
-        {
-            this.employeeService = employeeService;
-        }
-
         public async Task<List<Employees>> RemoveEmployeeData(Employees employees)
         {
             return await employeeService.Delete(employees);

@@ -2,18 +2,11 @@
 
 namespace aspnetcorewebapisqlclient.Data.Service
 {
-    public class EmployeeService : Query, IEmployeeService
+    public class EmployeeService(IDatabaseConnection dbConnectionFactory) : Query, IEmployeeService
     {
-        private readonly IDatabaseConnection dbConnectionFactory;
-
-        public EmployeeService(IDatabaseConnection dbConnectionFactory)
-        {
-            this.dbConnectionFactory = dbConnectionFactory;
-        }
-
         public async Task<List<Employees>> Get()
         {
-            List<Employees> employees = new();
+            List<Employees> employees = [];
 
             IDbConnection connection = dbConnectionFactory.Create();
             await connection.OpenAsync();
@@ -31,7 +24,7 @@ namespace aspnetcorewebapisqlclient.Data.Service
 
         public async Task<List<Employees>> Get(int id)
         {
-            List<Employees> employees = new();
+            List<Employees> employees = [];
 
             IDbConnection connection = dbConnectionFactory.Create();
             await connection.OpenAsync();

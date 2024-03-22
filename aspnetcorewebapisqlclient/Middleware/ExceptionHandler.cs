@@ -1,19 +1,12 @@
 ﻿namespace aspnetcorewebapisqlclient.Middleware
 {
-    public class ExceptionHandler
+    public class ExceptionHandler(RequestDelegate next)
     {
-        private readonly RequestDelegate next;
-
-        public ExceptionHandler(RequestDelegate next)
-        {
-            this.next = next;
-        }
-
         public async Task Invoke(HttpContext context)
         {
             try
             {
-                await this.next(context);
+                await next(context);
             }
             catch
             {

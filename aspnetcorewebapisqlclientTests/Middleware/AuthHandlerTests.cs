@@ -23,12 +23,12 @@ namespace aspnetcorewebapisqlclientTests.Middleware
         [TestMethod()]
         public async Task InvokeTest()
         {
-            claims = new()
-            {
+            claims =
+            [
                 new Claim(ClaimTypes.Name, "username"),
                 new Claim(ClaimTypes.NameIdentifier, "userId"),
                 new Claim("name", "John Doe"),
-            };
+            ];
 
             A.CallTo(() => httpContext.User.Claims).Returns(claims);
 
@@ -41,7 +41,7 @@ namespace aspnetcorewebapisqlclientTests.Middleware
         [TestMethod()]
         public async Task InvokeFailTest()
         {
-            claims = new();
+            claims = [];
 
             A.CallTo(() => httpContext.User.Claims).Returns(claims);
 

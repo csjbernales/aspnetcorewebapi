@@ -2,22 +2,15 @@
 
 namespace aspnetcorewebapisqlclient.Middleware
 {
-    public class AuthHandler
+    public class AuthHandler(RequestDelegate next)
     {
-        private readonly RequestDelegate next;
-
-        public AuthHandler(RequestDelegate next)
-        {
-            this.next = next;
-        }
-
         public async Task Invoke(HttpContext context)
         {
             var claims = context.User.Claims.ToList();
 
             var claim = claims.FirstOrDefault();
 
-            if (claim != null) //add checker here
+            if (claim is not null) //add checker here
             {
                 await next(context);
             }
